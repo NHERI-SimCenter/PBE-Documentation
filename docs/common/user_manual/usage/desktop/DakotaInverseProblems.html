@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. User Guide &mdash; Performance Based Engineering Application  documentation</title>
+  <title>Inverse Problem &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -36,9 +36,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1. UQ: Uncertainty Quantification" href="UQ.html" />
-    <link rel="prev" title="3.3. Test the Installation" href="../../installation/desktop/testInstall.html" /> 
+    <link rel="search" title="Search" href="../../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,20 +84,11 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/PBE/about.html">2. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GI.html">4.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIM.html">4.3. SIM: Structural Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">4.4. EVT: Earthquake Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">4.5. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">4.6. DL: Damage and Loss Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">4.7. RES: Results</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">4. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../requirements/PBE.html">7. Requirements</a></li>
@@ -162,13 +151,13 @@
     
       <li><a href="../../../../index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">4. </span>User Guide</li>
+      <li>Inverse Problem</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../../_sources/common/user_manual/usage/desktop/usage.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/common/user_manual/usage/desktop/DakotaInverseProblems.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -181,53 +170,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="user-guide">
-<span id="lbl-usage"></span><h1><span class="section-number">4. </span>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
-<p>Once the application is started the user is presented with the user interface (UI) shown in <a class="reference internal" href="#figgenericui-pbe"><span class="std std-numref">Fig. 4.2</span></a>. It is in this UI that the user selects the applications to run, inputs the necessary
-parameters for each application, starts the workflow either locally or
-remotely, and finally views the simulation results. The UI contains several separate areas:</p>
+  <div class="section" id="inverse-problem">
+<span id="lblinverseproblem"></span><h1>Inverse Problem<a class="headerlink" href="#inverse-problem" title="Permalink to this headline">¶</a></h1>
+<p>The inverse problem methods, like the parameter estimation methods presented in <span class="xref std std-ref">_lblParameterEstimation</span>, are concerend with estimation of input parameters given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using an inverse method the user has some idea of the distributions associated with these parameters. This information is known as the prior distributions. The Inverse  methods take thiss prior information and combines it with observational data (e.g. from experiments) to infer posterior distributions on the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. For the likelihood function, that function that specifies the likelihood of observing a particular observation given the model and its associated parameterization, Dakota uses a Gaussian liklihood function. The algorithms that generate the samples to produce the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) algorithm. For PBE app two families of algorithms are provided for the MCMC: DREAM, and the algotithms provided by the QUESO library.</p>
+<div class="section" id="queso">
+<h2>QUESO<a class="headerlink" href="#queso" title="Permalink to this headline">¶</a></h2>
+<p>The QUESO option supports the following MCMC algorithms from the QUESO library: DRAM (Delayed Rejection Adaptive Metropolis), delayed rejection (DR) only, adaptive metropolis (AM) only, pure Metropolis Hasting (MH)s, and multilevel (ML). The user is requested to select from one of the algorithms, provide a seed and to specify the number of markov chain samples, and has the option of specifying the number of burn in samples (those samples generated at the start to start the markov chain, but not included in the result)</p>
 <div class="align-center figure" id="id3">
-<span id="figgenericui-pbe"></span><img alt="../../../../_images/pbePanel.png" src="../../../../_images/pbePanel.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">The User Interface</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<span id="figqueso"></span><img alt="common/user_manual/usage/desktop/figures/QUESO.png" src="common/user_manual/usage/desktop/figures/QUESO.png" />
+<p class="caption"><span class="caption-text">DREAM input panel</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<ol class="arabic simple">
-<li><p>Login Button:</p></li>
+<dl class="citation">
+<dt class="label" id="id1"><span class="brackets">QUESO</span></dt>
+<dd><p>Prudencio, Ernesto E and Schulz, Karl W, “The parallel C++ statistical library ‘QUESO’: Quantification of Uncertainty for Estimation, Simulation and Optimization, Euro-Par 2011: Parallel Processing Workshops, Springer, 2012, 398-407</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="dream">
+<h2>DREAM<a class="headerlink" href="#dream" title="Permalink to this headline">¶</a></h2>
+<p>The DiffeRential Evolution Adaptive Metropolis (DREAM) method runs multiple markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. The inputs for the method are the number of chains, seed, number of markov chain samples and burn in samples. The number of Markov chain samples per chain is number of samples divided by number of chains.</p>
+<div class="align-center figure" id="id4">
+<span id="figdream"></span><img alt="common/user_manual/usage/desktop/figures/DREAM.png" src="common/user_manual/usage/desktop/figures/DREAM.png" />
+<p class="caption"><span class="caption-text">DREAM input panel</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="citation">
+<dt class="label" id="id2"><span class="brackets">DREAM</span></dt>
+<dd><ol class="upperalpha simple" start="10">
+<li><ol class="upperalpha simple">
+<li><p>Vrugt, C. J. F. ter Braak, C. G. H. Diks, B. A. Robinson, J. M. Hyman, and D. Higdon. Accelerating Markov chain Monte Carlo simulation by self-adaptive differential evolution with randomized subspace sampling. International Journal of Nonlinear Scientific Numerical Simulation, 10(3), 2009. 1804, 2550</p></li>
 </ol>
-<p>The <code class="docutils literal notranslate"><span class="pre">Login</span></code> Button is at the top right of the UI. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe</a>.</p>
-<ol class="arabic simple" start="2">
-<li><p>Message Area:</p></li>
+</li>
 </ol>
-<p>In the top center of the UI there is an area in which, while the application is running, error and status messages will be displayed.</p>
-<ol class="arabic simple" start="3">
-<li><p>Push Buttons:</p></li>
-</ol>
-<p>This is the area near the bottom of the UI in which 4 buttons are contained:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">RUN</span></code> – Run the simulation locally on the user’s desktop machine.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">at</span> <span class="pre">DesignSafe</span></code> – Process the information, and send to DesignSafe. The simulation will be run there on a supercomputer, and results will be stored in the user’s DesignSafe jobs folder.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">from</span> <span class="pre">DesignSafe</span></code> – Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Exit</span></code>: Exit the application.</p></li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple" start="3">
-<li><p>Input Panel Selection:</p></li>
-</ol>
-<p>This area on the left side provides the user with a selection of buttons to choose from, e.g. <code class="docutils literal notranslate"><span class="pre">UQ</span></code>, <code class="docutils literal notranslate"><span class="pre">GI</span></code>, <code class="docutils literal notranslate"><span class="pre">SI</span></code>, <code class="docutils literal notranslate"><span class="pre">EVT</span></code>, <code class="docutils literal notranslate"><span class="pre">RV</span></code>, <code class="docutils literal notranslate"><span class="pre">FEM</span></code>, <code class="docutils literal notranslate"><span class="pre">RES</span></code>. Selecting any of these buttons will change what is displayed in the central input panel.</p>
-<ol class="arabic simple" start="4">
-<li><p>Input Panel:</p></li>
-</ol>
-<p>This is the large central area of the UI where the  user provides input for the application chosen and where thay can view the results. For example, if the user had selected RV in the input panel  selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GI.html">4.2. GI: General Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIM.html">4.3. SIM: Structural Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="earthquake/earthquakeEvents.html">4.4. EVT: Earthquake Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RV.html">4.5. RV: Random Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PBE/DL.html">4.6. DL: Damage and Loss Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PBE/resPBE.html">4.7. RES: Results</a></li>
-</ul>
+</dd>
+</dl>
 </div>
 </div>
 

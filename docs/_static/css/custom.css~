@@ -3,14 +3,34 @@ wy-nav-content {
 }
 
 
-div.wy-side-scroll{
-	background:#cb463f;
+.math {
+    text-align: left;
 }
 
-#	background:#cb463f;
+.eqno {
+    float: right;
+}
 
 
-span.caption-text{
+div.wy-side-scroll{
+#	background:#0B619C	
+}
+
+div.wy-menu.wy-menu-vertical > .caption {
+	 color: #cb463f;
+}
+
+# LIGHT BLUE  background:#0099ff
+# BLUE: background:#0B619C
+# ADAM RED: background:#cb463f;
+
+.wy-side-scroll > .caption > fined label: lbldamping (if the link has no caption the label must precede a section header)
+/Users/fmckenna/release/SimCenterDocument.caption-text {
+  color: #ffffff;
+}
+
+
+span.caption.caption-text{
 	color: #000000;
 }
 

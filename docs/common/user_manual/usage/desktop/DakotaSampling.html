@@ -101,10 +101,9 @@
 <li class="toctree-l2"><a class="reference internal" href="GI.html">4.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SIM.html">4.3. SIM: Structural Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">4.4. EVT: Earthquake Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEM.html">4.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">4.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">4.7. DL: Damage and Loss Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">4.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">4.5. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">4.6. DL: Damage and Loss Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">4.7. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -193,9 +192,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="forward-propogation-methods">
-<h1><span class="section-number">4.1.1.1. </span>Forward Propogation Methods<a class="headerlink" href="#forward-propogation-methods" title="Permalink to this headline">¶</a></h1>
-<p>In the forward propagation problem, the user selects the sampling
-method to use from the dropdown menu <a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html">sampling methods</a>. Currently there are five options available: Monte Carlo Sampling (MCS),  Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specifies the appropriate input parameters for each. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.</p>
+<span id="lbldakotaforward"></span><h1><span class="section-number">4.1.1.1. </span>Forward Propogation Methods<a class="headerlink" href="#forward-propogation-methods" title="Permalink to this headline">¶</a></h1>
+<p>The forward propogation of uncertainty is concerned with the quantification of uncertainties in the output propagated from uncertain inputs.
+Currently there are five options available:  Monte Carlo Sampling (MCS),  Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specifies the appropriate input parameters for each. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.</p>
+<p>The the user selects the sampling method to use from the dropdown menu <a class="reference external" href="https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html">sampling methods</a>.</p>
 <div class="section" id="monte-carlo-sampling-mcs">
 <h2>Monte Carlo Sampling (MCS)<a class="headerlink" href="#monte-carlo-sampling-mcs" title="Permalink to this headline">¶</a></h2>
 <p>MCS is based on random sampling and is among the most robust approaches for problems where other uncertainty propagation schemes fail. Moreover, the convergence rate of MCS methods is independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow <span class="math notranslate nohighlight">\(N^{-1/2}\)</span>. In MCS, a sample drawn at any step is independent of all previous samples.</p>
@@ -248,8 +248,7 @@ method to use from the dropdown menu <a class="reference external" href="https:/
 <span id="figpce"></span><img alt="../../../../_images/fwPCE.png" src="../../../../_images/fwPCE.png" />
 <p class="caption"><span class="caption-number">Fig. 4.1.5 </span><span class="caption-text">PCE forward propagation input panel</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p>If you are not sure about the training parameters of the surrogates, please refrain from using the surrogates (PCE in particular) for forward propagation and use instead conventional sampling such as MCS and LHS as discussed above,
-even at a higher computational cost.</p>
+<p>If you are not sure about the training parameters of the surrogates, please refrain from using the surrogates (PCE in particular) for forward propagation and use instead conventional sampling such as MCS and LHS as discussed above, even at a higher computational cost.</p>
 </div>
 </div>
 
