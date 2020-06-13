@@ -212,7 +212,7 @@
 <h3>Response Model<a class="headerlink" href="#response-model" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-right" id="id2" style="width: 300px">
 <img alt="../../../../../_images/dl_p58_general_response.png" src="../../../../../_images/dl_p58_general_response.png" />
-<p class="caption"><span class="caption-number">Fig. 4.6.2 </span><span class="caption-text">Response model settings</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.2 </span><span class="caption-text">Response model settings.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Some text about the model</p>
 <p><strong>Response Description</strong></p>
@@ -240,9 +240,9 @@
 <h3>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-right" id="id3" style="width: 300px">
 <img alt="../../../../../_images/dl_p58_general_damage.png" src="../../../../../_images/dl_p58_general_damage.png" />
-<p class="caption"><span class="caption-number">Fig. 4.6.3 </span><span class="caption-text">Damage model settings</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.3 </span><span class="caption-text">Damage model settings.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Irrepairable Residual Drift</strong></p>
+<p><strong>Irreparable Residual Drift</strong></p>
 <blockquote>
 <div><p>Describes the limiting residual drift as a random variable with a lognormal distribution. See Figure 2-5 and Section 7.6 in FEMA P58 for details. The prescribed yield drift ratio is used to estimate residual drifts from peak interstory drifts per Section 5.4 in FEMA P58. This is only needed if no reliable residual drifts are available from the simulation. Considering the large uncertainty in estimated residual drift values, it is recommended to consider using the peak interstory drift as a proxy even if it would be numerically possible to obtain residual drift values.</p>
 </div></blockquote>
@@ -270,7 +270,7 @@
 <h3>Loss Model<a class="headerlink" href="#loss-model" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-right" id="id4" style="width: 300px">
 <img alt="../../../../../_images/dl_p58_general_loss.png" src="../../../../../_images/dl_p58_general_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 4.6.4 </span><span class="caption-text">Loss model settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.4 </span><span class="caption-text">Loss model settings.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Replacement Cost and Time</strong></p>
 <blockquote>
@@ -333,11 +333,11 @@
 <p>This panel provides more information about the active component in the drop-down menu under Selected components and allows you to specify where and what quantities of those components are in the building.</p>
 <div class="figure align-center" id="id6">
 <span id="fig-dl-p58-comp-details"></span><img alt="../../../../../_images/dl_p58_comp_details.png" src="../../../../../_images/dl_p58_comp_details.png" />
-<p class="caption"><span class="caption-number">Fig. 4.6.6 </span><span class="caption-text">Component details</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.6 </span><span class="caption-text">Component details.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Component Groups</strong></p>
 <blockquote>
-<div><p>Components are handled by defining component groups in the building. You can add a new component group definition or remove an existing one with the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Component</span> <span class="pre">Group</span></code> and <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Component</span> <span class="pre">Group</span></code> buttons. Each component group defintion allows you to assign component groups to various locations in the building.</p>
+<div><p>Components are handled by defining component groups in the building. You can add a new component group definition or remove an existing one with the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Component</span> <span class="pre">Group</span></code> and <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Component</span> <span class="pre">Group</span></code> buttons. Each component group definition allows you to assign component groups to various locations in the building.</p>
 <p>The following settings are available:</p>
 <dl class="field-list">
 <dt class="field-odd">location(s)</dt>
@@ -362,7 +362,7 @@
 </dl>
 </div></blockquote>
 <p>As long as you want to assign the same amount of components to every floor and every direction, one component group row is sufficient. Oftentimes, you will want to have more control over component quantities because the amount of components is not identical in all floors and directions.</p>
-<p>The example in <a class="reference internal" href="#fig-dl-p58-comp-details"><span class="std std-numref">Fig. 4.6.6</span></a> shows the assignment of Buckling Restrained Braces in a building. The first row assigns four BRBs in direction 1 to the first and second stories. The four braces are grouped in pairs (hence the <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">2</span></code> entry under <code class="docutils literal notranslate"><span class="pre">median</span> <span class="pre">quantity</span></code>). Damage to those two <em>Component Groups</em> can be evaluated independently. The second row assigns six braces to every floor in directon 2. These are also grouped in pairs, forming three <em>Component Groups</em>. Since the number of braces is known exactly, the <code class="docutils literal notranslate"><span class="pre">distribution</span></code> is set to <code class="docutils literal notranslate"><span class="pre">N/A</span></code> and there is no need to specifiy a <code class="docutils literal notranslate"><span class="pre">cov</span></code> value.</p>
+<p>The example in <a class="reference internal" href="#fig-dl-p58-comp-details"><span class="std std-numref">Fig. 4.6.6</span></a> shows the assignment of Buckling Restrained Braces in a building. The first row assigns four BRBs in direction 1 to the first and second stories. The four braces are grouped in pairs (hence the <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">2</span></code> entry under <code class="docutils literal notranslate"><span class="pre">median</span> <span class="pre">quantity</span></code>). Damage to those two <em>Component Groups</em> can be evaluated independently. The second row assigns six braces to every floor in direction 2. These are also grouped in pairs, forming three <em>Component Groups</em>. Since the number of braces is known exactly, the <code class="docutils literal notranslate"><span class="pre">distribution</span></code> is set to <code class="docutils literal notranslate"><span class="pre">N/A</span></code> and there is no need to specify a <code class="docutils literal notranslate"><span class="pre">cov</span></code> value.</p>
 </div>
 </div>
 <div class="section" id="collapse-modes">
@@ -461,8 +461,23 @@
 <dt class="bibtex label" id="applied-technology-council-atc-fema-2012"><span class="brackets">ATC12</span></dt>
 <dd><p>Applied Technology Council ATC, editor. <em>FEMA P58: Seismic Performance Assessment of Buildings - Methodology</em>. Volume 1. Federal Emergency Management Agency, 1 edition, 2012.</p>
 </dd>
+<dt class="bibtex label" id="dabaghi2017stochastic"><span class="brackets">DDK17</span></dt>
+<dd><p>Mayssa Dabaghi and Armen Der Kiureghian. Stochastic model for simulation of near-fault ground motions. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 46(6):963–984, 2017. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839</a>, <a class="reference external" href="https://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839">arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.2839">doi:10.1002/eqe.2839</a>.</p>
+</dd>
+<dt class="bibtex label" id="dabaghi2018simulation"><span class="brackets">DDK18</span></dt>
+<dd><p>Mayssa Dabaghi and Armen Der Kiureghian. Simulation of orthogonal horizontal components of near-fault ground motion for specified earthquake source and site characteristics. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 47(6):1369–1393, 2018. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.3021">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.3021</a>, <a class="reference external" href="https://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.3021">arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.3021</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.3021">doi:10.1002/eqe.3021</a>.</p>
+</dd>
+<dt class="bibtex label" id="dabaghi2014stochastic"><span class="brackets">DK14</span></dt>
+<dd><p>Mayssa Dabaghi and Armen Der Kiureghian. Stochastic Modeling and Simulation of Near-Fault Ground Motions for Performance-Based Earthquake Engineering. Technical Report, Pacific Earthquake Engineering Research Center, 2014.</p>
+</dd>
 <dt class="bibtex label" id="federal-emergency-management-agency-fema-hazus-2018-2"><span class="brackets">FEM18</span></dt>
 <dd><p>Federal Emergency Management Agency FEMA, editor. <em>Hazus - MH 2.1 Earthquake Model Technical Manual</em>. Federal Emergency Management Agency, 2018.</p>
+</dd>
+<dt class="bibtex label" id="somerville1997modification"><span class="brackets">SSGA97</span></dt>
+<dd><p>Paul G. Somerville, Nancy F. Smith, Robert W. Graves, and Norman A. Abrahamson. Modification of Empirical Strong Ground Motion Attenuation Relations to Include the Amplitude and Duration Effects of Rupture Directivity. <em>Seismological Research Letters</em>, 68(1):199–222, 01 1997. URL: <a class="reference external" href="https://doi.org/10.1785/gssrl.68.1.199">https://doi.org/10.1785/gssrl.68.1.199</a>, <a class="reference external" href="https://arxiv.org/abs/https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf">arXiv:https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf</a>, <a class="reference external" href="https://doi.org/10.1785/gssrl.68.1.199">doi:10.1785/gssrl.68.1.199</a>.</p>
+</dd>
+<dt class="bibtex label" id="vlachos2018predictive"><span class="brackets">VPD18</span></dt>
+<dd><p>Christos Vlachos, Konstantinos G. Papakonstantinou, and George Deodatis. Predictive model for site specific simulation of ground motions based on earthquake scenarios. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 47(1):195–218, 2018. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.2948">doi:10.1002/eqe.2948</a>.</p>
 </dd>
 </dl>
 </p>

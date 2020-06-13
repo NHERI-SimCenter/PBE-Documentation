@@ -185,11 +185,11 @@
             
   <div class="section" id="res-results">
 <span id="respbe"></span><h1><span class="section-number">4.7. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this headline">¶</a></h1>
-<p>After the user hits the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button, the simulation of building response and the loss assessment is performed automatically in the background. Assuming that the calculations were successful, the PBE app application switches to the RES panel to present the results. A successful run or download of a job that ran successfully will result in two tabbed widgets being displayed in this panel.</p>
+<p>After the user hits the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button, the simulation of building response and the loss assessment is performed automatically in the background. Assuming that the calculations were successful, the PBE app switches to the RES panel to present the results. A successful run or download of a job that ran successfully will result in two tabbed widgets being displayed in this panel.</p>
 <p>The first panel <a class="reference internal" href="#figresultssummarypbe"><span class="std std-numref">Fig. 4.7.1</span></a> shows summary statistics: mean, standard deviation, and several important percentiles of the Decision Variables.</p>
 <div class="align-center figure" id="id1">
 <span id="figresultssummarypbe"></span><img alt="../../../../../_images/resultsSummary_PBE.png" src="../../../../../_images/resultsSummary_PBE.png" />
-<p class="caption"><span class="caption-number">Fig. 4.7.1 </span><span class="caption-text">Results Summary</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.7.1 </span><span class="caption-text">Results summary.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The second panel presents results for each realization in a plot and in tabular format. By selecting various columns with the left and right mouse buttons in the table below the graphic, the information in the plot is updated <a class="reference internal" href="#resultsdata-pbe"><span class="std std-numref">Fig. 4.7.2</span></a>. The plot is controlled as follows:</p>
 <blockquote>
@@ -201,7 +201,7 @@
 </div></blockquote>
 <div class="align-center figure" id="id2">
 <span id="resultsdata-pbe"></span><img alt="../../../../../_images/resultsData_PBE.png" src="../../../../../_images/resultsData_PBE.png" />
-<p class="caption"><span class="caption-number">Fig. 4.7.2 </span><span class="caption-text">Results presented graphically and in tabular form</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.7.2 </span><span class="caption-text">Results presented graphically and in tabular form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The columns in the table typically identify the Decision Variable category (e.g. reconstruction, injuries, etc.) and a variable within that category preceded by a forward slash (e.g., injuries/fatalities). Boolean variables (e.g,. collapsed?, red_tagged?) are used to describe the occurrence of events. The reconstruction/time_impractical? and cost_impractical? variables identify realizations where reconstruction time or cost would exceed the replacement time or cost, respectively. In such cases, replacement is assumed instead of reconstruction. The minimum (i.e., based on parallel work) reconstruction time is used when making this decision.</p>
 <p>Besides the results displayed in the application, advanced users can find detailed information about EDPs, damage, and decision variables in <strong>csv</strong> files in the Working directory in the <strong>tmp.SimCenter/templatedir</strong> folder.</p>
