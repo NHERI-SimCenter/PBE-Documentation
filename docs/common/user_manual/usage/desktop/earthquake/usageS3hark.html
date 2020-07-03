@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.5. RV: Random Variables" href="../RV.html" />
+    <link rel="next" title="4.5. FEM: Finite Element Method" href="../FEM.html" />
     <link rel="prev" title="4.4.4. Multiple Existing" href="multipleExisting.html" /> 
 </head>
 
@@ -112,9 +112,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.5. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">4.6. DL: Damage and Loss Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">4.7. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">4.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">4.7. DL: Damage and Loss Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">4.8. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -204,7 +205,7 @@
             
   <div class="section" id="site-response-analysis">
 <span id="lbl-usages3hark"></span><h1><span class="section-number">4.4.5. </span>Site Response Analysis<a class="headerlink" href="#site-response-analysis" title="Permalink to this headline">¶</a></h1>
-<p><a href="#id12"><span class="problematic" id="id13">|s3harkName|</span></a> allows users to determine the event at the base of the building by performing an effective free-field site response analysis of a soil column.
+<p>s3hark allows users to determine the event at the base of the building by performing an effective free-field site response analysis of a soil column.
 In this panel the user specifies a ground motion at the bottom of the soil column.
 After the soil layers have been properly defined, the motion at the ground surface are given at the end of the analysis
 and that motion can be used in the simulation of the building response.</p>
@@ -219,7 +220,7 @@ which makes the UI look like what is shown in <a class="reference internal" href
 <span id="ui2"></span><img alt="../../../../../_images/editing2.png" src="../../../../../_images/editing2.png" />
 <p class="caption"><span class="caption-number">Fig. 4.4.7 </span><span class="caption-text">Collapse Graphic Interface</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>The UI of <a href="#id14"><span class="problematic" id="id15">|s3harkName|</span></a> consists of the following components:</p>
+<p>The UI of s3hark consists of the following components:</p>
 <div class="section" id="soil-column-graphic">
 <span id="profilecolumn"></span><h2><span class="section-number">4.4.5.1. </span>Soil Column Graphic<a class="headerlink" href="#soil-column-graphic" title="Permalink to this headline">¶</a></h2>
 <p>The first graphic on the left of the panel shows a visualization of the soil column created.
@@ -242,7 +243,7 @@ The GWT input field allows the user to specify the level of the ground water tab
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>Variables are assumed to have m, kPa, and kN units in <a href="#id16"><span class="problematic" id="id17">|s3harkName|</span></a>.</p></li>
+<li><p>Variables are assumed to have m, kPa, and kN units in s3hark.</p></li>
 </ul>
 </div>
 </div>
@@ -262,10 +263,10 @@ The GWT input field allows the user to specify the level of the ground water tab
 “““““““““““““““““““
 This tab allows the user to specify the paths to the OpenSees executable and a ground motion file that represent the ground shaking at the
 bedrock. The rock motion file must follow the SimCenter event format.
-Examples of SimCenter event files are available in the <code class="xref download docutils literal notranslate"><span class="pre">motion</span> <span class="pre">demos</span></code>.
-<a href="#id18"><span class="problematic" id="id19">|s3harkName|</span></a> will determine to use 2D column or 3D column based on the ground motion file provided.
+Examples of SimCenter event files are available in the <a class="reference download external" download="" href="https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip"><code class="xref download docutils literal notranslate"><span class="pre">motion</span> <span class="pre">demos</span></code></a>.
+s3hark will determine to use 2D column or 3D column based on the ground motion file provided.
 When a ground motion file is selected from the local computer, or the path of the ground motion file is typed in,
-<a href="#id20"><span class="problematic" id="id21">|s3harkName|</span></a> will figure out if it’s a 1D or 2D shaking file. If it’s 1D shaking, all elements will be 2D. If it’s 2D shaking,
+s3hark will figure out if it’s a 1D or 2D shaking file. If it’s 1D shaking, all elements will be 2D. If it’s 2D shaking,
 all elements will be 3D.
 The definition of 2D and 3D slope are different. See <a class="reference internal" href="#slope-2d"><span class="std std-numref">Fig. 4.4.13</span></a> and <a class="reference internal" href="#slope-3d"><span class="std std-numref">Fig. 4.4.15</span></a>.</p>
 <p>More details about this tab can be found in <a class="reference internal" href="#configure"><span class="std std-ref">Configure</span></a>.</p>
@@ -286,7 +287,7 @@ Once the site response analysis has been performed, this tab provides informatio
 </div>
 <div class="section" id="analyze-button">
 <h2><span class="section-number">4.4.5.6. </span>Analyze Button<a class="headerlink" href="#analyze-button" title="Permalink to this headline">¶</a></h2>
-<p>This <code class="docutils literal notranslate"><span class="pre">Analyze</span></code> button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer.
+<p>This <strong>Analyze</strong> button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer.
 A progress bar will show up at the bottom of the application indicating the status of the analysis.
 Upon the finish of the simulation, a message will be displayed (<a class="reference internal" href="#done"><span class="std std-numref">Fig. 4.4.10</span></a>).</p>
 <div class="align-center figure" id="id6">
@@ -308,7 +309,7 @@ Upon the finish of the simulation, a message will be displayed (<a class="refere
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>If the Analyze button is not pressed, no simulation will be performed,
-therefore no simulation is performed and there will be no ground motions provided to the building, if your are using <a href="#id22"><span class="problematic" id="id23">|s3harkName|</span></a> inside other SimCenter applications.</p></li>
+therefore no simulation is performed and there will be no ground motions provided to the building, if your are using s3hark inside other SimCenter applications.</p></li>
 </ul>
 </div>
 </div>
@@ -320,18 +321,18 @@ therefore no simulation is performed and there will be no ground motions provide
 </div>
 <p>In the configure tab, two paths need to be specified.</p>
 <p>You can either type them or click the ‘+’ button to select them from your computer.</p>
-<p>If you don’t have OpenSees install, the instruction can be found <span class="xref std std-ref">here</span>.
-If you don’t have a ground motion file, demos can be downloaded <code class="xref download docutils literal notranslate"><span class="pre">here</span></code>.</p>
+<p>If you don’t have OpenSees installed, the instruction can be found <span class="xref std std-ref">here</span>.
+If you don’t have a ground motion file, demos can be downloaded <a class="reference download external" download="" href="https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>Variables are assumed to have m, kPa, and kN units in <a href="#id24"><span class="problematic" id="id25">|s3harkName|</span></a>.</p></li>
+<li><p>Variables are assumed to have m, kPa, and kN units in s3hark.</p></li>
 </ul>
 </div>
 <p>The first demo is SRT-GM-Input-Style3.json, which contains the shaking motion in one direction (1D shaking).
 If you select this files as the input motion, your tab will look like the one shown in <a class="reference internal" href="#configure-1d"><span class="std std-numref">Fig. 4.4.12</span></a>.
 You can edit the slope degree <span class="math notranslate nohighlight">\(\alpha\)</span>. For flat ground the value should be set as 0.
-If 1D shaking motion provided, <a href="#id26"><span class="problematic" id="id27">|s3harkName|</span></a> automatically treat the problem as a 2D plane strain problem.
+If 1D shaking motion provided, s3hark automatically treat the problem as a 2D plane strain problem.
 2D elements will be used. The slope diagram is plotted in <a class="reference internal" href="#slope-2d"><span class="std std-numref">Fig. 4.4.13</span></a>.</p>
 <div class="align-center figure" id="id9">
 <span id="slope-2d"></span><img alt="../../../../../_images/slope2d.png" src="../../../../../_images/slope2d.png" />
@@ -343,8 +344,8 @@ If you select this file as the input motion, your tab will look like the one sho
 <span id="configure-2d"></span><img alt="../../../../../_images/configure-2d.png" src="../../../../../_images/configure-2d.png" />
 <p class="caption"><span class="caption-number">Fig. 4.4.14 </span><span class="caption-text">Configuration with a bi-directional shaking motion</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
-<p>You can see <a href="#id28"><span class="problematic" id="id29">|s3harkName|</span></a> detected the file you provided is a 2D shaking,
-<a href="#id30"><span class="problematic" id="id31">|s3harkName|</span></a> automatically treat the problem as a 3D problem.
+<p>You can see s3hark detected the file you provided is a 2D shaking,
+s3hark automatically treat the problem as a 3D problem.
 3D elements will be used. The slope diagram is plotted in <a class="reference internal" href="#slope-3d"><span class="std std-numref">Fig. 4.4.15</span></a>:</p>
 <div class="align-center figure" id="id11">
 <span id="slope-3d"></span><img alt="../../../../../_images/slope3d.png" src="../../../../../_images/slope3d.png" />
