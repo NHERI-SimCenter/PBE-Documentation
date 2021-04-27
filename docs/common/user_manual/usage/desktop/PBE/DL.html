@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4. DL: Damage and Loss Model &mdash; Performance Based Engineering Application  documentation</title>
+  <title>2.6. DL: Damage and Loss Model &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.1. FEMA" href="FEMA.html" />
-    <link rel="prev" title="2.3. RV: Random Variables" href="../RV.html" />
+    <link rel="next" title="2.6.1. FEMA" href="FEMA.html" />
+    <link rel="prev" title="2.5. RV: Random Variables" href="../RV.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -115,13 +115,15 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.2. SIM: Structural Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. DL: Damage and Loss Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FEMA.html">2.4.1. FEMA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="HAZUS.html">2.4.2. HAZUS MH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.3. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.4. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.5. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. DL: Damage and Loss Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FEMA.html">2.6.1. FEMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HAZUS.html">2.6.2. HAZUS MH</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.5. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.7. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
@@ -190,7 +192,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">2.4. </span>DL: Damage and Loss Model</li>
+      <li><span class="section-number">2.6. </span>DL: Damage and Loss Model</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,33 +212,33 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dl-damage-and-loss-model">
-<span id="lbldl"></span><h1><span class="section-number">2.4. </span>DL: Damage and Loss Model<a class="headerlink" href="#dl-damage-and-loss-model" title="Permalink to this headline">¶</a></h1>
+<span id="lbldl"></span><h1><span class="section-number">2.6. </span>DL: Damage and Loss Model<a class="headerlink" href="#dl-damage-and-loss-model" title="Permalink to this headline">¶</a></h1>
 <p>The Damage and Loss panel provides users a convenient way to define the damage and loss model for the building. The dropdown list at the top of the panel allows users to choose between two loss-assessment methods: FEMA P58 <a class="bibtex reference internal" href="../../../../../index.html#applied-technology-council-atc-fema-2012" id="id1">[ATC12]</a> and HAZUS MH <a class="bibtex reference internal" href="../../../../../index.html#federal-emergency-management-agency-fema-hazus-2018-2" id="id2">[FEM18]</a>. The method chosen determines the information displayed in the rest of the panel. The two methods are discussed in the following sections.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="FEMA.html">2.4.1. FEMA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="FEMA.html#general-settings">2.4.1.1. General Settings</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="FEMA.html">2.6.1. FEMA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FEMA.html#general-settings">2.6.1.1. General Settings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FEMA.html#response-model">Response Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FEMA.html#damage-model">Damage Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FEMA.html#loss-model">Loss Model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="FEMA.html#building-components">2.4.1.2. Building Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FEMA.html#building-components">2.6.1.2. Building Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FEMA.html#component-ensemble">Component Ensemble</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FEMA.html#component-details">Component Details</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="FEMA.html#collapse-modes">2.4.1.3. Collapse Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEMA.html#dependencies">2.4.1.4. Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEMA.html#logical-components">2.4.1.5. Logical components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEMA.html#model-parameters">2.4.1.6. Model parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEMA.html#collapse-modes">2.6.1.3. Collapse Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEMA.html#dependencies">2.6.1.4. Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEMA.html#logical-components">2.6.1.5. Logical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEMA.html#model-parameters">2.6.1.6. Model parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="HAZUS.html">2.4.2. HAZUS MH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#general-settings">2.4.2.1. General Settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#response-model">2.4.2.2. Response Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#damage-model">2.4.2.3. Damage Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#loss-model">2.4.2.4. Loss Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HAZUS.html">2.6.2. HAZUS MH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#general-settings">2.6.2.1. General Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#response-model">2.6.2.2. Response Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#damage-model">2.6.2.3. Damage Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HAZUS.html#loss-model">2.6.2.4. Loss Model</a></li>
 </ul>
 </li>
 </ul>

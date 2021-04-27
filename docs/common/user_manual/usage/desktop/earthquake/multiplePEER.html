@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Multiple PEER &mdash; Performance Based Engineering Application  documentation</title>
+  <title>2.3.3. Multiple PEER &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -43,6 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.3.4. Multiple Existing" href="multipleExisting.html" />
+    <link rel="prev" title="2.3.2. PEER NGA" href="peerNGA.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -108,9 +110,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.2. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="earthquakeEvents.html">2.3. EVT: Earthquake Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticGroundMotion.html">2.3.1. Stochastic Ground Motions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peerNGA.html">2.3.2. PEER NGA</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.3. Multiple PEER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.3.4. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.3.5. Site Response Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.4. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.5. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">2.6. DL: Damage and Loss Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.7. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
@@ -175,7 +193,11 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Multiple PEER</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="earthquakeEvents.html"><span class="section-number">2.3. </span>EVT: Earthquake Events</a> &raquo;</li>
+        
+      <li><span class="section-number">2.3.3. </span>Multiple PEER</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,12 +217,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="multiple-peer">
-<h1>Multiple PEER<a class="headerlink" href="#multiple-peer" title="Permalink to this headline">¶</a></h1>
-<p>This panel as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-peer-event</span></code> is provided for the user to utilize multiple existing
+<h1><span class="section-number">2.3.3. </span>Multiple PEER<a class="headerlink" href="#multiple-peer" title="Permalink to this headline">¶</a></h1>
+<p>This panel as shown in <a class="reference internal" href="#fig-peer-event"><span class="std std-numref">Fig. 2.3.3.1</span></a> is provided for the user to utilize multiple existing
 <a class="reference external" href="http://peer.berkeley.edu">PEER</a> ground motion acceleration files, <em>.AT2</em> files, to create a set of PEER earthquake event. A number of buttons at the top <strong>Add</strong>, <strong>Remove</strong>, and <strong>Load Directory</strong> allow the user to add and remove these PEER events.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-peer-event"></span><img alt="../../../../../_images/multiplePEER.png" src="../../../../../_images/multiplePEER.png" />
-<p class="caption"><span class="caption-text">Multiple PEER events.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.3.1 </span><span class="caption-text">Multiple PEER events.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>Add</strong> button is used to add an empty PEER event. For each PEER event the user must input a name for the EVENT, a path to the AT2 file, a direction that the motion acts, and a scale factor. The <strong>+</strong> and <strong>-</strong> buttons within each PEER event allow the user to add or remove AT2 files so that motions can be provided in different directions. Each AT2 file should be specified to operate in a different direction.</p>
 <p>The <strong>Remove</strong> button is used to remove events. To remove an event, the user must first select events they wish to remove, which is done by clicking in the small circle at the left side of the event frame. All of the selected events are removed when the <strong>Remove</strong> button is pressed.</p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PEER NGA &mdash; Performance Based Engineering Application  documentation</title>
+  <title>2.3.2. PEER NGA &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -44,6 +44,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.3.3. Multiple PEER" href="multiplePEER.html" />
+    <link rel="prev" title="2.3.1. Stochastic Ground Motions" href="stochasticGroundMotion.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -109,9 +111,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.2. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="earthquakeEvents.html">2.3. EVT: Earthquake Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticGroundMotion.html">2.3.1. Stochastic Ground Motions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.2. PEER NGA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.3.3. Multiple PEER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.3.4. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.3.5. Site Response Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.4. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.5. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">2.6. DL: Damage and Loss Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.7. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
@@ -176,7 +194,11 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>PEER NGA</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="earthquakeEvents.html"><span class="section-number">2.3. </span>EVT: Earthquake Events</a> &raquo;</li>
+        
+      <li><span class="section-number">2.3.2. </span>PEER NGA</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,18 +218,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="peer-nga">
-<h1>PEER NGA<a class="headerlink" href="#peer-nga" title="Permalink to this headline">¶</a></h1>
-<p>This event allows the user to perform ground motion records selection and scaling using <a class="reference external" href="https://peer.berkeley.edu/research/nga-west-2">PEER NGA West 2 ground motions database</a>. The suite of records can be selected from the database to represent the uncertainty in the ground motion. As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-nga-event</span></code> , the user must enter the following information for this event type:</p>
+<h1><span class="section-number">2.3.2. </span>PEER NGA<a class="headerlink" href="#peer-nga" title="Permalink to this headline">¶</a></h1>
+<p>This event allows the user to perform ground motion records selection and scaling using <a class="reference external" href="https://peer.berkeley.edu/research/nga-west-2">PEER NGA West 2 ground motions database</a>. The suite of records can be selected from the database to represent the uncertainty in the ground motion. As shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.3.2.1</span></a> , the user must enter the following information for this event type:</p>
 <div class="align-center figure" id="id3">
 <span id="fig-nga-event"></span><img alt="../../../../../_images/peerNgaRecords.png" src="../../../../../_images/peerNgaRecords.png" />
-<p class="caption"><span class="caption-text">PEER NGA records event.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">PEER NGA records event.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>A target response spectrum must be specified by the user to be used for records selection and scaling.</p></li>
 <li><p>The user specifies a selection criteria, such as the number of records and optional ranges of earthquake magnitude, distance to rupture (<span class="math notranslate nohighlight">\(R_{rup}\)</span>) and shear wave velocity in the top 30 meter of soil (<span class="math notranslate nohighlight">\(V_s 30\)</span>).</p></li>
 <li><p>The user specifies via a drop down menu, the number of component directions, one or two horizontal, or two horizontal and one vertical.</p></li>
 </ol>
-<p>Once the selection criteria has been entered, the user selects the  <strong>Select Records</strong> button. The Application at this point will interact with the NGA server to obtain a selection of records. After a suite of records is selected from the database, the list of records is shown in tabular form for the user to inspect their information, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-nga-event</span></code>. Additionally a plot is generated showing the target spectrum, the average and standard deviation of the selected suite of records and the selected scaled ground motions spectra. Users can also highlight particular spectra on the plot by selecting the one or more records in the table provided. This enables the user to inspect the suite of records used to characterize the ground motions before running the building simulation.</p>
+<p>Once the selection criteria has been entered, the user selects the  <strong>Select Records</strong> button. The Application at this point will interact with the NGA server to obtain a selection of records. After a suite of records is selected from the database, the list of records is shown in tabular form for the user to inspect their information, as shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.3.2.1</span></a>. Additionally a plot is generated showing the target spectrum, the average and standard deviation of the selected suite of records and the selected scaled ground motions spectra. Users can also highlight particular spectra on the plot by selecting the one or more records in the table provided. This enables the user to inspect the suite of records used to characterize the ground motions before running the building simulation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Record selection is always done to minimize the mean square error between the target spectrum and the selected scaled spectrum. It is also important to note that the current version only allows user to specify the ASCE 7-10 design spectrum as a target. Future versions will allow the users to specify a user-provided target spectrum or a target spectrum obtained from seismic hazard analysis, such as the uniform hazard spectrum (UHS) or the conditional mean spectrum (CMS).</p>

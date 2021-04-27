@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.2. HAZUS MH &mdash; Performance Based Engineering Application  documentation</title>
+  <title>2.6.2. HAZUS MH &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.5. RES: Results" href="resPBE.html" />
-    <link rel="prev" title="2.4.1. FEMA" href="FEMA.html" />
+    <link rel="next" title="2.7. RES: Results" href="resPBE.html" />
+    <link rel="prev" title="2.6.1. FEMA" href="FEMA.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -115,19 +115,21 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.2. SIM: Structural Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.3. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.4. DL: Damage and Loss Model</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="FEMA.html">2.4.1. FEMA</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. HAZUS MH</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#general-settings">2.4.2.1. General Settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#response-model">2.4.2.2. Response Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#damage-model">2.4.2.3. Damage Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#loss-model">2.4.2.4. Loss Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.3. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.4. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.5. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.6. DL: Damage and Loss Model</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="FEMA.html">2.6.1. FEMA</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.6.2. HAZUS MH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-settings">2.6.2.1. General Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response-model">2.6.2.2. Response Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#damage-model">2.6.2.3. Damage Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loss-model">2.6.2.4. Loss Model</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.5. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.7. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
@@ -196,9 +198,9 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-          <li><a href="DL.html"><span class="section-number">2.4. </span>DL: Damage and Loss Model</a> &raquo;</li>
+          <li><a href="DL.html"><span class="section-number">2.6. </span>DL: Damage and Loss Model</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.2. </span>HAZUS MH</li>
+      <li><span class="section-number">2.6.2. </span>HAZUS MH</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,21 +220,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hazus-mh">
-<span id="lblhazus"></span><h1><span class="section-number">2.4.2. </span>HAZUS MH<a class="headerlink" href="#hazus-mh" title="Permalink to this headline">¶</a></h1>
+<span id="lblhazus"></span><h1><span class="section-number">2.6.2. </span>HAZUS MH<a class="headerlink" href="#hazus-mh" title="Permalink to this headline">¶</a></h1>
 <p>This option implements the loss assessment methodology described in the <a class="reference external" href="https://www.fema.gov/media-library-data/20130726-1820-25045-6286/hzmh2_1_eq_tm.pdf">HAZUS MH Technical Manual</a> document.</p>
 <div class="section" id="general-settings">
-<h2><span class="section-number">2.4.2.1. </span>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#fig-dl-hazus-general"><span class="std std-numref">Fig. 2.4.2.1.1</span></a> shows the input panel that allows the user to set the response, damage, and loss models for the assessment.</p>
+<h2><span class="section-number">2.6.2.1. </span>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#fig-dl-hazus-general"><span class="std std-numref">Fig. 2.6.2.1.1</span></a> shows the input panel that allows the user to set the response, damage, and loss models for the assessment.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dl-hazus-general"></span><img alt="../../../../../_images/dl_hazus_general.png" src="../../../../../_images/dl_hazus_general.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">The General Damage and Loss Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.2.1.1 </span><span class="caption-text">The General Damage and Loss Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="response-model">
-<h2><span class="section-number">2.4.2.2. </span>Response Model<a class="headerlink" href="#response-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.2.2. </span>Response Model<a class="headerlink" href="#response-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id2" style="width: 300px">
 <img alt="../../../../../_images/dl_hazus_general_response.png" src="../../../../../_images/dl_hazus_general_response.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.2.1 </span><span class="caption-text">Response model settings.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.2.2.1 </span><span class="caption-text">Response model settings.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Some text about the model</p>
 <p><strong>Response Description</strong></p>
@@ -257,10 +259,10 @@
 </div></blockquote>
 </div>
 <div class="section" id="damage-model">
-<h2><span class="section-number">2.4.2.3. </span>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.2.3. </span>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id3" style="width: 300px">
 <img alt="../../../../../_images/dl_hazus_general_damage.png" src="../../../../../_images/dl_hazus_general_damage.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.3.1 </span><span class="caption-text">Damage model settings</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.2.3.1 </span><span class="caption-text">Damage model settings</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Structure Type and Design Level</strong></p>
 <blockquote>
@@ -269,10 +271,10 @@
 </div></blockquote>
 </div>
 <div class="section" id="loss-model">
-<h2><span class="section-number">2.4.2.4. </span>Loss Model<a class="headerlink" href="#loss-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.2.4. </span>Loss Model<a class="headerlink" href="#loss-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id4" style="width: 300px">
 <img alt="../../../../../_images/dl_hazus_general_loss.png" src="../../../../../_images/dl_hazus_general_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.4.1 </span><span class="caption-text">Loss model settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.2.4.1 </span><span class="caption-text">Loss model settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Replacement Cost and Time</strong></p>
 <blockquote>
