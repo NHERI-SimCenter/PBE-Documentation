@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.7.1.1. Asset Model &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.7.1.2. Demand Model" href="demands.html" />
+    <link rel="prev" title="2.7.1. Pelicun" href="Pelicun.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">7. Release Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Performance Assessment</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.7.1.1. Asset Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">3. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Performance Assessment</a> &raquo;</li>
+        
+          <li><a href="Pelicun.html"><span class="section-number">2.7.1. </span>Pelicun</a> &raquo;</li>
+        
+      <li><span class="section-number">2.7.1.1. </span>Asset Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/PBE/asset.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asset-model">
+<h1><span class="section-number">2.7.1.1. </span>Asset Model<a class="headerlink" href="#asset-model" title="Permalink to this headline">¶</a></h1>
+<p>This tab collects information about the asset model (<a class="reference internal" href="#fig-dl-pelicun-asset"><span class="std std-numref">Fig. 2.7.1.1.1</span></a>). The panel allows the user to define the general building features and assign components to the asset. In an efficienct, low-resolution analysis, only a few components are used to characterize the entire asset (e.g., building-level components in Hazus); while in a high-resolution analysis, such as FEMA P-58, a large number of components are assigned to various parts of the building to provide a more granular description of the consequences of the event.</p>
+<div class="align-center figure" id="id1">
+<span id="fig-dl-pelicun-asset"></span><img alt="../../../../../_images/dl_pelicun_asset.png" src="../../../../../_images/dl_pelicun_asset.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.1.1 </span><span class="caption-text">The Asset model inputs.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Asset model inputs are divided into the following areas:</p>
+<div class="section" id="general-information">
+<h2>General Information<a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h2>
+<p>This area collects the following general features of the building:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Number of Stories</dt>
+<dd class="field-odd"><p>The number of stories is used to parse the component assignment descriptions when convenience keywords, such as “all” and “roof” are used.</p>
+</dd>
+<dt class="field-even">Plan Area</dt>
+<dd class="field-even"><p>The plan area is required to assess the probability of injuries in some methods. The unit for the provided area is based on the settings in the GI panel.</p>
+</dd>
+<dt class="field-odd">Occupancy Type</dt>
+<dd class="field-odd"><p>The occupancy type is used for automatic assignment of population models, consequence functions, or other components of performance assessment methodologies. You can override such assignments in later tabs.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="databases">
+<h2>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h2>
+<p>This area is used to specify the component vulnerability database (i.e., typically a file that provides fragility function parameters). The following databases are built into the application:</p>
+<dl class="field-list">
+<dt class="field-odd">FEMA P-58</dt>
+<dd class="field-odd"><p>Provides the fragility function parameters published in the second edition of FEMA P-58 (2018).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>About 30 % of the components in FEMA P-58 have incomplete definitions. You will have to edit these components and provide the missing data to make them usable for performance assessment calculations. PBE highlights which component definitions are incomplete under <em>Additional info</em> in the <em>Component Assignment</em> area of this panel. See more information below.</p>
+</div>
+</dd>
+<dt class="field-even">Hazus Earthquake</dt>
+<dd class="field-even"><p>Provides the fragility function parameters published in the Hazus Earthquake Technical Manual (2011)</p>
+</dd>
+<dt class="field-odd">User Defined</dt>
+<dd class="field-odd"><p>Allows you to Choose a file that provides your own set of vulnerability parameters. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> explains how to prepare a compatible component vulnerability data file.</p>
+</dd>
+</dl>
+<p>The <strong>Export DB</strong> button allows you to export the selected built-in database to a file. This is helpful when you plan to make only minor edits to a built-in database and then use it as a User Defined one.</p>
+</div>
+<div class="section" id="component-assignment">
+<h2>Component Assignment<a class="headerlink" href="#component-assignment" title="Permalink to this headline">¶</a></h2>
+<p>This area is used to define the types of components in the building and assign quantities of each component to locations and directions in the building. Although PBE provides a convenient interface to prepare such an assignment, the information is eventually stored in a CSV file. If you want to preserve an assignment or share it with others, the <strong>Save</strong> button allows you to prepare such a CSV file, while you can use the <strong>Load</strong> button to import an assignment from such a file. You can find more information about the structure of these CSV files in the <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a>.</p>
+<p>The components available in the selected component vulnerability database are listed in the <strong>Available in DB:</strong> drop-down list. Use the <strong>Add</strong> button to assign the selected component or the <strong>Add All</strong> to assign all components from the list to the Asset Model. The assigned components are listed in the <strong>Assigned</strong> drop-down list. Use the <strong>Remove</strong> button to remove the selected component or the <strong>Remove All</strong> button to remove all components from the assigned set.</p>
+<p>Below the assignment controls, the panel provides information about the component selected from the assigned list:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Provides general information about the component from the database.</p>
+</dd>
+<dt class="field-even">Demand type</dt>
+<dd class="field-even"><p>Describes the type of demand that is required to evaluate the damage state of this component. Make sure you can provide the required demands at the locations and directions that this component is assigned to.</p>
+</dd>
+<dt class="field-odd">Block size</dt>
+<dd class="field-odd"><p>Specifies the recommended block size, that is, the quantity of the selected component that is assumed to have perfectly correlated behavior. In other words, this much of the component will get damaged together and all component damage is evaluated by aggregating the damage experienced by various blocks of the component in the building. Note that you can deviate from the recommended block size when assigning components.</p>
+</dd>
+<dt class="field-even">Additional info</dt>
+<dd class="field-even"><p>Provides the following helpful additional information:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Directionality</dt>
+<dd class="field-odd"><p>Identifies if the component is sensitive to the directionality of the demands. Non-directional components can be assigned a Direction of “0” if you do not need to recognize their direction for other reasons.</p>
+</dd>
+<dt class="field-even">Round up quantities</dt>
+<dd class="field-even"><p>Identifies if the component is found in buildings in integer quantities. This is typical for components that use “each” or “ea” as their quantity unit.</p>
+</dd>
+<dt class="field-odd">INCOMPLETE DATA!</dt>
+<dd class="field-odd"><p>Identifies components that do not have all parameters defined in the selected component vulnerability database. Components with incomplete data are not going to be used in the analysis. You are encouraged to export the database, provide the missing data for these components and specify the modified database as a User Defined resource to fix such a problem.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The bottom of the Component Assignment area is used to assign component quantities to locations and directions in the building. Each component type (i.e., selected from the assigned list of components) has its own set of component quantity assignment. Quantities are assigned in blocks. You can add a new block assignment using the <strong>+</strong> button on the left and you can remove an existin assignments using the <strong>-</strong> button on its left side. The following information can be provided for each assigned block:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Unit</dt>
+<dd class="field-odd"><p>The unit you used to specify component quantities. The <em>Block size</em> is provided above using the default unit from the fragility database. As long as the unit you choose belongs to the same class (i.e., length, area, etc.), you can use any of the commonly used metric or US units. Squared units are expressed by using a <code class="docutils literal notranslate"><span class="pre">2</span></code> after the name, such as <code class="docutils literal notranslate"><span class="pre">ft2</span></code> for square feet.</p>
+</dd>
+<dt class="field-even">Location(s)</dt>
+<dd class="field-even"><p>In buildings, locations are typically stories. The ground floor is story 1. Providing <code class="docutils literal notranslate"><span class="pre">all</span></code> assigns the same setting to every story. You can use two dashes to specify a range of stories, such as <code class="docutils literal notranslate"><span class="pre">3--7</span></code>. If a component is only assigned to the top story, or the roof, you can use <code class="docutils literal notranslate"><span class="pre">roof</span></code>. You can also combine these and use <code class="docutils literal notranslate"><span class="pre">3--roof</span></code>, for example. These settings make it easy to transfer performance models between buildings that have a different number of stories.</p>
+</dd>
+<dt class="field-odd">Direction(s)</dt>
+<dd class="field-odd"><p>The directions correspond to EDPs that are used to assess the fragility of the components. They shall match the directions in the EDP results available from the simulations. Typically, direction 1 and 2 correspond to orthogonal horizontal X and Y directions.</p>
+</dd>
+<dt class="field-even">Quantity</dt>
+<dd class="field-even"><p>The amount of components (in the specified unit) that are assigned to the given location(s) and direction(s). Note that if multiple locations and/or directions are provided, each of those will have the specified quantity assigned. For example, if the specified location(s) is “1-4” and the quantity is “250”, then the total quantity assigned by this line is “1000”.</p>
+</dd>
+<dt class="field-odd">Blocks</dt>
+<dd class="field-odd"><p>Specifies the number of component blocks to create from the assigned quantity. This is an optional parameter; the default value of 1 is used if left empty. Any positive integer number is valid and the provided quantity will be broken up into that many equal-sized pieces. You can use the provided information on the recommended block size to decide how many block you would like to use to model the assigned quantity of components. Having more than 100 blocks of a component in any given floor or direction can considerably increase the calculation effort - only assign such a large number of blocks if you suspect that having the damage of those components represented in the calculation without compromise is important to get high-quality results.</p>
+</dd>
+<dt class="field-even">Distribution</dt>
+<dd class="field-even"><p>If you want to model the uncertainty in component quantities, select either normal or lognormal distribution here. The value provided under Quantity and Dispersion will be used as the median and the dispersion for the distribution, respectively. The <code class="docutils literal notranslate"><span class="pre">N/A</span></code> setting corresponds to known, deterministic quantities with no uncertainty.</p>
+</dd>
+<dt class="field-odd">Dispersion</dt>
+<dd class="field-odd"><p>Dispersion is defined by the coefficient of variation for normal distributions and the log-standard deviation for lognormal distributions. If the distribution is set to <code class="docutils literal notranslate"><span class="pre">N/A</span></code>, this can be left blank.</p>
+</dd>
+<dt class="field-even">Comment</dt>
+<dd class="field-even"><p>You can provide any additional information here; it is not used in the assessment, but could be helpful when preparing and sharing the model.</p>
+</dd>
+</dl>
+<p>As long as you want to assign the same amount of components to every floor and every direction, one component group row is sufficient. Oftentimes, you will want to have more control over component quantities because the amount of components is not identical in all floors and directions.</p>
+<p>The example in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-p58-comp-details</span></code> shows the assignment of Buckling Restrained Braces in a building. The first row assigns four BRBs in direction 1 to the first and second stories. The four braces are grouped in pairs (hence the <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">2</span></code> entry under <code class="docutils literal notranslate"><span class="pre">median</span> <span class="pre">quantity</span></code>). Damage to those two <em>Component Groups</em> can be evaluated independently. The second row assigns six braces to every floor in direction 2. These are also grouped in pairs, forming three <em>Component Groups</em>. Since the number of braces is known exactly, the <code class="docutils literal notranslate"><span class="pre">distribution</span></code> is set to <code class="docutils literal notranslate"><span class="pre">N/A</span></code> and there is no need to specify a <code class="docutils literal notranslate"><span class="pre">cov</span></code> value.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

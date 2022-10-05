@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.7.1.2. Demand Model &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.7.1.3. Damage Model" href="damage.html" />
+    <link rel="prev" title="2.7.1.1. Asset Model" href="asset.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">7. Release Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Performance Assessment</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.7.1.2. Demand Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">3. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Performance Assessment</a> &raquo;</li>
+        
+          <li><a href="Pelicun.html"><span class="section-number">2.7.1. </span>Pelicun</a> &raquo;</li>
+        
+      <li><span class="section-number">2.7.1.2. </span>Demand Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/PBE/demands.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="demand-model">
+<h1><span class="section-number">2.7.1.2. </span>Demand Model<a class="headerlink" href="#demand-model" title="Permalink to this headline">¶</a></h1>
+<p>This tab collects information about the demands that control the performance model of the building (<a class="reference internal" href="#fig-dl-pelicun-demands"><span class="std std-numref">Fig. 2.7.1.2.1</span></a>). There are multiple ways to define the demands using the information provided in the following areas:</p>
+<div class="align-center figure" id="id1">
+<span id="fig-dl-pelicun-demands"></span><img alt="../../../../../_images/dl_pelicun_demands.png" src="../../../../../_images/dl_pelicun_demands.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.2.1 </span><span class="caption-text">The Demand model inputs.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="data-source">
+<h2>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h2>
+<p>The drop-down list in this area identifies how the demands are calculated:</p>
+<dl class="field-list">
+<dt class="field-odd">from Workflow</dt>
+<dd class="field-odd"><p>Select this option if the PBE app is used to perform the entire performance assessment workflow, that is, the structural response estimation is also set up an performed by this application. In this case, make sure the workflow you set up provides all of the demand types required by the performance assessment. The demand file will be automatically created in the appropriate format by the backend engine and passed on to Pelicun in the background.</p>
+</dd>
+<dt class="field-even">from File</dt>
+<dd class="field-even"><p>Select this option if the PBE app is only used for the performance assessment step, that is, the structural response estimation is performed outside of the application. In this case, you will need to perform the demand calculations and provide demand data in the standard CSV format used by SimCenter applications, including Pelicun. See the <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> for more information on the corresponding data format.</p>
+<p>When this option is selected, use the <strong>Choose</strong> button to select a file on your computer that contains the demand data.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="stochastic-model">
+<h2>Stochastic Model<a class="headerlink" href="#stochastic-model" title="Permalink to this headline">¶</a></h2>
+<p>Robust performance assessment typically requires hundreds or thousands of damage and loss realizations while raw demand data is typically not available for more than a few dozen realizations. Therefore, the raw data is typically used to calibrate a stochastic demand model that is later sampled to obtain the number of realizations required for performance assessment.</p>
+<p>This area controls the characteristics of the stochastic demand model that is prepared using the provided raw demand data. The following features are available:</p>
+<dl class="field-list">
+<dt class="field-odd">Distribution</dt>
+<dd class="field-odd"><p>Pelicun can fit a multivariate distribution to the raw data. The following options are available:</p>
+<dl class="field-list simple">
+<dt class="field-odd">lognormal</dt>
+<dd class="field-odd"><p>Fit a multivariate lognormal distribution to the data.</p>
+</dd>
+<dt class="field-even">truncated log</dt>
+<dd class="field-even"><p>Fit a truncated multivariate lognormal distribution to the data. Truncation allows for limiting the domain for each random demand variable. This is an effective and transparent approach to avoid unrealistically high demands that otherwise are generated from the tails of lognormal distributions. See the details of setting up truncation limits below.</p>
+</dd>
+<dt class="field-odd">empirical</dt>
+<dd class="field-odd"><p>Use the raw demand data as-is without fitting a distribution. When this approach is chosen, the empirical data is sampled with replacement to obtain the required number of realizations. This is only recommended if a sufficiently large number of realizations is available.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Truncation limits</dt>
+<dd class="field-even"><p>This option is only available if the truncated lognormal distribution is selected. The <strong>+</strong> and <strong>-</strong> buttons can be used to add or remove definitions to the list. The following information defines each truncation limit:</p>
+<dl class="field-list">
+<dt class="field-odd">Demand</dt>
+<dd class="field-odd"><p>Identifies the demand type using the standard SimCenter demand naming convention. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> provides a list of supported demand types that can be easily expanded if needed.</p>
+<p>Currently, all demands of the selected type will be truncated at the provided limits. Let us know if location-specific demand truncation would be helpful for your work.</p>
+</dd>
+<dt class="field-even">Lower Lim</dt>
+<dd class="field-even"><p>Lower truncation limit for the specified demand type. The unit of this truncation limit is identical to the unit of the demand in the raw demand data. If the demand is from the standard SimCenter workflow, then demand units are based on the unit settings in the GI panel of the PBE app.</p>
+</dd>
+<dt class="field-odd">Upper Lim</dt>
+<dd class="field-odd"><p>Upper truncation limit for the specified demand type. Unit considerations are identical to those explained under the Lower Lim. Either of the two limits can be left empty to avoid imposing limits on the given side of the distribution.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Add Uncertainty</dt>
+<dd class="field-even"><p>This option allows you to quantify the uncertainty that was not included in the simulations used to obtain the raw demand data. Following the FEMA P-58 methodology, the uncertainty is quantified as a log-standard deviation value that is used to increase the dispersion of the raw demand data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FEMA P-58 disaggregates this uncertainty into several components, but — from a practical point of view — only their aggregate value matters for the performance assessment. Please provide the aggregate value here.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the FEMA P-58 methodology was developed under the assumption of a multivariate lognormal distribution, Pelicun uses a more general assessment engine that can increase the uncertainty in truncated lognormal distributions as well as in  empirical data. Therefore, this option is not limited to lognormal distributions.</p>
+</div>
+</dd>
+<dt class="field-odd">Remove collapses</dt>
+<dd class="field-odd"><p>This option allows you to filter collapsed results from the raw demand data. The filtered data is removed from the raw demands before any other calculation would take place. For example, only the filtered data is passed on to the engine to fit a distribution to the demands. This allows you to remove collapsed cases and prepare a stochastic demand model only for the non-collapsed realizations.</p>
+<p>Use the <strong>+</strong> and <strong>-</strong> buttons to prepare a list of demand types and corresponding collapse limits. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> provides a list of supported demand types that can be easily expanded if needed.</p>
+<p>Currently, if any of the demands of the selected type exceeds the collapse limit, the building in the given realization will be considered collapsed. Let us know if location-specific collapse limits would be helpful for your work.</p>
+<p>The unit of the collapse limit is identical to the unit of the demand in the raw demand data. If the demand is from the standard SimCenter workflow, then demand units are based on the unit settings in the GI panel of the PBE app.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="sample">
+<h2>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h2>
+<p>This area is used to specify the sample size for demands and — since these realizations are the first step in the uncertainty propagation through the performance assessment workflow — for the entire performance assessment.</p>
+<p>Pelicun uses Latin Hypercube Sampling to provide mean and additive outputs with smaller errors than typical Monte Carlo analysis would. If you are only interested in such outputs, using a few hundred realizations should be sufficient. However, if you are interested in other statistics of the decision variable distributions, we recommend using a sample size of at least 1000.</p>
+<p>The <strong>Directly use raw demand data</strong> option allows you to use the raw data without resampling. That is, the data will be used in the same order it was provided. If the requested sample size if larger than the size of the raw demand sample, the demand data will be used multiple times, always re-starting from the beginning and going through in the order it was provided. This option is useful when you want to preserve the order of demands, for example, because a portfolio of buildings is analyzed and the demands were generated to represent spatial correlation in the hazard.</p>
+</div>
+<div class="section" id="residual-drifts">
+<h2>Residual Drifts<a class="headerlink" href="#residual-drifts" title="Permalink to this headline">¶</a></h2>
+<p>Residual interstory drift ratios are often used as proxies to infer irreparable damage to buildings. However, it is challenging to model such behavior reliably and some experts recommend approximating such drifts from other demands. The drop-down list in this area allows you to choose an approximate method to get residual drift estimates. If you prefer to use a method that is not listed here, let us know and we can include it in a future update. Choose <strong>do not infer</strong> if you do not need residual drifts, or you wish to provide those values as part of the raw demand data yourself.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This inference is performed <em>after</em> the demands are sampled, hence, the RID values are not limited by the prescribed distribution in the stochastic model.</p>
+</div>
+<p><strong>FEMA P-58 method</strong></p>
+<p>The inference method in FEMA P-58 uses the yield drift ratio of the structural system to characterize the initiation of inelastic behavior and estimates the residual drifts from the peak interstory drift ratios. Pelicun allows you to use direction-specific yield drift ratios to be able to appropriately model structures that are not identical in the two horizontal directions. Use the <strong>+</strong> and <strong>-</strong> buttons to prepare a list of directions and corresponding yield drift ratios.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pelicun applies this method to every PID (Peak Interstory Drift) demand to get a corresponding RID (Residual Interstory Drift) demand. This allows for any floor to trigger irreparable damage and enables a more realistic and detailed analysis than the typical approach of using a single RID demand as input.</p>
+<p>Nevertheless, if you wish to perform such a calculation, we recommend providing an RID-0-1 value among the raw demand inputs, where 0 as location identifies this as a global (i.e., not specific to a particular location) demand and 1 as direction is an arbitrary choice. The automatic irreparable damage calculation will recognize such input and perform the calculation appropriately.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

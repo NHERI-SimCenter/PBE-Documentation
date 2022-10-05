@@ -7,13 +7,18 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.3.2. PEER NGA &mdash; Performance Based Engineering Application  documentation</title>
+  <title>2.4.2. PEER NGA Records &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -31,21 +36,21 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.3.3. Multiple PEER" href="multiplePEER.html" />
-    <link rel="prev" title="2.3.1. Stochastic Ground Motions" href="stochasticGroundMotion.html" />
+    <link rel="next" title="2.4.3. Multiple PEER" href="multiplePEER.html" />
+    <link rel="prev" title="2.4.1. Stochastic Ground Motions" href="stochasticGroundMotion.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -102,32 +107,43 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">2. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PBE/releasenotes.html">7. Release Notes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.2. SIM: Structural Model</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="earthquakeEvents.html">2.3. EVT: Earthquake Events</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="stochasticGroundMotion.html">2.3.1. Stochastic Ground Motions</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.2. PEER NGA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.3.3. Multiple PEER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.3.4. Multiple Existing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.3.5. Site Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="earthquakeEvents.html">2.4. EVT: Earthquake Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticGroundMotion.html">2.4.1. Stochastic Ground Motions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. PEER NGA Records</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#target-spectrum">2.4.2.1. Target Spectrum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-selection">2.4.2.2. Configure Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-directory">2.4.2.3. Output Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ground-motion-components">2.4.2.4. Ground Motion Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scaling-and-selection">2.4.2.5. Scaling and Selection</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.4. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.5. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">2.6. DL: Damage and Loss Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.7. RES: Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.4.3. Multiple PEER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.4.4. Multiple SimCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.4.5. Site Response Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userSpecifiedDatabase.html">2.4.6. User Specified Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">2.7. DL: Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
@@ -135,17 +151,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">3. Coding Style</a></li>
 </ul>
 
             
@@ -196,9 +210,9 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-          <li><a href="earthquakeEvents.html"><span class="section-number">2.3. </span>EVT: Earthquake Events</a> &raquo;</li>
+          <li><a href="earthquakeEvents.html"><span class="section-number">2.4. </span>EVT: Earthquake Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.3.2. </span>PEER NGA</li>
+      <li><span class="section-number">2.4.2. </span>PEER NGA Records</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,32 +231,150 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="peer-nga">
-<h1><span class="section-number">2.3.2. </span>PEER NGA<a class="headerlink" href="#peer-nga" title="Permalink to this headline">¶</a></h1>
-<p>This event allows the user to perform ground motion records selection and scaling using <a class="reference external" href="https://peer.berkeley.edu/research/nga-west-2">PEER NGA West 2 ground motions database</a>. The suite of records can be selected from the database to represent the uncertainty in the ground motion. As shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.3.2.1</span></a> , the user must enter the following information for this event type:</p>
-<div class="align-center figure" id="id3">
+  <div class="section" id="peer-nga-records">
+<h1><span class="section-number">2.4.2. </span>PEER NGA Records<a class="headerlink" href="#peer-nga-records" title="Permalink to this headline">¶</a></h1>
+<p>This event allows the user to perform ground motion records selection and scaling using <a class="reference external" href="https://peer.berkeley.edu/research/nga-west-2">PEER NGA West 2 ground motions database</a>. The suite of records can be selected from the database to represent the uncertainty in the ground motion. As shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.4.2.1</span></a> , the user must enter the following information for this event type:</p>
+<div class="align-center figure" id="id5">
 <span id="fig-nga-event"></span><img alt="../../../../../_images/peerNgaRecords.png" src="../../../../../_images/peerNgaRecords.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">PEER NGA records event.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">PEER NGA records event.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>A target response spectrum must be specified by the user to be used for records selection and scaling.</p></li>
 <li><p>The user specifies a selection criteria, such as the number of records and optional ranges of earthquake magnitude, distance to rupture (<span class="math notranslate nohighlight">\(R_{rup}\)</span>) and shear wave velocity in the top 30 meter of soil (<span class="math notranslate nohighlight">\(V_s 30\)</span>).</p></li>
 <li><p>The user specifies via a drop down menu, the number of component directions, one or two horizontal, or two horizontal and one vertical.</p></li>
 </ol>
-<p>Once the selection criteria has been entered, the user selects the  <strong>Select Records</strong> button. The Application at this point will interact with the NGA server to obtain a selection of records. After a suite of records is selected from the database, the list of records is shown in tabular form for the user to inspect their information, as shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.3.2.1</span></a>. Additionally a plot is generated showing the target spectrum, the average and standard deviation of the selected suite of records and the selected scaled ground motions spectra. Users can also highlight particular spectra on the plot by selecting the one or more records in the table provided. This enables the user to inspect the suite of records used to characterize the ground motions before running the building simulation.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Record selection is always done to minimize the mean square error between the target spectrum and the selected scaled spectrum. It is also important to note that the current version only allows user to specify the ASCE 7-10 design spectrum as a target. Future versions will allow the users to specify a user-provided target spectrum or a target spectrum obtained from seismic hazard analysis, such as the uniform hazard spectrum (UHS) or the conditional mean spectrum (CMS).</p>
+<p>Once the selection criteria has been entered, the user selects the  <strong>Select Records</strong> button. The Application at this point will interact with the NGA server to obtain a selection of records. After a suite of records is selected from the database, the list of records is shown in tabular form for the user to inspect their information, as shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.4.2.1</span></a>. Additionally a plot is generated showing the target spectrum, the average and standard deviation of the selected suite of records and the selected scaled ground motions spectra. Users can also highlight particular spectra on the plot by selecting the one or more records in the table provided. This enables the user to inspect the suite of records used to characterize the ground motions before running the building simulation.</p>
+<div class="section" id="target-spectrum">
+<h2><span class="section-number">2.4.2.1. </span>Target Spectrum<a class="headerlink" href="#target-spectrum" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Design Spectrum (ASCE 7-10)</strong>: three parameters <span class="math notranslate nohighlight">\(S_{DS}\)</span>, <span class="math notranslate nohighlight">\(S_{D1}\)</span>, and <span class="math notranslate nohighlight">\(T_L\)</span> are used to define a ASCE 7-10 design spectrum.</p></li>
+</ol>
+<blockquote id="fig-asce710">
+<div><div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/asce710.png"><img alt="../../../../../_images/asce710.png" src="../../../../../_images/asce710.png" style="width: 400px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>User Specified</strong>: users can define the target response spectrum by (1) directly filling <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(Sa\)</span> data into the table or (2)
+uploading a csv file with the first column for <span class="math notranslate nohighlight">\(T\)</span> and second column for <span class="math notranslate nohighlight">\(Sa\)</span> (<a class="reference download internal" download="" href="../../../../../_downloads/b460f61fee6cf56deb455d83ab8db44c/UserSpecificSpectrum.csv"><code class="xref download docutils literal notranslate"><span class="pre">example</span></code></a>).</p></li>
+</ol>
+<blockquote id="fig-user-specified">
+<div><div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/user-specified.png"><img alt="../../../../../_images/user-specified.png" src="../../../../../_images/user-specified.png" style="width: 400px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>Design Spectrum (USGS Web Service)</strong>: users can use the <a class="reference external" href="https://earthquake.usgs.gov/ws/designmaps/">USGS Web Service</a> to retrieve following target spectra:
+(1) ASCE 7-05/10/16, (2) ASCE 41-13/17, (3) NEHRP-2009/2015, and (4) IBC-2012/2015. Site location, site class, and risk category are user-specified parameters.</p></li>
+</ol>
+<blockquote id="fig-usgs-designspectrum">
+<div><div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/usgs-designspectrum.png"><img alt="../../../../../_images/usgs-designspectrum.png" src="../../../../../_images/usgs-designspectrum.png" style="width: 400px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p><strong>Uniform Hazard Spectrum (USGS NSHMP)</strong>: Uniform Hazard Spectrum (UHS) can be retrieved from <a class="reference external" href="https://earthquake.usgs.gov/nshmp-haz-ws/apps/services.html">USGS NSHMP Service</a> to
+be used as the target spectrum for ground motion selection. User-specified parameters include return period, site location, site <span class="math notranslate nohighlight">\(V_{S30}\)</span>, and NSHM edition. Available
+NSHM editions are (1) Static: Conterminous U.S. 2008 (v3.1.0), (1) Static: Conterminous U.S. 2008 (v3.2.0), (3) Dynamic: Conterminous U.S. 2008 (v3.3.3),
+(4) Static: Conterminous U.S. 2014 (v4.0.0), (5) Dynamic: Conterminous U.S. 2014 (v4.1.4), and (6) Dynamic: Conterminous U.S. 2014 (update) (v4.2.0).</p></li>
+</ol>
+<blockquote id="fig-uhs">
+<div><div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/uhs.png"><img alt="../../../../../_images/uhs.png" src="../../../../../_images/uhs.png" style="width: 400px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p><strong>Conditional Mean Spectrum (USGS Disagg.)</strong>: Conditional Mean Spectrum (CMS) is also supported as a target spectrum type. Seismic Disaggregation data (i.e., mean magnitude, distance, and <span class="math notranslate nohighlight">\(\epsilon\)</span>)
+will be first retrieved from <a class="reference external" href="https://earthquake.usgs.gov/nshmp-haz-ws/apps/services.html">USGS NSHMP Service</a> given the site location, site <span class="math notranslate nohighlight">\(V_{S30}\)</span>, disaggregation model edition,
+return period, and conditional intensity measure (IM). Depending on the NSHM edition, available conditional IM can be different. Users can manually define the conditional period which leads
+to interpolating the results between the two neighboring periods that are supported by USGS NSHMP Service. With the disaggregated hazard, users cane
+select a ground motion model (GM Model), and a CMS will be computed using the defined GM Model with the NGA-West2 IM correlation model (<a class="reference internal" href="#bakerbradley2017" id="id2"><span>[BakerBradley2017]</span></a>).</p></li>
+</ol>
+<blockquote id="fig-cms-usgs-disagg">
+<div><div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/cms-usgs-disagg.png"><img alt="../../../../../_images/cms-usgs-disagg.png" src="../../../../../_images/cms-usgs-disagg.png" style="width: 400px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p><strong>Spectrum from Hazard Surrogate</strong>: Target spectrum is evaluated via a user-provided Gaussian Process (GP) surrogate model that follows the default format produced by <a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">quoFEM
+GP surrogate modeling</a>. Users will provide two input files
+for the pretrained GP model (the default names are <cite>SimGpModel.json</cite> and <cite>SimGPModel.pkl</cite>,
+please see more descriptions in <a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#saving-options">quoFEM documentation</a>).
+Once the model is successfully loaded, the intensity measure names in the trained GP model will be displayed in the <cite>Options</cite> panel.  Users need to provide the periods correspond to the
+spectral accelerations in the GP model.  Along with the <cite>Options</cite> panel, the input random variables in the pretrained model will also be displayed with text edit box(es) for evaluating
+the GP model. For instance, <a class="reference internal" href="#figsurrogatehazard"><span class="std std-numref">Fig. 2.4.2.1.1</span></a> shows one example that the surrogate GP model is trained for Hayward earthquake scenarios at San Francisco Bay Area in which the
+Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are input variables to predict response spectral acceleration at various periods from 0.01 to 10 sec.</p></li>
+</ol>
+<div class="align-center figure" id="id6">
+<span id="figsurrogatehazard"></span><a class="reference internal image-reference" href="../../../../../_images/surrogateHazard.png"><img alt="../../../../../_images/surrogateHazard.png" src="../../../../../_images/surrogateHazard.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">Target spectrum from hazard surrogate</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="configure-selection">
+<h2><span class="section-number">2.4.2.2. </span>Configure Selection<a class="headerlink" href="#configure-selection" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Number of Records</strong>: number of records to be selected (extensive selections may exceed the limit of PEER NGA-West 2 ground motion database).</p></li>
+<li><p><strong>Fault Type</strong>: filter - earthquake fault type of the ground event (e.g., strike-slip, normal oblique, reverse oblique);</p></li>
+<li><p><strong>Pulse</strong>: filter - pulse-like ground motion;</p></li>
+<li><p><strong>Magnitude</strong>: filter - minimum and maximum magnitudes used in the ground motion selection;</p></li>
+<li><p><strong>Distance</strong>: filter - minimum and maximum site-rupture distances used in the ground motion selection;</p></li>
+<li><p><strong>Vs30</strong>: filter - minimum and maximum <span class="math notranslate nohighlight">\(V_{S30}\)</span> used in the ground motion selection;</p></li>
+<li><p><strong>Ds5-95</strong>: filter - minimum and maximum 5-95% significant duration <span class="math notranslate nohighlight">\(D_{S5-95}\)</span> used in the ground motion selection.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../_images/selection-criteria.png"><img alt="../../../../../_images/selection-criteria.png" src="../../../../../_images/selection-criteria.png" style="width: 400px;" /></a>
+</div>
+</div>
+<div class="section" id="output-directory">
+<h2><span class="section-number">2.4.2.3. </span>Output Directory<a class="headerlink" href="#output-directory" title="Permalink to this headline">¶</a></h2>
+<p>Users can save the ground motion selection results and downloaded time history traces to local directories by clicking on the <strong>Browse</strong> button.</p>
+<div class="align-center figure" id="fig-output-dir">
+<a class="reference internal image-reference" href="../../../../../_images/output-dir.png"><img alt="../../../../../_images/output-dir.png" src="../../../../../_images/output-dir.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="ground-motion-components">
+<h2><span class="section-number">2.4.2.4. </span>Ground Motion Components<a class="headerlink" href="#ground-motion-components" title="Permalink to this headline">¶</a></h2>
+<p>Ground motion selection is conducted for the selected component(s) to minimize the mean spectrum differences.
+Supported options include SRSS, RotD100, RotD50, GeoMean, H1 (1st horizontal), H2 (2nd horizontal), and V (vertical component).
+Supported options for the mean spectrum include Arithmetic and Geometric.</p>
+<div class="align-center figure" id="fig-gm-comp">
+<a class="reference internal image-reference" href="../../../../../_images/gm-comp.png"><img alt="../../../../../_images/gm-comp.png" src="../../../../../_images/gm-comp.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="scaling-and-selection">
+<h2><span class="section-number">2.4.2.5. </span>Scaling and Selection<a class="headerlink" href="#scaling-and-selection" title="Permalink to this headline">¶</a></h2>
+<p>Three different scaling methods are available: (1) no scaling (No Scaling), (2) scaling factors applied individually to records to minimize differences between mean spectra (Minimize MSE),
+and (3) scaling factors applied individually to pin all spectra at a given period (Single Period).</p>
+<div class="align-center figure" id="fig-scaling-selection">
+<a class="reference internal image-reference" href="../../../../../_images/scaling-selection.png"><img alt="../../../../../_images/scaling-selection.png" src="../../../../../_images/scaling-selection.png" style="width: 800px;" /></a>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<p>Record selection is always done to minimize the mean square error between the target spectrum and the selected scaled spectrum.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web <a class="footnote-reference brackets" href="#id4" id="id3">1</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The record-to-record uncertainty in assessing the structural responses under earthquakes are taken into account by running
+a set of ground motion records. This can be realized by using the <strong>Forward Propagation</strong> method under the <strong>UQ</strong> tab. Once the
+ground motion records are selected, users have the control of how many records to be run in the time history analyses by seleting
+the Latin Hypercube Sample (<strong>LHS</strong>) and specifying the number of samples (<strong># Sample</strong>). Note that with the LHS algorithm, when
+the number of samples is the total number of selected records, each record will be used once in the time history analyses.</p>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>For more help on external services provided by PEER we encourage users to explore their <a class="reference external" href="https://peer.berkeley.edu/">website</a>.</p>
 </dd>
 </dl>
+<dl class="citation">
+<dt class="label" id="bakerbradley2017"><span class="brackets"><a class="fn-backref" href="#id2">BakerBradley2017</a></span></dt>
+<dd><p>Baker JW, Bradley BA. Intensity Measure Correlations Observed in the NGA-West2 Database, and Dependence of Correlations on Rupture and Site Parameters. Earthquake Spectra. 2017;33(1):145-156. doi:10.1193/060716eqs095m</p>
+</dd>
+</dl>
+</div>
 </div>
 
 
@@ -255,7 +387,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>
