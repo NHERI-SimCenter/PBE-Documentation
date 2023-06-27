@@ -122,7 +122,7 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
@@ -148,10 +148,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -210,7 +215,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
           <li><a href="earthquakeEvents.html"><span class="section-number">2.4. </span>EVT: Earthquake Events</a> &raquo;</li>
         
@@ -236,9 +241,9 @@
   <div class="section" id="peer-nga-records">
 <h1><span class="section-number">2.4.2. </span>PEER NGA Records<a class="headerlink" href="#peer-nga-records" title="Permalink to this headline">¶</a></h1>
 <p>This event allows the user to perform ground motion records selection and scaling using <a class="reference external" href="https://peer.berkeley.edu/research/nga-west-2">PEER NGA West 2 ground motions database</a>. The suite of records can be selected from the database to represent the uncertainty in the ground motion. As shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.4.2.1</span></a> , the user must enter the following information for this event type:</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <span id="fig-nga-event"></span><img alt="../../../../../_images/peerNgaRecords.png" src="../../../../../_images/peerNgaRecords.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">PEER NGA records event.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">PEER NGA records event.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>A target response spectrum must be specified by the user to be used for records selection and scaling.</p></li>
@@ -307,10 +312,40 @@ spectral accelerations in the GP model.  Along with the <cite>Options</cite> pan
 the GP model. For instance, <a class="reference internal" href="#figsurrogatehazard"><span class="std std-numref">Fig. 2.4.2.1.1</span></a> shows one example that the surrogate GP model is trained for Hayward earthquake scenarios at San Francisco Bay Area in which the
 Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are input variables to predict response spectral acceleration at various periods from 0.01 to 10 sec.</p></li>
 </ol>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id7">
 <span id="figsurrogatehazard"></span><a class="reference internal image-reference" href="../../../../../_images/surrogateHazard.png"><img alt="../../../../../_images/surrogateHazard.png" src="../../../../../_images/surrogateHazard.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">Target spectrum from hazard surrogate</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">Target spectrum from hazard surrogate</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
+<ol class="arabic simple" start="7">
+<li><p><strong>No Spectrum - Uniform IMs</strong>: This option does not select ground motions based on a target spectrum. Instead, it selects ground motion to have as diverse intensity measure (IM) combinations as possible. Based on the IM quantities and their range that user provides, it will select the ground records to uniformly fill in the IM domain. This is done by first uniformly binning the IM domain, and then, for each bin, allocating ground motion records that has IM values closest to the center of each bin.</p>
+<ul class="simple">
+<li><p><strong># samples per bin</strong>: 1 is recommended. If the number is 2, for example, twice number of ground motions will be selected.</p></li>
+<li><p><strong>Intensity Measure Calculation</strong>: Choose the intensity measures and their range to be uniformly populated. In order to achieve this, it is recommended to avoid having highly correlated IMs together in the list, for example, both peak spectral acceleration and peak ground acceleration. An example of good mildly correlated IM combinations is [spectral acceleration, significant duration, and sa ratio] as shown in the figure below <a class="reference internal" href="#zhong2023" id="id3"><span>[Zhong2023]</span></a>.</p></li>
+<li><p><strong>Ground motion coverage</strong>: When the number of IMs in the list are either 2 or 3, a plot that shows the covered domain of IM will be provided. Note that if no matching ground motions are found for the bins, corresponding anchor points (center of each bin) are colored red.</p></li>
+</ul>
+</li>
+</ol>
+<div class="align-center figure" id="id8">
+<span id="figuniform1"></span><a class="reference internal image-reference" href="../../../../../_images/peerNGA_uniform1.png"><img alt="../../../../../_images/peerNGA_uniform1.png" src="../../../../../_images/peerNGA_uniform1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1.2 </span><span class="caption-text">Setting up bins (grid points)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id9">
+<span id="figuniform2"></span><a class="reference internal image-reference" href="../../../../../_images/peerNGA_uniform2.png"><img alt="../../../../../_images/peerNGA_uniform2.png" src="../../../../../_images/peerNGA_uniform2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1.3 </span><span class="caption-text">Ground motion coverage: selected ground motions (yellow dots) and the centers of each bin (red/blue dots).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The IMs of each ground motion shown in the figure (yellow points) are obtained by looking up the library of pre-computed IMs and it’s proximity to each anchor point is calculated using <strong>geometric mean</strong> of the two horizontal directional components. Therefore, the IMs of the finally selected ground motions may not be <em>exactly</em> located at the yellow points shown in the below figure, but will have close proximity. The range of allowed scaling factor without any penalty is 0.5~10.0. The ground motions that are scaled beyond this range will get de-prioritized.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This option is useful for training a surrogate model. See <span class="xref std std-ref">example 09</span>.</p>
+</div>
+<dl class="citation">
+<dt class="label" id="zhong2023"><span class="brackets"><a class="fn-backref" href="#id3">Zhong2023</a></span></dt>
+<dd><p>Zhong, K., Navarro, J.G., Govindjee, S., and Deierlein, G.G., “Surrogate Modeling of Structural Seismic Response Using Probabilistic Learning on Manifolds,” <em>Earthquake Engineering &amp; Structural Dynamics</em>, 1-22, (2023) <a class="reference external" href="https://doi.org/10.1002/eqe.3839">https://doi.org/10.1002/eqe.3839</a></p>
+</dd>
+</dl>
 </div>
 <div class="section" id="configure-selection">
 <h2><span class="section-number">2.4.2.2. </span>Configure Selection<a class="headerlink" href="#configure-selection" title="Permalink to this headline">¶</a></h2>
@@ -356,7 +391,7 @@ and (3) scaling factors applied individually to pin all spectra at a given perio
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web <a class="footnote-reference brackets" href="#id4" id="id3">1</a>.</p>
+<p>It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web <a class="footnote-reference brackets" href="#id5" id="id4">1</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -367,7 +402,7 @@ the Latin Hypercube Sample (<strong>LHS</strong>) and specifying the number of s
 the number of samples is the total number of selected records, each record will be used once in the time history analyses.</p>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
 <dd><p>For more help on external services provided by PEER we encourage users to explore their <a class="reference external" href="https://peer.berkeley.edu/">website</a>.</p>
 </dd>
 </dl>
