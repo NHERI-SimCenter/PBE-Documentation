@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.2. Shear Building: HAZUS Assessment &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
+    <link rel="prev" title="3.1. FEMA P-58 Assessment Using External Demands" href="../pbdl-0001/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/PBE/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pbdl-0001/README.html">3.1. FEMA P-58 Assessment Using External Demands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Shear Building: HAZUS Assessment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-uq">3.2.1. Step 1: UQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-gi">3.2.2. Step 2: GI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-sim">3.2.3. Step 3: SIM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-evt">3.2.4. Step 4: EVT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5-fem">3.2.5. Step 5: FEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-6-rv">3.2.6. Step 6: RV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-7-dl">3.2.7. Step 7: DL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis-results">3.2.8. Analysis &amp; Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">3. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">3.2. </span>Shear Building: HAZUS Assessment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/pbdl-0002/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shear-building-hazus-assessment">
+<span id="pbdl-0002"></span><h1><span class="section-number">3.2. </span>Shear Building: HAZUS Assessment<a class="headerlink" href="#shear-building-hazus-assessment" title="Permalink to this headline">¶</a></h1>
+<p>This study explores a simple uncertainty propagation problem in the following three story shear building and employs the HAZUS methodology for assessing damage and loss:</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../../../../../_images/model3.png"><img alt="../../../../../_images/model3.png" src="../../../../../_images/model3.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">Three Story Shear Building Model (P10.2.9, “Dynamics of Structures”, A.K.Chopra)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>This example uses the PBE application to automatically prepare an column model that represents the three-story structure, subject it to a suite of ground motion time histories, and evaluate the seismic performance of the building using the Hazus Earthquake methodology.</p>
+<p>Each step of the workflow for this problem is explained below by sequentially walking through the input panels and highlighting their role in the simulation. The file <code class="docutils literal notranslate"><span class="pre">input.json</span></code> contains all of the settings for this exercise. It can be opened (using File/Open) to automatically populate the fields in the user interface.</p>
+<div class="section" id="step-1-uq">
+<h2><span class="section-number">3.2.1. </span>Step 1: UQ<a class="headerlink" href="#step-1-uq" title="Permalink to this headline">¶</a></h2>
+<p>This panel provides an interface to various forward propagation procedures which are used to sample the random variables defined in later panels and propagate each realization through the workflow. This process can be used to characterize the uncertainty in the workflow outputs. For this example, a latin hypercube sampling procedure (<strong>LHS</strong>) is used with <code class="docutils literal notranslate"><span class="pre">40</span></code> samples and a seed of <code class="docutils literal notranslate"><span class="pre">775</span></code>. Fixing the seed ensures the same random sample every time the calculation is run.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_UQ.png" src="../../../../../_images/2_UQ.png" />
+</div>
+</div>
+<div class="section" id="step-2-gi">
+<h2><span class="section-number">3.2.2. </span>Step 2: GI<a class="headerlink" href="#step-2-gi" title="Permalink to this headline">¶</a></h2>
+<p>Next, the <strong>GI</strong> panel may be used to define metadata and other general information about the model. Some of the values are automatically updated by later panels while others are only providing information about the model and not used for the simulation.</p>
+<p>It is important to review and specify the desired Units for the calculation here. It is important to provide all inputs assuming these units when no other instructions are given by the following panels. The length unit is used to define velocity and acceleration units as well.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_GI.png" src="../../../../../_images/2_GI.png" />
+</div>
+</div>
+<div class="section" id="step-3-sim">
+<h2><span class="section-number">3.2.3. </span>Step 3: SIM<a class="headerlink" href="#step-3-sim" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>SIM</strong> panel can be used to define the simulation model. In this example we leverage the convenient MDOF tool which provides a high-level interface for defining simple parameterized structural analysis models. Either variable names, or literal values can be entered in the fields of this panel, as shown in the following figure.</p>
+<p>This model could have random properties that we could sample and propagate the corresponding uncertainty through the workflow. If a variable name is entered, PBE automatically identifies it as a random variable, and creates a corresponding entry in the <strong>RV</strong> panel. Several examples in the documentation of the EE-UQ application demonstrate this feature on models of various complexity. In this example, we use a deterministic structural model for the sake of simplicity.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_SIM.png" src="../../../../../_images/2_SIM.png" />
+</div>
+</div>
+<div class="section" id="step-4-evt">
+<h2><span class="section-number">3.2.4. </span>Step 4: EVT<a class="headerlink" href="#step-4-evt" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>EVT</strong> panel provides various <strong>Load Generator</strong> options that can either import ground motion loads from external files or connect to the PEER NGA database and obtain loads that represent a target spectrum or generate loads during the simulation using a stochastic process. We will use the latter solution in this example by selecting the <strong>Stochastic Ground Motion</strong> option.</p>
+<p>The Vlachos et al. (2018) model generates ground motion time histories based on three parameters: magnitude, distance, and shear-wave velocity in the top 30 meters of the soil. We specify a magnitude <code class="docutils literal notranslate"><span class="pre">7</span></code> earthquake <code class="docutils literal notranslate"><span class="pre">40</span></code> kms from the site of interest. As for the shear-wave velocity, we introduce a random variable by providing <code class="docutils literal notranslate"><span class="pre">vs</span></code> as input. This is recognized by PBE and the corresponding variable is automatically added to the <strong>RV</strong> panel.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_EVT.png" src="../../../../../_images/2_EVT.png" />
+</div>
+</div>
+<div class="section" id="step-5-fem">
+<h2><span class="section-number">3.2.5. </span>Step 5: FEM<a class="headerlink" href="#step-5-fem" title="Permalink to this headline">¶</a></h2>
+<p>We now proceed to the <strong>FEM</strong> panel where we can adjust settings for running the dynamic analysis. The default settings are typically appropriate for analyses that use the MDOF tool.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_FEM.png" src="../../../../../_images/2_FEM.png" />
+</div>
+</div>
+<div class="section" id="step-6-rv">
+<h2><span class="section-number">3.2.6. </span>Step 6: RV<a class="headerlink" href="#step-6-rv" title="Permalink to this headline">¶</a></h2>
+<p>Now in the <strong>RV</strong> panel we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, when this tab is opened it already contains the <code class="docutils literal notranslate"><span class="pre">vs</span></code> random variable. We choose to model the uncertainty in the shear wave velocity using a normal distribution with a mean of 400 m/s and a standard deviation of 100 m/s.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_RV.png" src="../../../../../_images/2_RV.png" />
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not leave any of the distributions for these values as constant when using the Dakota UQ engine.</p>
+</div>
+</div>
+<div class="section" id="step-7-dl">
+<h2><span class="section-number">3.2.7. </span>Step 7: DL<a class="headerlink" href="#step-7-dl" title="Permalink to this headline">¶</a></h2>
+<p>The last step in the setup is the <strong>DL</strong> panel. We use the four tabs in this panel to specify the performance model following the Hazus Earthquake methodology.</p>
+<p>First, in the Asset tab, we choose the <code class="docutils literal notranslate"><span class="pre">Hazus</span> <span class="pre">Earthquake</span></code> component vulnerability database that is bundled with the PBE application. This loads all of the building archetypes handled by Hazus in the <code class="docutils literal notranslate"><span class="pre">Available</span> <span class="pre">in</span> <span class="pre">DB</span></code> list. We assign the <code class="docutils literal notranslate"><span class="pre">STR.S1M.MC</span></code> steel frame archetype as the structural component. <code class="docutils literal notranslate"><span class="pre">NSD</span></code> and <code class="docutils literal notranslate"><span class="pre">NSA.MC</span></code> components are added to represent drift and acceleration-sensitive non-structural components.</p>
+<p>Because Hazus components are assigned at the building level, there is only one performance group created for each. The acceleration-sensitive component is assigned to the roof of the building (to obtain roof acceleration from there) while the drift-sensitive components are assigned to the first floor. This latter assignment is used with roof drift EDPs in buildings regardless of the number of floors they have.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_DL_asset.png" src="../../../../../_images/2_DL_asset.png" />
+</div>
+<p>Under the Demands tab, we specify that the demand data is provided by the Workflow automatically; we assume that demands follow a multivariate lognormal distribution. After fitting such a distribution to the data, we sample 500 demand realizations for damage and loss assessment.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_DL_demands.png" src="../../../../../_images/2_DL_demands.png" />
+</div>
+<p>The Damage tab setup is simple when the Hazus earthquake methodology is used because this method includes collapse in the structure component damage states and does not consider irreparable damage. The Damage Process employed by this method is included in PBE and selected for this example.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_DL_damage.png" src="../../../../../_images/2_DL_damage.png" />
+</div>
+<p>Losses are calculated using the included Hazus Earthquake consequence functions for repair costs and an Automatic mapping between damaged components and consequence models. This mapping uses the occupancy type and component types specified in the Asset tab earlier and selects the corresponding consequence functions following the Hazus methodology.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_DL_loss.png" src="../../../../../_images/2_DL_loss.png" />
+</div>
+</div>
+<div class="section" id="analysis-results">
+<h2><span class="section-number">3.2.8. </span>Analysis &amp; Results<a class="headerlink" href="#analysis-results" title="Permalink to this headline">¶</a></h2>
+<p>Once a full workflow has been defined click on the <strong>Run</strong> button. When the analysis is complete the <strong>RES</strong> tab will be activated and the results will be displayed. When a HAZUS assessment has been conducted, the results panel will resemble the following figures which show the <strong>Summary</strong> and <strong>Data</strong> tabs, respectively.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_RES_summary.png" src="../../../../../_images/2_RES_summary.png" />
+</div>
+<div class="align-center figure">
+<img alt="../../../../../_images/2_RES_data.png" src="../../../../../_images/2_RES_data.png" />
+</div>
+<p>In the <strong>Data</strong> tab of the <strong>RES</strong> panel, we are presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking on the individual columns the plot axis changes (left mouse click controls vertical axis, right mouse click the horizontal axis). If a singular column of the tabular data is selected with both right and left mouse buttons, a frequency and CDF plot will be displayed.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
