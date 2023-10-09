@@ -161,6 +161,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -270,7 +275,7 @@
 <dd class="field-even"><p>Select this option if none of the built-in libraries are used in your analyses. This assumes that all components will be defined through external files.</p>
 </dd>
 </dl>
-<p>The <span class="xref std std-ref">lbl-dldb_repair</span> section of this manual provides detailed description of the components available in the built-in libraries.</p>
+<p>The <a class="reference internal" href="../../../../dldb/repair/index.html#lbl-dldb-repair"><span class="std std-ref">Repair Consequence Models</span></a> section of this manual provides detailed description of the components available in the built-in libraries.</p>
 <div class="section" id="user-defined-components">
 <h3>User-defined components<a class="headerlink" href="#user-defined-components" title="Permalink to this headline">¶</a></h3>
 <p>The built-in component libraries provide a good starting point, but you will almost always need to add project- or problem-specific components to provide a comprehensive description of damage and losses for an asset. Pelicun stores consequence function parameters in a standardized format. We suggest using the <strong>Export DB</strong> button to export one of the built-in libraries to a file that can serve as a template for adding your own components. The file formats and data schema are described in detail under <span class="xref std std-ref">lbl-dldb_schema</span>.</p>

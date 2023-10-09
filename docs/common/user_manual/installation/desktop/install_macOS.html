@@ -136,6 +136,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -244,7 +249,7 @@
 </div>
 </div></blockquote>
 <p><strong>3.</strong> Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a <strong>nheri_simcenter</strong> python package that automatically installs all other dependencies. Start a Terminal window and type the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install nheri_simcenter --upgrade
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>nheri_simcenter<span class="w"> </span>--upgrade
 </pre></div>
 </div>
 <p>Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.</p>
@@ -256,7 +261,7 @@
 <p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
 <p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env <span class="p">|</span> grep SHELL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>SHELL
 </pre></div>
 </div>
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
@@ -267,7 +272,7 @@
 </div>
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.2.4. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
-<p>To download the PBE app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE">PBE Download</a> page which should resemble <code class="xref std std-numref docutils literal notranslate"><span class="pre">figDownload-PBE</span></code>. The download page contains a list of downloadable files and directories.</p>
+<p>To download the PBE app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE">PBE Download</a> page which should resemble <a class="reference internal" href="#figdownload-pbe"><span class="std std-numref">Fig. 1.2.4.2</span></a>. The download page contains a list of downloadable files and directories.</p>
 <div class="align-center figure" id="id9">
 <span id="figdownload-pbe"></span><img alt="../../../../_images/pbeDownload.png" src="../../../../_images/pbeDownload.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.4.2 </span><span class="caption-text">PBE download page.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
@@ -289,7 +294,7 @@
 <img alt="../../../../_images/AppleSecurity.png" src="../../../../_images/AppleSecurity.png" />
 </div>
 </div>
-<p>Once the application started, you should see the user interface shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUI-PBE</span></code>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/pbdl-0001/README.html#pbdl-0001"><span class="std std-ref">FEMA P-58 Assessment Using External Demands</span></a> to test the application.</p>
+<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figui-pbe"><span class="std std-numref">Fig. 1.2.5.2</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/pbdl-0001/README.html#pbdl-0001"><span class="std std-ref">FEMA P-58 Assessment Using External Demands</span></a> to test the application.</p>
 <div class="align-center figure" id="id15">
 <span id="figui-pbe"></span><img alt="../../../../_images/PBE_startup.png" src="../../../../_images/PBE_startup.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.5.2 </span><span class="caption-text">PBE application on startup.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
