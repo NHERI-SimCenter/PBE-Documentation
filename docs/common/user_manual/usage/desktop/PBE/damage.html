@@ -110,10 +110,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -128,32 +128,33 @@
 <li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Performance Assessment</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Damage and Loss Assessment</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">2.7.1.3. Damage Model</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#global-vulnerabilities">Global Vulnerabilities</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#global-vulnerabilities">Global Vulnerabilities</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#irreparable-damage">Irreparable Damage</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#collapse">Collapse</a></li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="#damage-process">Damage Process</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="output.html">2.7.1.5. Outputs</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -214,7 +215,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
-          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Performance Assessment</a> &raquo;</li>
+          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Damage and Loss Assessment</a> &raquo;</li>
         
           <li><a href="Pelicun.html"><span class="section-number">2.7.1. </span>Pelicun</a> &raquo;</li>
         
@@ -238,62 +239,128 @@
            <div itemprop="articleBody">
             
   <div class="section" id="damage-model">
-<h1><span class="section-number">2.7.1.3. </span>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h1>
-<p>This tab provides settings related to modeling damages (<a class="reference internal" href="#fig-dl-pelicun-damage"><span class="std std-numref">Fig. 2.7.1.3.1</span></a>). The vulnerability of individual components is already described by the parameters in the database that you selected in the Asset model. This tab provides a convenient way for you to create additional components that represent global vulnerabilities and allows you to specify a damage process that describes the interdependencies in component damages.</p>
+<span id="lblpelicun-damage"></span><h1><span class="section-number">2.7.1.3. </span>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h1>
+<p>This tab configures the damage simulation (<a class="reference internal" href="#fig-dl-pelicun-damage"><span class="std std-numref">Fig. 2.7.1.3.1</span></a>). Note that components were already assigned to the asset in the earlier <a class="reference internal" href="asset.html#lblpelicun-asset"><span class="std std-ref">Asset Model</span></a> tab. These components have their fragility functions defined in the specified component vulnerability data files and they do not need to be further configured here. This tab provides a convenient way to create additional components that represent global vulnerabilities and allows you to specify a damage process that describes the interdependencies in damage simulation. These features are described in detail below.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dl-pelicun-damage"></span><img alt="../../../../../_images/dl_pelicun_damage.png" src="../../../../../_images/dl_pelicun_damage.png" />
 <p class="caption"><span class="caption-number">Fig. 2.7.1.3.1 </span><span class="caption-text">The Damage model inputs.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="global-vulnerabilities">
 <h2>Global Vulnerabilities<a class="headerlink" href="#global-vulnerabilities" title="Permalink to this headline">¶</a></h2>
-<p>Two types of global vulnerabilities can be automatically added to any performance assessment by PBE:</p>
-<dl class="field-list">
-<dt class="field-odd">Irreparable Damage</dt>
-<dd class="field-odd"><p>Irreparable damage is assumed to be triggered by excessive residual interstory drift values. The corresponding limit state capacity is assumed to have a lognormal distribution with user-defined parameters.</p>
+<p>We use the term Global Vulnerabilities for damages that are at the building-level and usually affect multiple components in the building. In high-resolution assessments (e.g., FEMA P-58), the vulnerabilities listed below require building-specific fragility functions that are typically not part of a standard damage and loss model library. The data you provide here is used the automatically generate additional components for the analysis that can capture these types of vulnerabilities.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This model is supported by FEMA P-58 with a median of 0.015 radian and a logarithmic standard deviation of 0.3.</p>
+<p>In analyses with building-level resolution (e.g., Hazus Earthquake Methodology), these vulnerabilities are typically handled with components that provide a holistic model for the entire building. In such cases, we recommend assinging those components to the building in the Asset tab and not include these vulnerabilities.</p>
+</div>
+<div class="section" id="irreparable-damage">
+<h3>Irreparable Damage<a class="headerlink" href="#irreparable-damage" title="Permalink to this headline">¶</a></h3>
+<p>Irreparable damage is assumed to be triggered by excessive Residual Interstory Drift (RID) values. The corresponding limit state capacity is assumed to have a lognormal distribution with user-defined parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FEMA P-58 recommends using this model with a median of 0.01 and a logarithmic standard deviation of 0.3.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Exceedance events are managed by creating an <code class="docutils literal notranslate"><span class="pre">excessiveRID</span></code> component and assigning it to every story and direction where RID values are provided in the demand sample. Then, the drift capacity distribution is sampled for every excessiveRID component and the realized capacities are checked against the corresponding RID demand realizations. If any RID exceeds the capacity of the corresponding story, the entire building is considered irreparable.</p>
+<p>Damage experienced by the excessiveRID components is recorded in the output files for every realization. This can help evaluate the contribution of individual floors to the irreparable damage outcomes.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above approach typically results in higher probability of irreparable damage than the widely used alternative where a single RID demand is checked against a single capacity realization. If you wish to achieve that behavior, see the Residual Drifts section at the bottom of the <a class="reference internal" href="demands.html#lblpelicun-demands"><span class="std std-ref">Demand Model</span></a> page for information on how to provide demands that have one RID value for the entire building.</p>
+</div>
+</div>
+<div class="section" id="collapse">
+<h3>Collapse<a class="headerlink" href="#collapse" title="Permalink to this headline">¶</a></h3>
+<p>Collapse is assumed to be triggered by a particular demand exceeding the structure’s capacity for that demand. This generic approach allows you to consider collapse fragility curves that are typically controlled by intensity measures. It also supports modeling non-simulated collapses where exceeding a certain level of structural response is considered to result in collapse. For the latter, make sure the collapsed cases are not already filtered out by setting a collapse limit in the <a class="reference internal" href="demands.html#lblpelicun-demands"><span class="std std-ref">Demand Model</span></a>. Currently, only one demand type can be specified. Let us know if your work would benefit from having multiple collapse limits in an assessment.</p>
+<p>The following settings are available for the global collapse component:</p>
+<dl class="field-list">
+<dt class="field-odd">Demand</dt>
+<dd class="field-odd"><p>Identifies the demand type using the standard SimCenter demand naming convention. See the section on standard demand data in <a class="reference internal" href="demands.html#lblpelicun-demands"><span class="std std-ref">Demand Model</span></a> for a detailed description of demand labels.</p>
+<p>All demands of the selected type will be evaluated against the capacity specified by the following parameters. For example, if PID is specified here, the peak interstory drift ratio on all floors and in all directions is checked against capacity realizations sampled for every location.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When demands at multiple locations can trigger collapse capacity exceedance, these are managed by creating an <code class="docutils literal notranslate"><span class="pre">excessive.coll.DEM</span></code> component and assigning it to every story and direction where the demand type specified here is available. Damage experienced by these components is recorded in the output files for every realization. This can help evaluate the contribution of individual floors to the collapse outcomes.</p>
 </div>
 </dd>
-<dt class="field-even">Collapse</dt>
-<dd class="field-even"><p>Collapse is assumed to be triggered by a single demand exceeding the structure’s capacity for that demand. You can provide the demand type (Demand), the median capacity (Capacity), the distribution that describes the uncertainty in the capacity (Distribution) and the dispersion of that distribution (:math: <cite>theta_1</cite>). Dispersion is defined as the coefficient of variation for a normal distribution and the log-standard deviation for a lognormal distribution. Note that a distribution of “N/A” corresponds to a deterministic capacity and does not require a dispersion value.</p>
-<p>In an earthquake context, the capacity can be based on a collapse fragility function and it is defined as the median and the log-standard deviation of that function. The corresponding demand type is typically an intensity measure, often the spectral acceleration at the fundamental period of vibration. Such a demand can be provided as “SA_1.03”, for example, for a :math: <cite>T_1=1.13</cite> case.</p>
-<p>Another typical use case is to take a demand type from one of the Engineering Demand Parameters and consider that it cannot exceed a certain value without collapse. For example, use PID as the type and set the capacity as a deterministic 0.1.</p>
+<dt class="field-even">Capacity</dt>
+<dd class="field-even"><p>Specifies the median capacity of the building, that is, the intensity of the given demand type that triggers the collapse limit state in 50% of the realizations.</p>
+<p>If you use a deterministic approach to collapse modeling, this capacity is a hard limit that will directly be applied to all realizations. Otherwise, the following two parameters are used to define a random collapse capacity variable through a probability density function. That capacity variable is sampled for every realization and every location (if there are multiple locations with collapse demands) to capture the uncertainty in the collapse capacity.</p>
+<p>The unit of the collapse capacity is based on the length unit in the General Information panel of the PBE app.</p>
+</dd>
+<dt class="field-odd">Distribution</dt>
+<dd class="field-odd"><p>Specifies the type of distribution, if any, to model the uncertainty in the collapse capacity. Currently, lognormal and normal distributions are supported. You can use a determinsitic model by selecting <code class="docutils literal notranslate"><span class="pre">N/A</span></code>.</p>
+</dd>
+<dt class="field-even">θ₁</dt>
+<dd class="field-even"><p>Specifies the second parameter of the probability density function of the distribution selected above. The second parameter is the coefficient of variation for normal and the log-standard deviation for lognormal distributions. This input is not used if you selected <code class="docutils literal notranslate"><span class="pre">N/A</span></code> for the distribution.</p>
 </dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>These automatic component generators were designed to handly the typical use cases. Pelicun allows for more complex global vulnerabilities and such models can be used in the PBE app too as long as they are provided as part of the Asset model. Let us know if you are interested in such vulnerabilities.</p>
+<p>A conventional lognormal collapse fragility function can be defined with its median and log-standard deviation. The corresponding demand type is typically an intensity measure. In an earthquake context, this is often the spectral acceleration at the fundamental period of vibration. Such a demand can be provided as “SA_1.03”, for example, for a T₁=1.13 case.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Another typical use case is to take a demand type from one of the measured response quantities and assume that the building collapses when it exceeds a certain value. For example, in an earthquake context, use PID as the demand type and set the capacity as a deterministic 0.1. This will check the peak interstory drift ratio on every story of the building and trigger a collapse if it exceeds 10% in any story.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These automatic component generators were designed to handle the typical use cases mentioned above. Pelicun can model more complex global vulnerabilities and such models can be used in the PBE app too as long as the corresponding components are prepared and provided as part of the Asset model. Let us know if you are interested in such advanced modeling.</p>
+</div>
 </div>
 </div>
 <div class="section" id="damage-process">
 <h2>Damage Process<a class="headerlink" href="#damage-process" title="Permalink to this headline">¶</a></h2>
-<p>Damage processes characterize the interdependencies between various component damages during performance assessment. They allow modeling complex cascading damage scenarios and the development of models where multiple different probabilistic events can trigger the same damage state.</p>
-<p>Two damage processes are provided by the PBE app for the sake of convenience:</p>
+<p>Damage processes characterize the interdependencies between various component damages. They allow modeling complex cascading damage phenomena and models where multiple different probabilistic events can trigger the same damage state.</p>
+<p>Damage processes are a list of tasks described using a JSON file. Each task identifies a source component and how a damage event in the source component triggers one or more damage events in target components. The following example illustrates the general notation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;27_sourceComp&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">&quot;DS3&quot;</span><span class="p">:</span> <span class="s2">&quot;targetComp1_DS2&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;DS4&quot;</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">&quot;targetComp1_DS3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;targetComp2_DS1&quot;</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;DS5&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL_NA&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Task identifiers shall start with a positive integer (<code class="docutils literal notranslate"><span class="pre">27</span></code> in the example above). They are sorted at the beginning and executed in ascending order. Although it is not mandatory, we recommend adding tasks to the JSON file in ascending order and using a sequence of integers starting with <code class="docutils literal notranslate"><span class="pre">1</span></code> for the sake of clarity.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sourceComp</span></code> should be replaced with the component ID of the source component and <code class="docutils literal notranslate"><span class="pre">targetComp1</span></code> and <code class="docutils literal notranslate"><span class="pre">targetComp2</span></code> are placeholders for the component IDs of different target components. Each task assigns a dictionary to the source component and allows you to specify one or more damage states that trigger damage events. In the example above, <code class="docutils literal notranslate"><span class="pre">DS3</span></code>, <code class="docutils literal notranslate"><span class="pre">DS4</span></code>, and <code class="docutils literal notranslate"><span class="pre">DS5</span></code> are used to trigger other damages.</p>
+<p>Each damage state can be linked to one or more damage events. In the example above, <code class="docutils literal notranslate"><span class="pre">DS3</span></code> in the source component triggers <code class="docutils literal notranslate"><span class="pre">DS2</span></code> in <code class="docutils literal notranslate"><span class="pre">targetComp1</span></code>, while <code class="docutils literal notranslate"><span class="pre">DS4</span></code> in the source component affects two components. It triggers <code class="docutils literal notranslate"><span class="pre">DS3</span></code> in <code class="docutils literal notranslate"><span class="pre">targetComp1</span></code> and <code class="docutils literal notranslate"><span class="pre">DS1</span></code> in <code class="docutils literal notranslate"><span class="pre">targetComp2</span></code>. Note how multiple target events can be linked to a source damage event by using an array of strings.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DS5</span></code> damage state triggers events using two special keywords. When <code class="docutils literal notranslate"><span class="pre">ALL</span></code> is used for the target component, it affects all but the source component. This is helpful to model how global events affect damages of all components. When <code class="docutils literal notranslate"><span class="pre">NA</span></code> is used as a target damage state, it removes all damage information from the target component.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not the same as assigning <code class="docutils literal notranslate"><span class="pre">DS0</span></code> because it signals an undefined damage state rather than no damage. This option is typically helpful when certain component damages are conditioned on other events and need not be evaluated otherwise. For example, if we are interested in detailed component damage statistics conditioned on no collapse, we assign an <code class="docutils literal notranslate"><span class="pre">ALL_NA</span></code> target event to collapse cases to remove component damages from those realizations.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a source or target component is not among the components assigned to the building, the corresponding task is simply skipped during the simulation. This allows for creating general damage process files with tasks that are only triggered when the corresponding components are available in the building.</p>
+</div>
+<p>In a future update we plan to include more specific component identification that lets you restrict tasks to linking co-located components (i.e., sourceComp and targetComp located at the same story). This will allow for tasks that can, for example, link a damage to a pipe component in the ceiling to water-induced damage to a component on the floor.</p>
+<p>The following options are available for damage processes in the PBE app:</p>
 <dl class="field-list">
 <dt class="field-odd">FEMA P-58</dt>
-<dd class="field-odd"><p>Based on the second edition of the methodology, this process performs two tasks:</p>
+<dd class="field-odd"><p>Automatically loads a pre-defined damage process based on the second edition of the FEMA P-58 methodology:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;1_collapse&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;1_excessive.coll.DEM&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;DS1&quot;</span><span class="p">:</span> <span class="s2">&quot;collapse_DS1&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;2_collapse&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;DS1&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL_NA&quot;</span>
     <span class="p">},</span>
-    <span class="s2">&quot;2_excessiveRID&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;3_excessiveRID&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;DS1&quot;</span><span class="p">:</span> <span class="s2">&quot;irreparable_DS1&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>This process performs the following tasks:</p>
 <ol class="arabic simple">
-<li><p>Make sure that no other component damages are evaluated when the building collapses. This is important to avoid double counting consequences later.</p></li>
-<li><p>If any of the residual interstory drifts exceeds the assigned capacity, trigger an irreparable damage state.</p></li>
+<li><p>If the collapse capacity of any story is exceeded by the demand (see Collapse in the Global Vulnerabilities section above for details) trigger a global collapse event through the <code class="docutils literal notranslate"><span class="pre">collapse</span></code>  component’s <code class="docutils literal notranslate"><span class="pre">DS1</span></code>. Note that this task is only applied if there are multiple locations with collapse checks. Otherwise, there are no excessive.coll.DEM components assigned and this task is skipped.</p></li>
+<li><p>Make sure that no other component damages are evaluated when the building collapses. This is important to avoid double counting consequences and to get appropriate component damage statistics conditioned on no collapse.</p></li>
+<li><p>If any of the residual interstory drifts exceeds the assigned capacity, trigger an irreparable damage event using <code class="docutils literal notranslate"><span class="pre">DS1</span></code> of the <code class="docutils literal notranslate"><span class="pre">irreparable</span></code> component.</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If there are no collapse and irreparable damage vulnerabilities assigned, this damage process is automatically simplified before running the calculation.</p>
-</div>
 </dd>
 <dt class="field-even">Hazus Earthquake</dt>
-<dd class="field-even"><p>Based on the Hazus Earthquake methodology, this process performs four tasks:</p>
+<dd class="field-even"><p>Automatically loads a pre-defined damage process based on the Hazus Earthquake methodology:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;1_STR&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;DS5&quot;</span><span class="p">:</span> <span class="s2">&quot;collapse_DS1&quot;</span>
@@ -301,23 +368,34 @@
     <span class="s2">&quot;2_LF&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;DS5&quot;</span><span class="p">:</span> <span class="s2">&quot;collapse_DS1&quot;</span>
     <span class="p">},</span>
-    <span class="s2">&quot;3_collapse&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;3_excessive.coll.DEM&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;DS1&quot;</span><span class="p">:</span> <span class="s2">&quot;collapse_DS1&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;4_collapse&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;DS1&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL_NA&quot;</span>
     <span class="p">},</span>
-    <span class="s2">&quot;4_excessiveRID&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;5_excessiveRID&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;DS1&quot;</span><span class="p">:</span> <span class="s2">&quot;irreparable_DS1&quot;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>This process performs the following tasks:</p>
 <ol class="arabic simple">
-<li><p>If any of the structural components (there is typically only one) is in Collapse damage state (DS5), trigger a global collapse damage state.</p></li>
-<li><p>If any of the liquefaction-related components is in a collapse damage state (DS5), it triggers a global collapse damage state.</p></li>
-<li><p>If the building is in a collapse damage state (including due to outcomes from tasks 1 or 2), all other component damages are set to N/A to avoid double counting consequences.</p></li>
-<li><p>If any of the residual interstory drifts exceeds the assigned capacity, trigger an irreparable damage state. This last task extends the concept of irreparable damage to the Hazus methodology. It is removed from the damage process if there are no irreparable damage vulnerabilities assigned to the model.</p></li>
+<li><p>If any of the structural components (there is typically only one <code class="docutils literal notranslate"><span class="pre">STR</span></code> component) is in Collapse damage state (<code class="docutils literal notranslate"><span class="pre">DS5</span></code>), trigger a global collapse damage state. Note that <code class="docutils literal notranslate"><span class="pre">STR</span></code> is automatically replaced by the PBE app with the component ID of the structural component assigned to the building. If there is no <code class="docutils literal notranslate"><span class="pre">STR</span></code> component assigned to the building, this task is skipped.</p></li>
+<li><p>If any of the lifeline-facility components (there is typically only one <code class="docutils literal notranslate"><span class="pre">LF</span></code> component) is in a collapse damage state (<code class="docutils literal notranslate"><span class="pre">DS5</span></code>), trigger a global collapse damage state. Note that <code class="docutils literal notranslate"><span class="pre">LF</span></code> is automatically replaced by the PBE app with the component ID of the lifeline-facility component assigned to the building. Also note that despite Hazus’s recommendation to use <code class="docutils literal notranslate"><span class="pre">LF</span></code> components only for lifeline facilities where very little information is available about the structural system, these are often applied in literature more broadly to a general building inventory. If there is no <code class="docutils literal notranslate"><span class="pre">LF</span></code> component assigned to the building, this task is skipped.</p></li>
+<li><p>If the collapse capacity of any story is exceeded by the demand (see Collapse in the Global Vulnerabilities section above for details) trigger a global collapse event through the <code class="docutils literal notranslate"><span class="pre">collapse</span></code>  component’s <code class="docutils literal notranslate"><span class="pre">DS1</span></code>. Note that this task is only applied if there are multiple locations with collapse checks. Otherwise, there are no excessive.coll.DEM components assigned and this task is skipped.</p></li>
+<li><p>Make sure that no other component damages are evaluated when the building collapses. This is important to avoid double counting consequences and to get appropriate component damage statistics conditioned on no collapse.</p></li>
+<li><p>If any of the residual interstory drifts exceeds the assigned capacity, trigger an irreparable damage event using <code class="docutils literal notranslate"><span class="pre">DS1</span></code> of the <code class="docutils literal notranslate"><span class="pre">irreparable</span></code> component. This last task extends the concept of irreparable damage to the Hazus methodology. It is removed from the damage process if there are no such vulnerabilities assigned to the model.</p></li>
 </ol>
 </dd>
+<dt class="field-odd">User Defined</dt>
+<dd class="field-odd"><p>This option allows you to load a custom damage process for the calculation from a JSON file.</p>
+</dd>
+<dt class="field-even">None</dt>
+<dd class="field-even"><p>Do not consider interdependencies between damages. If this option is selected, all component damages are evaluated independently.</p>
+</dd>
 </dl>
-<p>You can use a custom damage process for the calculation by selecting <strong>User Defined</strong> from the drop-down list and providing the process in a JSON file. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> provides more information on preparing damage processes.</p>
 </div>
 </div>
 

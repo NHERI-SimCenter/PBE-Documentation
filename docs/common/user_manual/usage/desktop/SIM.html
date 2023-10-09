@@ -111,10 +111,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PBE/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -131,25 +131,21 @@
 <li class="toctree-l3"><a class="reference internal" href="#steel-building-model-autosda">2.3.3. Steel Building Model (AutoSDA)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#concrete-building-model-rc-fiap">2.3.4. Concrete Building Model (RC-FIAP)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mdof-lu-building-model">2.3.6. MDOF-LU Building Model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multi-model">2.3.7. Multi Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-models">2.3.7. Multiple Models</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">2.7. DL: Performance Assessment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">2.7. DL: Damage and Loss Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -239,7 +235,7 @@
 <li><p><a class="reference internal" href="#steel-building-model-autosda" id="id12">Steel Building Model (AutoSDA)</a></p></li>
 <li><p><a class="reference internal" href="#concrete-building-model-rc-fiap" id="id13">Concrete Building Model (RC-FIAP)</a></p></li>
 <li><p><a class="reference internal" href="#mdof-lu-building-model" id="id14">MDOF-LU Building Model</a></p></li>
-<li><p><a class="reference internal" href="#multi-model" id="id15">Multi Model</a></p></li>
+<li><p><a class="reference internal" href="#multiple-models" id="id15">Multiple Models</a></p></li>
 </ul>
 </div>
 <div class="section" id="multiple-degrees-of-freedom-mdof">
@@ -277,12 +273,12 @@
 </div>
 <div class="section" id="steel-building-model-autosda">
 <h2><a class="toc-backref" href="#id12"><span class="section-number">2.3.3. </span>Steel Building Model (AutoSDA)</a><a class="headerlink" href="#steel-building-model-autosda" title="Permalink to this headline">¶</a></h2>
-<p>This module provides a way for a user to create a nonlinear structural model of a moment-resisting steel-framed building. The <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> computer program <span id="id2">[<a class="reference internal" href="../../../../index.html#id52" title="Xingquan Guan, Henry Burton, and Thomas Sabol. Python-based computational platform to automate seismic design, nonlinear structural model construction and analysis of steel moment resisting frames. Engineering Structures, 224:111199, 2020.">GBS20</a>]</span> is used for the seismic design and to generate the resulting two-dimensional structural model in <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code>. <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> automates the seismic design process and nonlinear structural model construction, generating code-conforming section sizes and detailing for beams, columns, and beam-column connections based on the user-specified input design parameters. The resulting nonlinear model is then subjected to the hazard option that is selected by the user in the <strong>EVT</strong> panel. The TCL files of the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> model generated by <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> are located in the individual work directories in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder that <strong>EE-UQ</strong> creates on the user’s computer.</p>
+<p>This module provides a way for a user to create a nonlinear structural model of a moment-resisting steel-framed building. The <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> computer program <span id="id2">[<a class="reference internal" href="../../../../index.html#id54" title="Xingquan Guan, Henry Burton, and Thomas Sabol. Python-based computational platform to automate seismic design, nonlinear structural model construction and analysis of steel moment resisting frames. Engineering Structures, 224:111199, 2020.">GBS20</a>]</span> is used for the seismic design and to generate the resulting two-dimensional structural model in <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code>. <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> automates the seismic design process and nonlinear structural model construction, generating code-conforming section sizes and detailing for beams, columns, and beam-column connections based on the user-specified input design parameters. The resulting nonlinear model is then subjected to the hazard option that is selected by the user in the <strong>EVT</strong> panel. The TCL files of the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> model generated by <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> are located in the individual work directories in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder that <strong>EE-UQ</strong> creates on the user’s computer.</p>
 <p>The input panel for this module is shown in <a class="reference internal" href="#fig-sda"><span class="std std-numref">Fig. 2.3.3.1</span></a>. Users need to provide the following information:</p>
 <ol class="arabic simple">
 <li><p>Building Information Inputs: The building information box describes the building geometry. The units for the building geometry parameters are in feet. Changing the building parameter values will update the building properties in the <strong>GI</strong> panel. Also, changing the number of building stories will add or subtract rows from the <code class="docutils literal notranslate"><span class="pre">Member</span> <span class="pre">Depth</span></code> and <code class="docutils literal notranslate"><span class="pre">Loading</span></code> tables below.</p></li>
 <li><p>Seismic Design Parameters: The seismic design parameters box contains the Equivalent Lateral Force (ELF) design parameters as specified by ASCE 7-10. <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> employs these parameters in its automated seismic design procedures. Note that the values of these ELF parameters are site-specific, and can be obtained from the <a class="reference external" href="https://seismicmaps.org">SEAOC/OSHPD Seismic Design Maps Tool</a> or the <a class="reference external" href="https://hazards.atcouncil.org">ATC Hazards by Location Tool</a>.</p></li>
-<li><p>Building Data Folder: The location of the building data folder is specified within this box. The building data folder should contain the following four CSV files that are required by <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code>: 1) Geometry.csv; 2) ELFParameters.csv; 3) MemberDepth.csv; and 4) Loads.csv. These files can be automatically created on the user’s computer by by clicking on the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">File</span></code> button. The user will be prompted to select a folder whereafter the files will be saved. Alternatively, users have the option to upload their own CSV files by selecting a folder, and then clicking on the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">File</span></code> button. Note that users are encouraged to backup their CSV files as <strong>EE-UQ</strong> will overwrite the existing files in the selected folder. Before running an analysis, users must save or load the corresponding CSV files so that <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> can locate them.</p></li>
+<li><p>Building Data Folder: The location of the building data folder is specified within this box. The building data folder should contain the following four CSV files that are required by <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code>: 1) Geometry.csv; 2) ELFParameters.csv; 3) MemberDepth.csv; and 4) Loads.csv. These files can be automatically created on the user’s computer by clicking on the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">File</span></code> button. The user will be prompted to select a folder whereafter the files will be saved. Alternatively, users have the option to upload their own CSV files by selecting a folder, and then clicking on the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">File</span></code> button. Note that users are encouraged to backup their CSV files as <strong>EE-UQ</strong> will overwrite the existing files in the selected folder. Before running an analysis, users must save or load the corresponding CSV files so that <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> can locate them.</p></li>
 <li><p>Member Depth Table: This table lists the user-specified depths for the interior columns, exterior columns, and beams. Each row in the table corresponds to a building story. The first row corresponds to the first story, the second row to the second story, etc. As shown in <a class="reference internal" href="#fig-sda"><span class="std std-numref">Fig. 2.3.3.1</span></a>, the member depth values need to follow nomenclature from the AISC steel shapes database, e.g., W14, W24. If multiple depths are specified, the depths need to be separated by a comma, followed by a space.</p></li>
 <li><p>Loading Table: This table contains the loading values for the floors, beams and columns. As in the <code class="docutils literal notranslate"><span class="pre">Member</span> <span class="pre">Depth</span></code> table, each row in this table corresponds to its own building story. In this table, there is an option to specify the loading values as random variables. This is done by entering a unique name tag for a random variable in lieu of a numerical value. For example, in any of the cells in the table, a user can enter the text <code class="docutils literal notranslate"><span class="pre">SomeRV.</span></code> The <code class="docutils literal notranslate"><span class="pre">SomeRV</span></code> random variable tag will then appear in the <strong>UQ</strong> panel, where the type of distribution, mean value, etc., can be specified.</p></li>
 </ol>
@@ -305,7 +301,7 @@
 <p>The input panel for this module is shown in <a class="reference internal" href="#fig-eeuqrcfiapsim"><span class="std std-numref">Fig. 2.3.4.1</span></a>. Users need to provide the following information:</p>
 <ol class="arabic simple">
 <li><p>Column Section Dimensions: Where the user specifies the interior and exterior column dimensions, namely the width and depth in meters.</p></li>
-<li><p>Beam Section Dimensions: Where the user specifies the width and depth of the beam sections. The the beam section dimension units are in meters.</p></li>
+<li><p>Beam Section Dimensions: Where the user specifies the width and depth of the beam sections. The beam section dimension units are in meters.</p></li>
 <li><p>Frame Geometry: The frame geometry is defined as a vector of story heights and spans, in meters. Each height or span needs to be separated by a comma. That is, there are as many building stories as there are comma-separated heights. Note that changing the values of the stories and spans will update the building properties in the <strong>GI</strong> panel.</p></li>
 <li><p>ASCE 7-16 Seismic Design Parameters: The seismic design parameters box contains the design parameters as specified by ASCE 7-16. <code class="docutils literal notranslate"><span class="pre">`RC-FIAP</span></code> employs these parameters in its automated seismic design procedures.</p></li>
 <li><p>Moment of Inertia Parameters: This is where the moment of inertia for elastic analyses is specified for both beams and columns.</p></li>
@@ -333,17 +329,21 @@
 <p class="caption"><span class="caption-number">Fig. 2.3.6.1 </span><span class="caption-text">MDOF-LU Building model input panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="multi-model">
-<h2><a class="toc-backref" href="#id15"><span class="section-number">2.3.7. </span>Multi Model</a><a class="headerlink" href="#multi-model" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Multi Model</strong> structural modeling application allows users to define multiple structural models for use in their analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis.</p>
+<div class="section" id="multiple-models">
+<h2><a class="toc-backref" href="#id15"><span class="section-number">2.3.7. </span>Multiple Models</a><a class="headerlink" href="#multiple-models" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Multiple Models</strong> structural modeling application allows users to define multiple structural models for use in their analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis.</p>
 <p>By adding a model, a new tab is created in the SIM panel where users can choose one of the structural modeling applications described in the sections above and provide the inputs necessary to create the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.</p>
 <div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../_images/multimodelSIM.png"><img alt="../../../../_images/multimodelSIM.png" src="../../../../_images/multimodelSIM.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.7.1 </span><span class="caption-text">Selecting a structural modeling application within a Multi Model SIM Application</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.7.1 </span><span class="caption-text">Selecting a structural modeling application within a Multiple Models SIM Application</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If a Multi Model application is selected, at least 2 models must be defined.</p>
+<p>If a Multiple Models application is selected, at least 2 models must be defined.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the “Multi-fidelity Monte Carlo (MFMC)” option was selected in the UQ tab, the belief values will be ignored. The premise of MFMC is that the high-fidelity model response is always the best response, therefore, <em>belief in each model</em> does not apply.</p>
 </div>
 </div>
 </div>

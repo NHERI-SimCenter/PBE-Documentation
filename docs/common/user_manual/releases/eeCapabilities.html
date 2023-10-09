@@ -108,10 +108,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/PBE/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -124,11 +124,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -208,7 +203,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p><strong>Version 3.3</strong> of PBE app was released <strong>March 23</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p><strong>Version 3.4</strong> of PBE app was released <strong>September 29</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this headline">¶</a></h2>
 <p>Applications used to specify/select the structural model to be used in analysis.</p>
@@ -218,8 +213,8 @@
 <li><p>Steel Building Model: automating steel frame design and modeling</p></li>
 <li><p>Concrete Building Model: automating concrete moment frame design and modeling</p></li>
 <li><p>MDOF-LU: MDOF shear building model</p></li>
-<li><p><span class="blue">SurrogateGP: surrogate model trained in EE-UQ</span></p></li>
-<li><p><span class="blue">Multimodel: selecting multiple structural information models</span></p></li>
+<li><p>SurrogateGP: surrogate model trained in EE-UQ</p></li>
+<li><p>Multiple models: selecting multiple structural information models <span class="blue">[&lt;- renaming from Multimodel]</span></p></li>
 </ol>
 </div>
 <div class="section" id="earthquake-motion-event">
@@ -227,7 +222,7 @@
 <p>Applications used to specify/select ground motions for the structure.</p>
 <ol class="arabic simple">
 <li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
-<li><p>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions <span class="blue">[&lt;- New option to select a suit of ground motions with uniformly populated IMs. This can be useful when training a surrogate model]</span></p></li>
+<li><p>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</p></li>
 <li><p>Site Response: propagating rock motions to the surface</p></li>
 <li><p>Multiple PEER: using multiple PEER recordings</p></li>
 <li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
@@ -240,7 +235,7 @@
 <ol class="arabic simple">
 <li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
 <li><p>User Defined: user-specified EDP</p></li>
-<li><p><span class="blue">None: used only for surrogate model-based predictions</span></p></li>
+<li><p>None: used only for surrogate model-based predictions</p></li>
 </ol>
 </div>
 <div class="section" id="finite-element-application">
@@ -248,9 +243,9 @@
 <p>Applications used to determine the response output parameters given the ground motion and structural model.</p>
 <ol class="arabic simple">
 <li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
-<li><p><span class="blue">CustomPy-Simulation: user-provided python script</span></p></li>
-<li><p><span class="blue">None: used only for surrogate model-based predictions</span></p></li>
-<li><p><span class="blue">Multimodel: selecting multiple finite element applications</span></p></li>
+<li><p>CustomPy-Simulation: user-provided python script`</p></li>
+<li><p>None: used only for surrogate model-based predictions</p></li>
+<li><p>Multiple models: selecting multiple finite element applications <span class="blue">[&lt;- renaming from Multimodel]</span></p></li>
 </ol>
 </div>
 <div class="section" id="uncertainty-quantification">
@@ -275,6 +270,7 @@
 <li><p>Resample from existing correlated dataset of samples</p></li>
 </ol>
 </li>
+<li><p><span class="blue">Multi-fidelity Monte Carlo (MFMC)</span></p></li>
 </ol>
 </li>
 </ol>
@@ -307,7 +303,7 @@
 <li><p>SimCenterUQ Engine Surrogate Options:</p>
 <ol class="arabic simple">
 <li><p>Probabilistic Learning on Manifolds (PLoM) Surrogate modeling</p></li>
-<li><p><span class="blue">Gaussian Process Surrogate Modeling</span></p></li>
+<li><p>Gaussian Process Surrogate Modeling</p></li>
 </ol>
 </li>
 </ol>

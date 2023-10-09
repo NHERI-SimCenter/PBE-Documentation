@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="2.7.1.1. Asset Model" href="asset.html" />
-    <link rel="prev" title="2.7. DL: Performance Assessment" href="DL.html" />
+    <link rel="prev" title="2.7. DL: Damage and Loss Assessment" href="DL.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -110,10 +110,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -128,28 +128,25 @@
 <li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Performance Assessment</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Damage and Loss Assessment</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">2.7.1. Pelicun</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="output.html">2.7.1.5. Outputs</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -210,7 +207,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
-          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Performance Assessment</a> &raquo;</li>
+          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Damage and Loss Assessment</a> &raquo;</li>
         
       <li><span class="section-number">2.7.1. </span>Pelicun</li>
     
@@ -233,37 +230,15 @@
             
   <div class="section" id="pelicun">
 <span id="lblpelicun"></span><h1><span class="section-number">2.7.1. </span>Pelicun<a class="headerlink" href="#pelicun" title="Permalink to this headline">¶</a></h1>
-<p>Pelicun is a general-purpose performance assessment engine that is designed to integrate various methods to support performance assessment of multiple types of assets under various hazards. PBE provides a convenient interface to Pelicun to facilitate setting up and running various types of performance assessments. PBE supports the commonly used settings and analyses; advanced users are encouraged to take advantage of the full suite of features in Pelicun running the engine directly using configuration files or Python scripts.</p>
-<p>Pelicun uses four types of models to define a performance assessment problem and set up the corresponding calculation. Each of the models has its own tab in Pelicun’s input panel:</p>
+<p>Pelicun is a general-purpose damage and loss assessment engine that is designed to integrate various methods to support the analysis of multiple types of assets (e.g., buildings, bridges) under various hazards (e.g., seismic, wind, water). PBE provides a convenient interface to Pelicun to facilitate setting up and running damage and loss calculations. The interface in PBE aims to support the commonly used settings and analyses in Pelicun; advanced users are encouraged to take advantage of the full suite of features in Pelicun and running the engine directly using configuration files or Python scripts.</p>
+<p>Pelicun uses four types of models to perform a damage and loss assessment calculation. Each of the models has its own tab in Pelicun’s input panel. The fifth tab controls the types of outputs generated at the end of the calculation.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="asset.html#general-information">General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asset.html#databases">Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asset.html#component-assignment">Component Assignment</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="demands.html#data-source">Data Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demands.html#stochastic-model">Stochastic Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demands.html#sample">Sample</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demands.html#residual-drifts">Residual Drifts</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="damage.html#global-vulnerabilities">Global Vulnerabilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="damage.html#damage-process">Damage Process</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="losses.html#repair-consequences">Repair consequences</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="losses.html#global-consequences">Global consequences</a></li>
-<li class="toctree-l3"><a class="reference internal" href="losses.html#database">Database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="losses.html#mapping">Mapping</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">2.7.1.5. Outputs</a></li>
 </ul>
 </div>
 </div>

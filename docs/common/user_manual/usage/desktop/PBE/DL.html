@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.7. DL: Performance Assessment &mdash; Performance Based Engineering Application  documentation</title>
+  <title>2.7. DL: Damage and Loss Assessment &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -110,10 +110,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -128,22 +128,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. DL: Performance Assessment</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. DL: Damage and Loss Assessment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -204,7 +200,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
-      <li><span class="section-number">2.7. </span>DL: Performance Assessment</li>
+      <li><span class="section-number">2.7. </span>DL: Damage and Loss Assessment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,41 +219,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dl-performance-assessment">
-<span id="lbldl"></span><h1><span class="section-number">2.7. </span>DL: Performance Assessment<a class="headerlink" href="#dl-performance-assessment" title="Permalink to this headline">¶</a></h1>
-<p>The Performance Assessment panel provides a convenient way to define the models and set up a performance assessment for a building. The dropdown list at the top of the panel lists the available performance assessment engines for the workflow. Currently, the PBE app uses the Pelicun engine - other options might be added in the future.</p>
+  <div class="section" id="dl-damage-and-loss-assessment">
+<span id="lbldl"></span><h1><span class="section-number">2.7. </span>DL: Damage and Loss Assessment<a class="headerlink" href="#dl-damage-and-loss-assessment" title="Permalink to this headline">¶</a></h1>
+<p>The Damage and Loss Assessment panel provides a convenient way to configure a damage and loss assessment calculation for a building. The dropdown list at the top of the panel lists the available tools for this task. Currently, the PBE app uses the Pelicun engine - other options might be added in the future.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="asset.html#general-information">General Information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="asset.html#databases">Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="asset.html#component-assignment">Component Assignment</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="demands.html#data-source">Data Source</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demands.html#stochastic-model">Stochastic Model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demands.html#sample">Sample</a></li>
-<li class="toctree-l3"><a class="reference internal" href="demands.html#residual-drifts">Residual Drifts</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="damage.html#global-vulnerabilities">Global Vulnerabilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="damage.html#damage-process">Damage Process</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="losses.html#repair-consequences">Repair consequences</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="losses.html#global-consequences">Global consequences</a></li>
-<li class="toctree-l4"><a class="reference internal" href="losses.html#database">Database</a></li>
-<li class="toctree-l4"><a class="reference internal" href="losses.html#mapping">Mapping</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a></li>
 </ul>
 </div>
 </div>

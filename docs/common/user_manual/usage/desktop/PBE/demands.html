@@ -110,10 +110,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -128,34 +128,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Performance Assessment</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Damage and Loss Assessment</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">2.7.1.2. Demand Model</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#data-source">Data Source</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#stochastic-model">Stochastic Model</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#standard-format-for-demand-data">Standard Format for Demand Data</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#probabilistic-model">Probabilistic Model</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#sample">Sample</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#residual-drifts">Residual Drifts</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="output.html">2.7.1.5. Outputs</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -216,7 +214,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
-          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Performance Assessment</a> &raquo;</li>
+          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Damage and Loss Assessment</a> &raquo;</li>
         
           <li><a href="Pelicun.html"><span class="section-number">2.7.1. </span>Pelicun</a> &raquo;</li>
         
@@ -240,97 +238,166 @@
            <div itemprop="articleBody">
             
   <div class="section" id="demand-model">
-<h1><span class="section-number">2.7.1.2. </span>Demand Model<a class="headerlink" href="#demand-model" title="Permalink to this headline">¶</a></h1>
-<p>This tab collects information about the demands that control the performance model of the building (<a class="reference internal" href="#fig-dl-pelicun-demands"><span class="std std-numref">Fig. 2.7.1.2.1</span></a>). There are multiple ways to define the demands using the information provided in the following areas:</p>
+<span id="lblpelicun-demands"></span><h1><span class="section-number">2.7.1.2. </span>Demand Model<a class="headerlink" href="#demand-model" title="Permalink to this headline">¶</a></h1>
+<p>This tab configures the demand model that is used to generate realizations of demands that act on the components defined in the previous tab. (<a class="reference internal" href="#fig-dl-pelicun-demands"><span class="std std-numref">Fig. 2.7.1.2.1</span></a>). There are multiple ways to define the demands using the information provided in the following areas:</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dl-pelicun-demands"></span><img alt="../../../../../_images/dl_pelicun_demands.png" src="../../../../../_images/dl_pelicun_demands.png" />
 <p class="caption"><span class="caption-number">Fig. 2.7.1.2.1 </span><span class="caption-text">The Demand model inputs.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="data-source">
 <h2>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h2>
-<p>The drop-down list in this area identifies how the demands are calculated:</p>
+<p>The drop-down list in this area identifies the source of demand information:</p>
 <dl class="field-list">
 <dt class="field-odd">from Workflow</dt>
-<dd class="field-odd"><p>Select this option if the PBE app is used to perform the entire performance assessment workflow, that is, the structural response estimation is also set up an performed by this application. In this case, make sure the workflow you set up provides all of the demand types required by the performance assessment. The demand file will be automatically created in the appropriate format by the backend engine and passed on to Pelicun in the background.</p>
+<dd class="field-odd"><p>Select this option if the PBE app is used to perform the entire performance assessment workflow, that is, the structural response simulation is also set up and performed by the PBE app. In such a case, make sure the workflow you set up provides all of the demand types required by the damage and loss assessment. The demand data file is automatically created in the appropriate format by the backend engine and passed on to Pelicun in the background.</p>
 </dd>
 <dt class="field-even">from File</dt>
-<dd class="field-even"><p>Select this option if the PBE app is only used for the performance assessment step, that is, the structural response estimation is performed outside of the application. In this case, you will need to perform the demand calculations and provide demand data in the standard CSV format used by SimCenter applications, including Pelicun. See the <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> for more information on the corresponding data format.</p>
-<p>When this option is selected, use the <strong>Choose</strong> button to select a file on your computer that contains the demand data.</p>
+<dd class="field-even"><p>Select this option if the PBE app is only used for the performance assessment step, that is, the structural response simulation is performed outside of the PBE app. In such a case, you will need to perform the demand calculations and provide the demand data file in the standard CSV format used by SimCenter applications, including Pelicun (see below).</p>
+<p>When this option is selected, use the <strong>Choose</strong> button to select the CSV file on your computer that contains the demand data.</p>
 </dd>
 </dl>
 </div>
-<div class="section" id="stochastic-model">
-<h2>Stochastic Model<a class="headerlink" href="#stochastic-model" title="Permalink to this headline">¶</a></h2>
-<p>Robust performance assessment typically requires hundreds or thousands of damage and loss realizations while raw demand data is typically not available for more than a few dozen realizations. Therefore, the raw data is typically used to calibrate a stochastic demand model that is later sampled to obtain the number of realizations required for performance assessment.</p>
-<p>This area controls the characteristics of the stochastic demand model that is prepared using the provided raw demand data. The following features are available:</p>
+<div class="section" id="standard-format-for-demand-data">
+<h2>Standard Format for Demand Data<a class="headerlink" href="#standard-format-for-demand-data" title="Permalink to this headline">¶</a></h2>
+<p>The PBE app expects demand data in a tabular structure in a CSV file (<a class="reference internal" href="#fig-dl-pelicun-demands-csv"><span class="std std-numref">Fig. 2.7.1.2.2</span></a>). Each row corresponds to one realization and each column corresponds to one intensity or response measure.</p>
+<p>Demand units can be specified by adding a row with a <code class="docutils literal notranslate"><span class="pre">Units</span></code> label. The supported units are described in the <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterBackendApplications/blob/master/modules/performDL/pelicun3/pelicun/settings/default_units.json">Default Units</a> file of the Pelicun engine. If your work benefits from having additional units in that list, let us know and we can add them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can edit the <code class="docutils literal notranslate"><span class="pre">default_units.json</span></code> file in the backend engine and add the units that you want to have supported. The calculation engine works with the Standard Metric (SI) unit system. If you want to add new units, you will need to provide its name and scale factor that converts quantities in that unit to the equivalent unit in the SI system. As soon as you add this information to the <code class="docutils literal notranslate"><span class="pre">default_units.json</span></code> file, you should be able to use the new units in the PBE application.</p>
+</div>
+<p>If no units are specified in the demand input file, the units are inferred based on the length unit selected in the PBE app under the General Information (GI) panel.</p>
+<p>If only one demand realization (i.e., row) is provided, the demands will be considered deterministic. Otherwise, Pelicun can either use the provided data directly, or it can fit a multivariate distribution function to the provided data and sample from that distribution to get demands for the damage and loss simulation. See details of these settings in the following sections.</p>
+<div class="align-center figure" id="id2">
+<span id="fig-dl-pelicun-demands-csv"></span><img alt="../../../../../_images/dl_pelicun_demands_csv.png" src="../../../../../_images/dl_pelicun_demands_csv.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.2.2 </span><span class="caption-text">Demand information stored in a CSV file.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>The labels in the header of the table in the demand CSV file identify the types of demands and their reference location in the investigated asset. Each label is structured as <code class="docutils literal notranslate"><span class="pre">event-demand-location-direction</span></code>, with the following general rules:</p>
+<dl class="field-list">
+<dt class="field-odd">event</dt>
+<dd class="field-odd"><p>A one-based integer that is used to identify which event resulted in the measured demands in a multi-event simulation. Examples of multi-event simulations: earthquake + aftershocks; earthquake ground shaking + tsunami; multiple consecutive wind or flood events. If a damage and loss assessment uses a single event, then either use <code class="docutils literal notranslate"><span class="pre">1</span></code> for this field or omit it and use a simplified <code class="docutils literal notranslate"><span class="pre">demand-location-direction</span></code> label.</p>
+</dd>
+<dt class="field-even">demand</dt>
+<dd class="field-even"><p>Identifies the type of demand using a capitalized acronym for brevity. The demand types PBE currently recognizes are listed in its <a class="reference external" href="https://github.com/NHERI-SimCenter/pelicun/blob/master/pelicun/base.py#L493">Pelicun’s base module</a>. Additional demand types can be easily added to this file either locally or to the official release by sending a request to the developers.</p>
+<p>Certain demands have additional identifiers, such as the vibration period for spectral acceleration. These can be added after an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) character as floating point numbers. For example, spectral acceleration at 0.7 seconds would require an <code class="docutils literal notranslate"><span class="pre">SA_0.7</span></code> demand label.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A special demand label <code class="docutils literal notranslate"><span class="pre">ONE</span></code> is reserved for advanced calculations to provide a uniform 1.0 demand in all realizations. This column is typically generated automatically during the calculation and it is part of the demand output.</p>
+</div>
+</dd>
+<dt class="field-odd">location</dt>
+<dd class="field-odd"><p>An integer that specifies the location in the asset where the demand was measured. In buildings, locations typically correspond to stories, but they are a general identifier that can be used in creative ways to group components in other assets. In a high-resolution building assessment, demands are available at every floor, hence, the location=floor assignment is typically used. In a high-resolution bridge analysis, for example, you can assign locations to key parts of the bridge where specific response quantities will be available as demands. In a low-resolution assessment, often only the ground floor and roof locations are used to characterize the response of a building.</p>
+<p>The location needs to be a non-negative integer. The first floor in a building is typically location 1. This works well for demands assigned to entire stories, such as peak interstory drift ratio. Seismic analyses also needs other demands that are assigned to floors, i.e, slabs, such as peak floor acceleration. For the sake of clarity, we have a specific relationship between the location IDs of slabs and stories in buildings: a story always shares the location ID with its ceiling slab and its floor slab’s ID is the previous integer. This has a few important consequences:</p>
+<ul class="simple">
+<li><p>The ground acceleration (and any other demand that specifically corresponds to the ground as opposed to the first story of the building) shall be assigned to location <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>We assume stories are assigned a sequence of locations <code class="docutils literal notranslate"><span class="pre">1-n</span></code> in a building with <code class="docutils literal notranslate"><span class="pre">n</span></code> stories.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">n-th</span></code> floor’s acceleration (and any other demand that specifically corresponds to the floor slab as opposed to the story) shall be assigned to location <code class="docutils literal notranslate"><span class="pre">n</span></code>. Note that as a result, the acceleration assigned to location <code class="docutils literal notranslate"><span class="pre">1</span></code> will be experienced by inhabitants in story <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+<li><p>The roof acceleration is assigned to the top floor’s location.</p></li>
+<li><p>If basement levels are modeled, they shall not be assigned a negative location. We recommend using story=1 at the lowest basement level and applying the above rules accordingly.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above considerations do not affect component assignments in the <a class="reference internal" href="asset.html#lblpelicun-asset"><span class="std std-ref">Asset Model</span></a>. Components shall be assigned to the story they are installed on. Pelicun automatically picks the demands from the floor of a story unless an demand Offset is specified for a component in the provided vulnerability data. Suspended ceilings, for example, use an offset of 1 for their floor acceleration demand, to get the ceiling acceleration to control the damage of such components within a given story. See the <span class="xref std std-ref">lbl-dldb_damage</span> section for more details on how the offset information is stored in the Damage and Loss Database.</p>
+</div>
+</dd>
+<dt class="field-even">direction</dt>
+<dd class="field-even"><p>Demand measured at a given location might be a vector-valued quantity. For example, a three-dimensional vector can describe both the intensity and the orientation of a demand. In seismic performance assessment, story drift ratios and floor accelerations are typically captured by recording their two orthogonal horizontal components. In a more general example, one can assign directions to deformations measured at various places within a floor (i.e., they have the same location).</p>
+<p>The direction needs to be a non-negative integer. The zero direction is reserved to internally handle the governing, non-directional demands and shall never be used in demand labels.</p>
+<p>The location and direction of the demands is used to link them to component blocks in a building (see the <a class="reference internal" href="asset.html#lblpelicun-asset"><span class="std std-ref">Asset Model</span></a> for more details on component blocks). You can specify any location and direction combination as long as you follow the same logic when assigning components to the building.</p>
+</dd>
+</dl>
+<p>For example, the <code class="docutils literal notranslate"><span class="pre">1-PFA-0-1</span></code> label in <a class="reference internal" href="#fig-dl-pelicun-demands-csv"><span class="std std-numref">Fig. 2.7.1.2.2</span></a> above corresponds to Peak Floor Acceleration from event 1 measured in inch/s2 at the ground in direction 1. Another example from column M in the figure:<code class="docutils literal notranslate"><span class="pre">1-PID-1-2</span></code> corresponds to the Peak Interstory Drift Ratio from event 1 measured at the first story in direction 2. PID is unitless, that is, no scaling is needed regardless of what units are used for other quantities in the analysis.</p>
+</div>
+<div class="section" id="probabilistic-model">
+<h2>Probabilistic Model<a class="headerlink" href="#probabilistic-model" title="Permalink to this headline">¶</a></h2>
+<p>A robust damage and loss assessment typically requires hundreds or thousands of damage and loss realizations to be able to propagate the various uncertainties throughout the simulation. Since raw demand data is often not available for more than a few dozen realizations, it is typically used to calibrate the parameters of a multivariate probability density function that is later sampled to obtain a sufficiently high number of demand realizations.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a critical step in the analysis that can introduce significant error in the results if the target probability density function fits the provided raw data poorly. Although the widely used multivariate lognormal model works well in many scenarios, we strongly advise always making sure it is applicable to your case before using it.</p>
+</div>
+<p>The following settings control the characteristics of the probabilistic demand model:</p>
 <dl class="field-list">
 <dt class="field-odd">Distribution</dt>
-<dd class="field-odd"><p>Pelicun can fit a multivariate distribution to the raw data. The following options are available:</p>
+<dd class="field-odd"><p>Select the type of distribution, if any, to be fit to the raw demand data. The following options are available:</p>
 <dl class="field-list simple">
 <dt class="field-odd">lognormal</dt>
 <dd class="field-odd"><p>Fit a multivariate lognormal distribution to the data.</p>
 </dd>
 <dt class="field-even">truncated log</dt>
-<dd class="field-even"><p>Fit a truncated multivariate lognormal distribution to the data. Truncation allows for limiting the domain for each random demand variable. This is an effective and transparent approach to avoid unrealistically high demands that otherwise are generated from the tails of lognormal distributions. See the details of setting up truncation limits below.</p>
+<dd class="field-even"><p>Fit a truncated multivariate lognormal distribution to the data. Truncation allows for limiting the domain for each random demand variable. This is an effective and transparent approach to avoid unrealistically high demands that otherwise would be generated from the tails of lognormal distributions. See the details of setting up truncation limits below.</p>
 </dd>
 <dt class="field-odd">empirical</dt>
-<dd class="field-odd"><p>Use the raw demand data as-is without fitting a distribution. When this approach is chosen, the empirical data is sampled with replacement to obtain the required number of realizations. This is only recommended if a sufficiently large number of realizations is available.</p>
+<dd class="field-odd"><p>Use the raw demand data as-is without fitting a distribution. When this approach is chosen, the empirical data is sampled with replacement to obtain the required number of realizations. This is recommended if a sufficiently large number of realizations is available to characterize the uncertainty in the demand, or, if a single realization is provided to characterize a deterministic demand for the analysis.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Truncation limits</dt>
-<dd class="field-even"><p>This option is only available if the truncated lognormal distribution is selected. The <strong>+</strong> and <strong>-</strong> buttons can be used to add or remove definitions to the list. The following information defines each truncation limit:</p>
+<dd class="field-even"><p>This option is only available if the <code class="docutils literal notranslate"><span class="pre">truncated</span> <span class="pre">log</span></code> option is selected above. The <strong>+</strong> and <strong>-</strong> buttons can be used to add or remove definitions from the list. The following information defines each truncation limit:</p>
 <dl class="field-list">
 <dt class="field-odd">Demand</dt>
-<dd class="field-odd"><p>Identifies the demand type using the standard SimCenter demand naming convention. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> provides a list of supported demand types that can be easily expanded if needed.</p>
-<p>Currently, all demands of the selected type will be truncated at the provided limits. Let us know if location-specific demand truncation would be helpful for your work.</p>
+<dd class="field-odd"><p>Identifies the demand type using the standard SimCenter demand naming convention. See the previous section above for a detailed description of demand labels. Note that currently, only the demand type is specified here. All demands of the selected type will be truncated at the provided limits, i.e., demands of the given type at all locations and directions from all events.</p>
+<p>Let us know if more specific demand truncation would be helpful for your work.</p>
 </dd>
 <dt class="field-even">Lower Lim</dt>
-<dd class="field-even"><p>Lower truncation limit for the specified demand type. The unit of this truncation limit is identical to the unit of the demand in the raw demand data. If the demand is from the standard SimCenter workflow, then demand units are based on the unit settings in the GI panel of the PBE app.</p>
+<dd class="field-even"><p>Lower truncation limit for the specified demand type. The unit of this truncation limit is identical to the unit of the demand in the raw demand data. If the demand is from the standard SimCenter workflow, demand units are based on the unit settings in the General Information panel of the PBE app.</p>
 </dd>
 <dt class="field-odd">Upper Lim</dt>
-<dd class="field-odd"><p>Upper truncation limit for the specified demand type. Unit considerations are identical to those explained under the Lower Lim. Either of the two limits can be left empty to avoid imposing limits on the given side of the distribution.</p>
+<dd class="field-odd"><p>Upper truncation limit for the specified demand type. Unit considerations are identical to those explained under the Lower Lim. Either of the two limits can be left empty to avoid imposing limits on the corresponding side of the distribution.</p>
 </dd>
 </dl>
+<p>The example shown in <a class="reference internal" href="#fig-dl-pelicun-demands"><span class="std std-numref">Fig. 2.7.1.2.1</span></a> request a truncated lognormal fit with a truncation at 6% peak interstory drift ratio. Note that other demand types (such as peak floor accelerations) would not be truncated under these settings.</p>
 </dd>
 <dt class="field-even">Add Uncertainty</dt>
-<dd class="field-even"><p>This option allows you to quantify the uncertainty that was not included in the simulations used to obtain the raw demand data. Following the FEMA P-58 methodology, the uncertainty is quantified as a log-standard deviation value that is used to increase the dispersion of the raw demand data.</p>
+<dd class="field-even"><p>This option allows you to add uncertainty to the demand distribution that was not included in the simulations used to obtain the raw demand data. Following the FEMA P-58 methodology, the uncertainty is quantified as a log-standard deviation value that is used to increase the dispersion of the raw demand data in all dimensions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>FEMA P-58 disaggregates this uncertainty into several components, but — from a practical point of view — only their aggregate value matters for the performance assessment. Please provide the aggregate value here.</p>
+<p>FEMA P-58 disaggregates this uncertainty into several components, but—from a practical point of view—only their aggregate value matters for the damage and loss assessment. Please provide the aggregate value here.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Although the FEMA P-58 methodology was developed under the assumption of a multivariate lognormal distribution, Pelicun uses a more general assessment engine that can increase the uncertainty in truncated lognormal distributions as well as in  empirical data. Therefore, this option is not limited to lognormal distributions.</p>
+<p>This option is not limited to lognormal distributions. Pelicun uses a general assessment engine that can add uncertainty following the logic described in FEMA P-58 to not only lognormal, but also truncated lognormal distributions as well as to empirical data.</p>
 </div>
 </dd>
 <dt class="field-odd">Remove collapses</dt>
-<dd class="field-odd"><p>This option allows you to filter collapsed results from the raw demand data. The filtered data is removed from the raw demands before any other calculation would take place. For example, only the filtered data is passed on to the engine to fit a distribution to the demands. This allows you to remove collapsed cases and prepare a stochastic demand model only for the non-collapsed realizations.</p>
-<p>Use the <strong>+</strong> and <strong>-</strong> buttons to prepare a list of demand types and corresponding collapse limits. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> provides a list of supported demand types that can be easily expanded if needed.</p>
-<p>Currently, if any of the demands of the selected type exceeds the collapse limit, the building in the given realization will be considered collapsed. Let us know if location-specific collapse limits would be helpful for your work.</p>
-<p>The unit of the collapse limit is identical to the unit of the demand in the raw demand data. If the demand is from the standard SimCenter workflow, then demand units are based on the unit settings in the GI panel of the PBE app.</p>
+<dd class="field-odd"><p>This option allows you to filter collapsed results from the raw demand data. The collapsed realizations are removed from the raw demands before any other calculation would take place. For example, only the filtered data is passed on to the engine to fit a distribution to the demands. This allows you to remove collapsed cases and prepare a probabilistic demand model only for the non-collapsed realizations.</p>
+<p>Use the <strong>+</strong> and <strong>-</strong> buttons to prepare a list of demand types and corresponding collapse limits. See the previous section above for a detailed description of demand labels. Note that currently, only the demand type is specified here. If any of the demands (across events, locations, and directions) of the specified type exceeds the collapse limit in a realization, the asset in that realization is considered collapsed.</p>
+<p>Let us know if more specific collapse limits would be helpful for your work.</p>
+<p>The unit of the collapse limit is identical to the unit of the specified demand type in the raw demand data. If the demand data is from the standard SimCenter workflow, then demand units are based on the unit settings in the General Information panel of the PBE app.</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="sample">
 <h2>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h2>
-<p>This area is used to specify the sample size for demands and — since these realizations are the first step in the uncertainty propagation through the performance assessment workflow — for the entire performance assessment.</p>
-<p>Pelicun uses Latin Hypercube Sampling to provide mean and additive outputs with smaller errors than typical Monte Carlo analysis would. If you are only interested in such outputs, using a few hundred realizations should be sufficient. However, if you are interested in other statistics of the decision variable distributions, we recommend using a sample size of at least 1000.</p>
-<p>The <strong>Directly use raw demand data</strong> option allows you to use the raw data without resampling. That is, the data will be used in the same order it was provided. If the requested sample size if larger than the size of the raw demand sample, the demand data will be used multiple times, always re-starting from the beginning and going through in the order it was provided. This option is useful when you want to preserve the order of demands, for example, because a portfolio of buildings is analyzed and the demands were generated to represent spatial correlation in the hazard.</p>
+<p>This area is used to specify the sample size for demands. Since these realizations are the first step in the uncertainty propagation through the simulation, their size will define the number of damage and loss realizations produced by the entire assessment workflow.</p>
+<p>Pelicun uses Latin Hypercube Sampling to provide mean and additive outputs with smaller standard errors than a conventional Monte Carlo analysis. If you are only interested in such outputs, using a few hundred realizations should be sufficient. However, if you are interested in other statistics of the damage and loss measures (such as percentiles far from the median), we recommend using a sample size of at least 1000.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Directly use raw demand data</dt>
+<dd class="field-odd"><p>This option allows you to use the provided demand data without resampling. That is, the data will be used in the same order it was provided. If the requested sample size is larger than the size of the raw demand sample, the demand data will be used multiple times, always re-starting from the beginning and going through in the original order. This option is useful when you want to preserve the order of demands, for example, because a portfolio of buildings is analyzed and the demands were generated to represent spatial correlation in the event intensities.</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="residual-drifts">
 <h2>Residual Drifts<a class="headerlink" href="#residual-drifts" title="Permalink to this headline">¶</a></h2>
-<p>Residual interstory drift ratios are often used as proxies to infer irreparable damage to buildings. However, it is challenging to model such behavior reliably and some experts recommend approximating such drifts from other demands. The drop-down list in this area allows you to choose an approximate method to get residual drift estimates. If you prefer to use a method that is not listed here, let us know and we can include it in a future update. Choose <strong>do not infer</strong> if you do not need residual drifts, or you wish to provide those values as part of the raw demand data yourself.</p>
+<p>Residual interstory drift ratios are often used as proxies to infer irreparable damage to buildings. However, it is challenging to model such behavior reliably and some experts recommend approximating such drifts from other demands. The drop-down list in this area allows you to choose an approximate method to get residual drift estimates. Let us know if you prefer to use a method that is not listed here so that we can consider including it in a future update. Choose <strong>do not infer</strong> if you do not need residual drifts, or you wish to provide those values as part of the raw demand data yourself.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This inference is performed <em>after</em> the demands are sampled, hence, the RID values are not limited by the prescribed distribution in the stochastic model.</p>
+<p>This inference is performed <strong>after</strong> the demands are sampled, hence, the RID values are not limited by the prescribed distribution in the probabilistic model.</p>
 </div>
 <p><strong>FEMA P-58 method</strong></p>
-<p>The inference method in FEMA P-58 uses the yield drift ratio of the structural system to characterize the initiation of inelastic behavior and estimates the residual drifts from the peak interstory drift ratios. Pelicun allows you to use direction-specific yield drift ratios to be able to appropriately model structures that are not identical in the two horizontal directions. Use the <strong>+</strong> and <strong>-</strong> buttons to prepare a list of directions and corresponding yield drift ratios.</p>
+<p>The inference method recommended in FEMA P-58 uses the yield drift ratio of the structural system to characterize the initiation of inelastic behavior and estimates the residual drifts from the peak interstory drift ratios under seismic excitation. Pelicun allows you to use direction-specific yield drift ratios to be able to appropriately model structural systems that are not identical in the two horizontal directions. Use the <strong>+</strong> and <strong>-</strong> buttons to prepare a list of directions and corresponding yield drift ratios.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Pelicun applies this method to every PID (Peak Interstory Drift) demand to get a corresponding RID (Residual Interstory Drift) demand. This allows for any floor to trigger irreparable damage and enables a more realistic and detailed analysis than the typical approach of using a single RID demand as input.</p>
-<p>Nevertheless, if you wish to perform such a calculation, we recommend providing an RID-0-1 value among the raw demand inputs, where 0 as location identifies this as a global (i.e., not specific to a particular location) demand and 1 as direction is an arbitrary choice. The automatic irreparable damage calculation will recognize such input and perform the calculation appropriately.</p>
+<p>Pelicun applies this method to every PID (Peak Interstory Drift) demand to get a corresponding RID (Residual Interstory Drift) demand. This allows for any floor to experience excessive residual drifts and provides a realistic picture of each floor’s contribution to the likelihood of irreparable damage in the building. Since every floor is given a partially correlated chance to produce large residual drifts, this approach typically results in a higher likelihood of irreparable damage than the widely used alternative where a single RID demand is calculated based on the maximum of PID values across all floors and directions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you wish to perform your own RID calculation, we recommend providing an RID-0-1 value among the demand inputs, where 0 as location identifies this as a global (i.e., not specific to a particular location) demand and 1 as direction is an arbitrary choice. The automatic irreparable damage evaluation will recognize such input and perform the calculation appropriately.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You might experience errors if you provide RIDs with zeros among them in the raw demand input and try to fit a lognormal distribution to the demands. These errors are due to zero being outside of the domain for the lognormal distribution.</p>
+<p>We do not recommend replacing these zeros with small numbers because that typically results in poorly calibrated and biased lognormal demand distributions.</p>
+<p>If you have a sufficiently large raw sample and only one RID column, then you can consider running two separate assessments. One conditioned on no residual drift using only the RID=0 realizations and omitting the RID column from the input; and a second conditioned on non-zero residual drift using only RID&gt;0 realizations where fitting the lognormal distribution should not run into errors. The final results should be combined considering the proportion of the two scenarios across the raw data.</p>
+<p>This above method will not work well if you plan to consider RID on all floors of a multi-story building because you will typically experience RID=0 on at least one of the floors in every realization. In such cases, we recommend starting by inferring RID values for every floor using the built-in FEMA P-58 method and carefully reviewing how the inferred values compare to the ones in the raw data under various yield drift ratios. If none of the yield drift ratio values provides data that is in sufficiently good agreement with the raw results, we recommend seeking a different inference method or resampling method and performing that step outside of the PBE application. Then, you can use the method described in the note above to load the inferred RID values to the analysis.</p>
 </div>
 </div>
 </div>

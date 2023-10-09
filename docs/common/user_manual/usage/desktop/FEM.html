@@ -111,10 +111,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PBE/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -129,24 +129,20 @@
 <li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. FEM: Finite Element Method</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">2.5.1. OpenSees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multi-model">2.5.2. Multi Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-models">2.5.2. Multiple Models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#none">2.5.3. None</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">2.7. DL: Performance Assessment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">2.7. DL: Damage and Loss Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -232,7 +228,7 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#id1" id="id5">OpenSees</a></p></li>
-<li><p><a class="reference internal" href="#multi-model" id="id6">Multi Model</a></p></li>
+<li><p><a class="reference internal" href="#multiple-models" id="id6">Multiple Models</a></p></li>
 <li><p><a class="reference internal" href="#none" id="id7">None</a></p></li>
 </ul>
 </div>
@@ -252,11 +248,11 @@ this includes the choice of:</p>
 <li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/System_Command">System</a>: The system defines how the matrix equation <span class="math notranslate nohighlight">\(Ax = b\)</span> is stored in memory and solved. The default is the unsymmetric sparse solver Umfpack. Other options available include: profileSPD, BandSPD, BandGEM, Diagonal, SuperLU.</p></li>
 <li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Integrator_Command">Integration Scheme</a>: The integration scheme specifies the time stepping algorithm being employed to solve the transient problem (<span class="math notranslate nohighlight">\(M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)\)</span>). The integration scheme determined the coefficients in the <span class="math notranslate nohighlight">\(A\)</span> matrix,  the meaning of the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(b\)</span> vectors and how the nodal displacements, velocities, and accelerations should be updated given <span class="math notranslate nohighlight">\(x\)</span>. The default is Newmark’s linear acceleration method (Newmark 0.5 0.25). Other Newmark methods can be employed by changing the <span class="math notranslate nohighlight">\(\alpha\)</span> and  <span class="math notranslate nohighlight">\(\beta\)</span> terms, and other methods, HHT, CentralDifference, can be selected.</p></li>
 <li><p><a class="reference external" href="http://opensees.berkeley.edu/wiki/index.php/Test_Command">Convergence Test</a>, the default is a norm on the unbalance force with a convergence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria that can be chosen incude: NormDispIncr, EnergyIncrement, and the relative norms.</p></li>
-<li><p>Damping Model: The pull down menu defaults to <strong>Rayleigh Damping</strong>. The other option is <strong>Modal Damping</strong>. The theory behind the two are presented in <a class="reference internal" href="../../../technical_manual/desktop/damping.html#lbldamping"><span class="std std-ref">Damping Options</span></a>.</p>
+<li><p>Damping Model: The pull down menu defaults to <strong>Rayleigh Damping</strong>. The other option is <strong>Modal Damping</strong>. The theory behind the two is presented in <a class="reference internal" href="../../../technical_manual/desktop/damping.html#lbldamping"><span class="std std-ref">Damping Options</span></a>.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, <span class="math notranslate nohighlight">\(\zeta\)</span> and specify two modes from which the damping coefficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> will be determined. Mass proportional damping can be obtained by setting the <strong>Mode 2</strong> option to 0, <strong>stiffness proportional damping</strong> by setting <strong>Mode 1</strong> option to 0.</p></li>
-<li><p>Modal Damping: With modal damping the user specifies the number of modes and the damping ratio <span class="math notranslate nohighlight">\(\zeta\)</span>. In addition the user has the option of specifying a <strong>stiffness proportional damping ratio</strong>, which as mentioned in the <a class="reference internal" href="../../../technical_manual/desktop/damping.html#lbldamping"><span class="std std-ref">Damping Options</span></a> is used to provide additional damping for the higher modes.</p></li>
+<li><p>Rayleigh Damping. With Rayleigh damping the user must provide the damping ratio, <span class="math notranslate nohighlight">\(\zeta\)</span> and specify two modes from which the damping coefficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> will be determined. Mass proportional damping can be obtained by setting the <strong>Mode 2</strong> option to 0, <strong>stiffness proportional damping</strong> by setting <strong>Mode 1</strong> option to 0.</p></li>
+<li><p>Modal Damping: With modal damping the user specifies the number of modes and the damping ratio <span class="math notranslate nohighlight">\(\zeta\)</span>. In addition, the user has the option of specifying a <strong>stiffness proportional damping ratio</strong>, which as mentioned in the <a class="reference internal" href="../../../technical_manual/desktop/damping.html#lbldamping"><span class="std std-ref">Damping Options</span></a> is used to provide additional damping for the higher modes.</p></li>
 </ol>
 <div class="align-center figure" id="id3">
 <img alt="../../../../_images/OpenSeesFEM-Modal.png" src="../../../../_images/OpenSeesFEM-Modal.png" />
@@ -285,17 +281,21 @@ analyze $numStep $dt
 instead of the default, they can take advantage of the <strong>numStep</strong> and <strong>dt</strong> variables that
 are obtained from the EVENT and are automatically set by the program.</p>
 </div>
-<div class="section" id="multi-model">
-<h2><a class="toc-backref" href="#id6"><span class="section-number">2.5.2. </span>Multi Model</a><a class="headerlink" href="#multi-model" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Multi Model</strong> simulation application allows users to define multiple finite element analysis options. The Add and Remove buttons allow users to control the number of sets of options they want to use while conducting the analysis.</p>
+<div class="section" id="multiple-models">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">2.5.2. </span>Multiple Models</a><a class="headerlink" href="#multiple-models" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Multiple Models</strong> simulation application allows users to define multiple finite element analysis options. The Add and Remove buttons allow users to control the number of sets of options they want to use while conducting the analysis.</p>
 <p>By adding a model, a new tab is created in the FEM panel where users can choose one of the finite element analysis applications described in the sections above and provide the inputs necessary to define the required analysis options. Users also need to specify their belief corresponding to that analysis option. The beliefs are expressed as non-negative numerical values. The belief value in each tab is defined relative to the values in the other tabs, and the beliefs do not need to sum to 1.</p>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/multimodelFEM.png"><img alt="../../../../_images/multimodelFEM.png" src="../../../../_images/multimodelFEM.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.5.2.1 </span><span class="caption-text">Selecting a set of finite element analysis options within a Multi Model FEM Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5.2.1 </span><span class="caption-text">Selecting a set of finite element analysis options within a Multiple Models FEM Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If a Multi Model application is selected, at least 2 models must be defined.</p>
+<p>If the Multiple Models application is selected, at least 2 models must be defined.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the “Multi-fidelity Monte Carlo (MFMC)” option was selected in the UQ tab, the belief values will be ignored. The premise of MFMC is that the high-fidelity model response is always the best response, therefore, <em>belief in each model</em> does not apply.</p>
 </div>
 </div>
 <div class="section" id="none">

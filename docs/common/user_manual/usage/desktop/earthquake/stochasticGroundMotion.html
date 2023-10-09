@@ -110,10 +110,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PBE/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -136,19 +136,15 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">2.7. DL: Performance Assessment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">2.7. DL: Damage and Loss Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -236,15 +232,15 @@
 target seismic event. In order to do so, the stochastic ground motion
 model is selected from the <code class="docutils literal notranslate"><span class="pre">drop-down</span> <span class="pre">menu</span></code>, which is as shown
 in :numref:fig-stochasticVlachos-event’. Two stochastic motion models are currently available:
-Vlachoes et al. (2018) <span id="id1">[<a class="reference internal" href="../../../../../index.html#id5" title="Christos Vlachos, Konstantinos G. Papakonstantinou, and George Deodatis. Predictive model for site specific simulation of ground motions based on earthquake scenarios. Earthquake Engineering &amp; Structural Dynamics, 47(1):195-218, 2018. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948, doi:10.1002/eqe.2948.">VPD18</a>]</span> and  Dabaghi &amp; Der Kiureghian (2014, 2017, 2018)
-<span id="id2">[<a class="reference internal" href="../../../../../index.html#id16" title="Mayssa Dabaghi and Armen Der Kiureghian. Stochastic model for simulation of near-fault ground motions. Earthquake Engineering &amp; Structural Dynamics, 46(6):963-984, 2017. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839, arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839, doi:10.1002/eqe.2839.">DDK17</a>, <a class="reference internal" href="../../../../../index.html#id15" title="Mayssa Dabaghi and Armen Der Kiureghian. Simulation of orthogonal horizontal components of near-fault ground motion for specified earthquake source and site characteristics. Earthquake Engineering &amp; Structural Dynamics, 47(6):1369-1393, 2018. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.3021, arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.3021, doi:10.1002/eqe.3021.">DDK18</a>, <a class="reference internal" href="../../../../../index.html#id14" title="Mayssa Dabaghi and Armen Der Kiureghian. Stochastic Modeling and Simulation of Near-Fault Ground Motions for Performance-Based Earthquake Engineering. Technical Report, Pacific Earthquake Engineering Research Center, 2014.">DK14</a>]</span>. Depending on the
+Vlachoes et al. (2018) <span id="id1">[<a class="reference internal" href="../../../../../index.html#id7" title="Christos Vlachos, Konstantinos G. Papakonstantinou, and George Deodatis. Predictive model for site specific simulation of ground motions based on earthquake scenarios. Earthquake Engineering &amp; Structural Dynamics, 47(1):195-218, 2018. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948, doi:10.1002/eqe.2948.">VPD18</a>]</span> and  Dabaghi &amp; Der Kiureghian (2014, 2017, 2018)
+<span id="id2">[<a class="reference internal" href="../../../../../index.html#id18" title="Mayssa Dabaghi and Armen Der Kiureghian. Stochastic model for simulation of near-fault ground motions. Earthquake Engineering &amp; Structural Dynamics, 46(6):963-984, 2017. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839, arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839, doi:10.1002/eqe.2839.">DDK17</a>, <a class="reference internal" href="../../../../../index.html#id17" title="Mayssa Dabaghi and Armen Der Kiureghian. Simulation of orthogonal horizontal components of near-fault ground motion for specified earthquake source and site characteristics. Earthquake Engineering &amp; Structural Dynamics, 47(6):1369-1393, 2018. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.3021, arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.3021, doi:10.1002/eqe.3021.">DDK18</a>, <a class="reference internal" href="../../../../../index.html#id16" title="Mayssa Dabaghi and Armen Der Kiureghian. Stochastic Modeling and Simulation of Near-Fault Ground Motions for Performance-Based Earthquake Engineering. Technical Report, Pacific Earthquake Engineering Research Center, 2014.">DK14</a>]</span>. Depending on the
 model selected, the user will be asked to enter values for a number of parameters that are
 used to generate a seismic event. For the Vlachos er al. model users is required to input the <code class="docutils literal notranslate"><span class="pre">moment</span> <span class="pre">magnitude',</span> <span class="pre">``site</span> <span class="pre">to</span> <span class="pre">rupture</span> <span class="pre">distance</span></code> and the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">shear</span> <span class="pre">wave</span> <span class="pre">velocity</span></code>.</p>
 <div class="align-center figure" id="id4">
 <span id="fig-stochasticvlachos-event"></span><img alt="../../../../../_images/stochasticVlachos.png" src="../../../../../_images/stochasticVlachos.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.1.1 </span><span class="caption-text">Vlachos et al. (2018) model inputs.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p id="fig-stochasticdabaghi-event">For the Dabaghi and Der Kiureghian model geometric directivity parameters, as shown in <a class="reference internal" href="#fig-dabaghi"><span class="std std-numref">Fig. 2.4.1.2</span></a>, required by the Dabaghi and Der Kiureghian model are described completely in Somerville et al. (1997) <span id="id3">[<a class="reference internal" href="../../../../../index.html#id17" title="Paul G. Somerville, Nancy F. Smith, Robert W. Graves, and Norman A. Abrahamson. Modification of Empirical Strong Ground Motion Attenuation Relations to Include the Amplitude and Duration Effects of Rupture Directivity. Seismological Research Letters, 68(1):199-222, 01 1997. URL: https://doi.org/10.1785/gssrl.68.1.199, arXiv:https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf, doi:10.1785/gssrl.68.1.199.">SSGA97</a>]</span>.</p>
+<p id="fig-stochasticdabaghi-event">For the Dabaghi and Der Kiureghian model geometric directivity parameters, as shown in <a class="reference internal" href="#fig-dabaghi"><span class="std std-numref">Fig. 2.4.1.2</span></a>, required by the Dabaghi and Der Kiureghian model are described completely in Somerville et al. (1997) <span id="id3">[<a class="reference internal" href="../../../../../index.html#id19" title="Paul G. Somerville, Nancy F. Smith, Robert W. Graves, and Norman A. Abrahamson. Modification of Empirical Strong Ground Motion Attenuation Relations to Include the Amplitude and Duration Effects of Rupture Directivity. Seismological Research Letters, 68(1):199-222, 01 1997. URL: https://doi.org/10.1785/gssrl.68.1.199, arXiv:https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf, doi:10.1785/gssrl.68.1.199.">SSGA97</a>]</span>.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-dabaghi"></span><img alt="../../../../../_images/stochasticDabaghi.png" src="../../../../../_images/stochasticDabaghi.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.1.2 </span><span class="caption-text">Dabaghi &amp; Der Kiureghian (2018) model inputs.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>

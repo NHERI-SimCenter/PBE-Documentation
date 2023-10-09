@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.7.1.5. Outputs &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.8. PRF: Recovery Performance Assessment" href="performance.html" />
+    <link rel="prev" title="Repair Consequences" href="repairs.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Damage and Loss Assessment</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="losses.html">2.7.1.4. Loss Models</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.7.1.5. Outputs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#asset">Asset</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#demands">Demands</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#damage">Damage</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#repair-consequences">Repair Consequences</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#aggregate-sample">Aggregate Sample</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#aggregate-statistics">Aggregate Statistics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.9. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">3. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
+        
+          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Damage and Loss Assessment</a> &raquo;</li>
+        
+          <li><a href="Pelicun.html"><span class="section-number">2.7.1. </span>Pelicun</a> &raquo;</li>
+        
+      <li><span class="section-number">2.7.1.5. </span>Outputs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/PBE/output.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="outputs">
+<span id="lblpelicun-output"></span><h1><span class="section-number">2.7.1.5. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h1>
+<p>This tab controls the types of output data generated throughout the calculation (<a class="reference internal" href="#fig-dl-pelicun-outputs"><span class="std std-numref">Fig. 2.7.1.5.1</span></a>). These outputs are stored in the local jobs directory (see its location under Preferences).</p>
+<div class="align-center figure" id="id5">
+<span id="fig-dl-pelicun-outputs"></span><img alt="../../../../../_images/dl_pelicun_outputs.png" src="../../../../../_images/dl_pelicun_outputs.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.1 </span><span class="caption-text">The settings for calculation outputs.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>All outputs can be saved in either CSV or JSON format. The descriptions below focus on the tabular organization of the CSV format. Each JSON output is generated by using the column labels in the header of the corresponding CSV table as a first-level list of keys. The value assigned to each of these keys is the contents of the corresponding column as an array or dictionary. Arrays are used for files that store a sample, while dictionaries are used for files of statistics where the index of the table needs to be preserved. The sample files are automatically zipped to reduce their size.The following sections introduce each output type with the corresponding table headers and structure.</p>
+<p>Every output has a <em>sample</em> and a <em>statistics</em> version. The <em>sample</em> file provides information on every individual realization (identified by the index of the table) of the probabilistic calculation. The <em>statistics</em> file provides summary statistics based on the data in the <em>sample</em>. The following statistics are available:</p>
+<dl class="field-list simple">
+<dt class="field-odd">sample size</dt>
+<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">count</span></code> row provides the number of valid values in each column of the <em>sample</em> file. This might be fewer than the total number of realizations in the damage and loss assessment if certain outputs are conditioned on other events, such as collapse and non-collapse cases.</p>
+</dd>
+<dt class="field-even">mean</dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">mean</span></code> row provides the mean of each column in the <em>sample</em> file.</p>
+</dd>
+<dt class="field-odd">standard deviation</dt>
+<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">std</span></code> row provides the standard deviation of each column in the <em>sample</em> file. The number of degrees of freedom is set to N-1, where N is the sample size. This yields an unbiased estimate of the variance and a corrected sample standard deviation. Note that while this is a much better estimate than using N degrees of freedom, it is still not an unbiased one. For the typical sample sizes of N&gt;100, the bias in this statistic is negligible.</p>
+</dd>
+<dt class="field-even">median</dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">50%</span></code> row provides the 50th percentile, also known as the median, of each column of the <em>sample</em> file.</p>
+</dd>
+<dt class="field-odd">log standard deviation</dt>
+<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">log_std</span></code> row provides the standard deviation (with the same N-1 degrees of freedom for bias-correction) in logarithmic space for each column in the <em>sample</em> file. When a column in the sample includes zero or negative values, the log standard deviation for that column is undefined and left empty.</p>
+</dd>
+<dt class="field-even">extreme values</dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> rows provide the minimum and maximum values of each column in the <em>sample</em> file.</p>
+</dd>
+<dt class="field-odd">mean ± 1,2,3 standard deviations</dt>
+<dd class="field-odd"><p>Assuming a normal distribution, the following percentiles are <code class="docutils literal notranslate"><span class="pre">-3,</span> <span class="pre">-2,</span> <span class="pre">-1,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3</span></code> standard deviations from the mean: <code class="docutils literal notranslate"><span class="pre">0.10%,</span> <span class="pre">2.30%,</span> <span class="pre">15.90%,</span> <span class="pre">84.10%,</span> <span class="pre">97.70%,</span> <span class="pre">99.90%</span></code>. Each of these rows provides percentiles for each column in the <em>sample</em> file.</p>
+</dd>
+<dt class="field-even">10th and 90th percentiles</dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">10%</span></code> and <code class="docutils literal notranslate"><span class="pre">90%</span></code> rows provide the 10th and the 90th percentiles for each column in the <em>sample</em> file. The 90th percentile is often used as the so-called <em>probable maximum</em> value and its opposite, the 10th percentile is considered a lower bound in several applications.</p>
+</dd>
+</dl>
+<div class="section" id="asset">
+<h2>Asset<a class="headerlink" href="#asset" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">CMP_sample.csv</span></code> (<a class="reference internal" href="#fig-dl-pelicun-outputs-cmp-sample"><span class="std std-numref">Fig. 2.7.1.5.2</span></a>) and <code class="docutils literal notranslate"><span class="pre">CMP_stats.csv</span></code> (<a class="reference internal" href="#fig-dl-pelicun-outputs-cmp-stats"><span class="std std-numref">Fig. 2.7.1.5.3</span></a>) files provide information on the types and quantities of damageable components assigned to the asset. Each column in the table corresponds to a component at a given location and direction. The label of each column is structured as <code class="docutils literal notranslate"><span class="pre">componentID-location-direction</span></code>. The quantities are measured in the units specified during component assignment.</p>
+<p>The component quantity sample file is helpful in assessments with probabilistic component quantities. When the component quantities are deterministic, the sample file will contain identical rows. The statistics file provides a more concise option if you want to preserve deterministic component quantity assignments.</p>
+<div class="align-center figure" id="id6">
+<span id="fig-dl-pelicun-outputs-cmp-sample"></span><img alt="../../../../../_images/dl_pelicun_outputs_CMP_sample.png" src="../../../../../_images/dl_pelicun_outputs_CMP_sample.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.2 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">CMP_sample.csv</span></code> output file with the component quantity sample.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id7">
+<span id="fig-dl-pelicun-outputs-cmp-stats"></span><img alt="../../../../../_images/dl_pelicun_outputs_CMP_stats.png" src="../../../../../_images/dl_pelicun_outputs_CMP_stats.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.3 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">CMP_stats.csv</span></code> output file with the component quantity statistics.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="demands">
+<h2>Demands<a class="headerlink" href="#demands" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">DEM_sample.csv</span></code> (<a class="reference internal" href="#fig-dl-pelicun-outputs-dem-sample"><span class="std std-numref">Fig. 2.7.1.5.4</span></a>) and <code class="docutils literal notranslate"><span class="pre">DEM_stats.csv</span></code> (<a class="reference internal" href="#fig-dl-pelicun-outputs-dem-stats"><span class="std std-numref">Fig. 2.7.1.5.5</span></a>) files provide information on the types and sizes of demands applied to the asset. Each column in the table corresponds to a demand type at a given location and direction. The label of each column is structured as <code class="docutils literal notranslate"><span class="pre">event-demand-location-direction</span></code>. Demands are measured in the units specified during demand assignment. The <span class="xref std std-ref">lbl-dldb_demands</span> section provides more information on demand labels and units.</p>
+<div class="align-center figure" id="id8">
+<span id="fig-dl-pelicun-outputs-dem-sample"></span><img alt="../../../../../_images/dl_pelicun_outputs_DEM_sample.png" src="../../../../../_images/dl_pelicun_outputs_DEM_sample.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.4 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DEM_sample.csv</span></code> output file with the demand sample.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id9">
+<span id="fig-dl-pelicun-outputs-dem-stats"></span><img alt="../../../../../_images/dl_pelicun_outputs_DEM_stats.png" src="../../../../../_images/dl_pelicun_outputs_DEM_stats.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.5 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DEM_stats.csv</span></code> output file with the demand statistics.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="damage">
+<h2>Damage<a class="headerlink" href="#damage" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">DMG_sample.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DMG_sample</span></code>) and <code class="docutils literal notranslate"><span class="pre">DMG_stats.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DMG_stats</span></code>) files provide information on the quantity of components in each damage state in each location and direction. The label of each column is structured as <code class="docutils literal notranslate"><span class="pre">componentID-location-direction-ds</span></code>, where <code class="docutils literal notranslate"><span class="pre">ds</span></code> stands for damage state. Damaged component quantities are provided in the units specified during component assignment.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ds=0</span></code> option is included in the output and it provides the quantity of undamaged components for convenience. For the sake of efficiency, if a component type at a given location-direction is not damaged in any of the realizations, it is not included in the output. Furthermore, damage states that are never triggered (i.e., columns that would have all zero quantities) are also removed from the output. This behavior is controlled by optional settings in Pelicun that keep the output file sizes manageable. Let us know if there is interest in outputs with a comprehensive list of component-location-direction-ds; we can make such options available through the PBE app.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some of the rows can be almost entirely empty if the assessment includes global vulnerabilities, such as collapse, that render other component damages undefined (see Damage Processes under <span class="xref std std-ref">lbl-dldb_damage</span>). In such cases, the columns corresponding to the <code class="docutils literal notranslate"><span class="pre">collapse</span></code> component will identify the realizations (i.e., rows) where collapse was observed and other damages were not evaluated.</p>
+<p>In the figures below, for example, realizations 4995, 4998, and 4999 are collapses and we see no damage quantities for other components. In the statistics file, we see that there are 4134 realizations with valid damage quantities for the first component. That yields a <cite>4134/5000 = 82.68%</cite> probability of non-collapse outcomes.</p>
+<p>Collapse is used here to demonstrate a common example that can lead to undefined damage quantities. Complex damage processes can introduce sophisticated interdependencies in the damage simulation that can yield similarly undefined damages for a subset of components.</p>
+</div>
+<div class="align-center figure" id="id10">
+<span id="fig-dl-pelicun-outputs-dmg-sample"></span><img alt="../../../../../_images/dl_pelicun_outputs_DMG_sample.png" src="../../../../../_images/dl_pelicun_outputs_DMG_sample.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.6 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_sample.csv</span></code> output file with the damaged component quantity sample.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id11">
+<span id="fig-dl-pelicun-outputs-dmg-stats"></span><img alt="../../../../../_images/dl_pelicun_outputs_DMG_stats.png" src="../../../../../_images/dl_pelicun_outputs_DMG_stats.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.7 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_stats.csv</span></code> output file with the damaged component quantity statistics.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>Two additional output files provide aggregate component damage information. The <code class="docutils literal notranslate"><span class="pre">DMG_grp.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DMG_grp</span></code>) aggregates damage quantities from the <code class="docutils literal notranslate"><span class="pre">DMG_sample.csv</span></code> across locations and directions. In other words, it provides the total quantity of components in each damage state across the entire asset. Its column labels are structured as <code class="docutils literal notranslate"><span class="pre">componentID-ds</span></code>. The <code class="docutils literal notranslate"><span class="pre">DMG_grp_stats.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DMG_grp_stats</span></code>) provides statistics for the aggregated damage sample.</p>
+<div class="align-center figure" id="id12">
+<span id="fig-dl-pelicun-outputs-dmg-grp"></span><img alt="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp.png" src="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.8 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_grp.csv</span></code> output file with the aggregate damaged component quantity sample.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id13">
+<span id="fig-dl-pelicun-outputs-dmg-grp-stats"></span><img alt="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp_stats.png" src="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp_stats.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.9 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_grp_stats.csv</span></code> output file with the aggregate damaged component quantity statistics.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="repair-consequences">
+<h2>Repair Consequences<a class="headerlink" href="#repair-consequences" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">DV_repair_sample.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DV_repair_sample</span></code>) and <code class="docutils literal notranslate"><span class="pre">DV_repair_stats.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DV_repair_stats</span></code>) files provide detailed information on the repair consequences. The label of each column is structured as <code class="docutils literal notranslate"><span class="pre">consequenceType-lossComponentID-damageComponentID-ds-location-direction</span></code>, where <code class="docutils literal notranslate"><span class="pre">consequenceType</span></code> identifies the repair consequence (<em>Carbon</em>, <em>Cost</em>, <em>Energy</em>, and <em>Time</em> are currently supported); <code class="docutils literal notranslate"><span class="pre">damageComponentID</span></code> identifies which component’s damage resulted in the consequence; and <code class="docutils literal notranslate"><span class="pre">lossComponentID</span></code> identifies the component used to model the consequences. Consequence values are currently provided in the default units of the loss components.</p>
+<p>&lt;HERE&gt;</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ds=0</span></code> option is included in the output and it provides the quantity of undamaged components for convenience. For the sake of efficiency, if a component type at a given location-direction is not damaged in any of the realizations, it is not included in the output. Furthermore, damage states that are never triggered (i.e., columns that would have all zero quantities) are also removed from the output. This behavior is controlled by optional settings in Pelicun that keep the output file sizes manageable. Let us know if there is interest in outputs with a comprehensive list of component-location-direction-ds; we can make such options available through the PBE app.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some of the rows can be almost entirely empty if the assessment includes global vulnerabilities, such as collapse, that render other component damages undefined (see Damage Processes under <span class="xref std std-ref">lbl-dldb_damage</span>). In such cases, the columns corresponding to the <code class="docutils literal notranslate"><span class="pre">collapse</span></code> component will identify the realizations (i.e., rows) where collapse was observed and other damages were not evaluated.</p>
+<p>In the figures below, for example, realizations 4995, 4998, and 4999 are collapses and we see no damage quantities for other components. In the statistics file, we see that there are 4134 realizations with valid damage quantities for the first component. That yields a <cite>4134/5000 = 82.68%</cite> probability of non-collapse outcomes.</p>
+<p>Collapse is used here to demonstrate a common example that can lead to undefined damage quantities. Complex damage processes can introduce sophisticated interdependencies in the damage simulation that can yield similarly undefined damages for a subset of components.</p>
+</div>
+<div class="align-center figure" id="id14">
+<span id="id1"></span><img alt="../../../../../_images/dl_pelicun_outputs_DMG_sample.png" src="../../../../../_images/dl_pelicun_outputs_DMG_sample.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.10 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_sample.csv</span></code> output file with the damaged component quantity sample.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id15">
+<span id="id2"></span><img alt="../../../../../_images/dl_pelicun_outputs_DMG_stats.png" src="../../../../../_images/dl_pelicun_outputs_DMG_stats.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.11 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_stats.csv</span></code> output file with the damaged component quantity statistics.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>Two additional output files provide aggregate component damage information. The <code class="docutils literal notranslate"><span class="pre">DMG_grp.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DMG_grp</span></code>) aggregates damage quantities from the <code class="docutils literal notranslate"><span class="pre">DMG_sample.csv</span></code> across locations and directions. In other words, it provides the total quantity of components in each damage state across the entire asset. Its column labels are structured as <code class="docutils literal notranslate"><span class="pre">componentID-ds</span></code>. The <code class="docutils literal notranslate"><span class="pre">DMG_grp_stats.csv</span></code> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-pelicun-outputs-DMG_grp_stats</span></code>) provides statistics for the aggregated damage sample.</p>
+<div class="align-center figure" id="id16">
+<span id="id3"></span><img alt="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp.png" src="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.12 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_grp.csv</span></code> output file with the aggregate damaged component quantity sample.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id17">
+<span id="id4"></span><img alt="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp_stats.png" src="common/user_manual/usage/desktop/PBE/figures/dl_pelicun_outputs_DMG_grp_stats.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1.5.13 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">DMG_grp_stats.csv</span></code> output file with the aggregate damaged component quantity statistics.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="aggregate-sample">
+<h3>Aggregate Sample<a class="headerlink" href="#aggregate-sample" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="aggregate-statistics">
+<h3>Aggregate Statistics<a class="headerlink" href="#aggregate-statistics" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

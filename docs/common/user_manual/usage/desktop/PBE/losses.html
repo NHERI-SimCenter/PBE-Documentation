@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.8. RES: Results" href="resPBE.html" />
+    <link rel="next" title="Repair Consequences" href="repairs.html" />
     <link rel="prev" title="2.7.1.3. Damage Model" href="damage.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -110,10 +110,10 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">5. Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">6. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
@@ -128,36 +128,28 @@
 <li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Performance Assessment</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="DL.html">2.7. DL: Damage and Loss Assessment</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="Pelicun.html">2.7.1. Pelicun</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="asset.html">2.7.1.1. Asset Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="demands.html">2.7.1.2. Demand Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="damage.html">2.7.1.3. Damage Model</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">2.7.1.4. Loss Models</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#repair-consequences">Repair consequences</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#global-consequences">Global consequences</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#database">Database</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#mapping">Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="repairs.html">Repair Consequences</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="output.html">2.7.1.5. Outputs</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.9. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -218,7 +210,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
-          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Performance Assessment</a> &raquo;</li>
+          <li><a href="DL.html"><span class="section-number">2.7. </span>DL: Damage and Loss Assessment</a> &raquo;</li>
         
           <li><a href="Pelicun.html"><span class="section-number">2.7.1. </span>Pelicun</a> &raquo;</li>
         
@@ -242,56 +234,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="loss-models">
-<h1><span class="section-number">2.7.1.4. </span>Loss Models<a class="headerlink" href="#loss-models" title="Permalink to this headline">¶</a></h1>
-<p>This tab is designed to collect settings for various loss models. Currently, it provides repair cost and repair time modeling capabilities. Extensions with injuries, unsafe placards, and environmental impacts, and functional recovery time are planned for future releases. The following subsections introduce the settings for each type of loss model.</p>
-<div class="section" id="repair-consequences">
-<h2>Repair consequences<a class="headerlink" href="#repair-consequences" title="Permalink to this headline">¶</a></h2>
-<p>Repair cost and time in pelicun are calculated as a function of the quantity and severity of damage experienced by structural components (<a class="reference internal" href="#fig-dl-pelicun-loss-repairs"><span class="std std-numref">Fig. 2.7.1.4.1</span></a>). There are three settings in this panel that influence these calculations:</p>
-<div class="align-center figure" id="id1">
-<span id="fig-dl-pelicun-loss-repairs"></span><img alt="../../../../../_images/dl_pelicun_loss_repairs.png" src="../../../../../_images/dl_pelicun_loss_repairs.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7.1.4.1 </span><span class="caption-text">The Repair Consequence model inputs.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<div class="section" id="global-consequences">
-<h3>Global consequences<a class="headerlink" href="#global-consequences" title="Permalink to this headline">¶</a></h3>
-<p>This area allows you to add a replacement cost and time consequence to the model automatically. If you choose Automatic mapping between damage and consequences (see the subsection on Mapping below for details), collapse and irreparable damage are mapped to this replacement consequence.</p>
-<p>If the distribution is set to N/A, the consequence is deterministic. Otherwise, the median and theta_1 are the two parameters that define the uncertain consequence. Theta_1 is the coefficient of variation for a normal distribution and the log-standard deviation for a lognormal distribution.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Both the FEMA P-58 and the Hazus methodology use deterministic representation of replacement cost and time.</p>
-</div>
-</div>
-<div class="section" id="database">
-<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
-<p>Consequence data is decoupled from damage data (i.e., component vulnerabilities) and provided in separate datasets for each consequence type (e.g., repairs, injuries) and method in Pelicun. This area provides a drop-down list with the built-in consequence functions and the ability to use custom datasets. The following options are available:</p>
-<dl class="field-list">
-<dt class="field-odd">FEMA P-58</dt>
-<dd class="field-odd"><p>Provides the repair consequence data that was released with the second edition of the FEMA P-58 methodology (2018).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A substantial part of the consequence definitions in FEMA P-58 are incomplete. You will have to edit the dataset and provide the missing data if you need to use components with incomplete information. If such components are selected for analysis without fixing these issues, they are recognized and skipped by Pelicun during the calculation.</p>
-</div>
-</dd>
-<dt class="field-even">Hazus Earthquake</dt>
-<dd class="field-even"><p>Provides the repair consequence data published in the Hazus Earthquake Technical Manual (2011)</p>
-</dd>
-<dt class="field-odd">User Defined</dt>
-<dd class="field-odd"><p>Allows you to Choose a file that provides your own set of consequence functions. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> explains how to prepare a compatible consequence data file.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="mapping">
-<h3>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h3>
-<p>Mapping is responsible for linking damaged components with consequence models. The <strong>Automatic</strong> approach is limited to the built-in databases and works with the following assumptions:</p>
-<dl class="field-list simple">
-<dt class="field-odd">FEMA P-58</dt>
-<dd class="field-odd"><p>Assumes that the component vulnerability and consequence IDs are identical. Queries the damageable component IDs and creates a mapping to a list of identical consequence IDs.</p>
-</dd>
-<dt class="field-even">HAZUS</dt>
-<dd class="field-even"><p>For each component, uses the damageable component IDs to extract the relevant information and adds the occupancy type (set in the Asset model panel) to arrive at a corresponding consequence component ID.</p>
-</dd>
-</dl>
-<p>You can select the <strong>User Defined</strong> option if you prefer to provide your own mapping. This option allows you to Choose a CSV file that lists the damaged component IDs and the corresponding consequence IDs. The <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">Pelicun Documentation</a> provides more information on the standard structure of these CSV files.</p>
-</div>
+<span id="lblpelicun-losses"></span><h1><span class="section-number">2.7.1.4. </span>Loss Models<a class="headerlink" href="#loss-models" title="Permalink to this headline">¶</a></h1>
+<p>This tab configures models that assign consequences to component damages or demands. Currently, it provides repair consequence modeling capabilities. Extensions with injuries and unsafe placards are planned for future releases. The following subsections introduce the settings for each consequence model type.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="repairs.html">Repair Consequences</a></li>
+</ul>
 </div>
 </div>
 
