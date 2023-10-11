@@ -15,13 +15,7 @@ Version 3
 
       **Major updates:**
 
-<<<<<<< HEAD
-#. nclusion of Arup's PyREDi, `open-source REDi Seismic Downtime Model <https://github.com/arup-group/REDi>`_
-#. To the DBDL added Hazus Earthquake Transportation library
-#. All features of EE-UQ up to v3.4, including:
-=======
       - Post-disaster Performance and Recovery Simulation
->>>>>>> 5465e321181959c9aed898fcb553ab1cd1e97a5e
    
          - Extended the PBE simulation workflow with a Performance (PRF) step. Applications in this step use the Damage and Loss (DL) results in models that estimate the post-disaster performance and recovery of an asset
          - Integrated the `ARUP REDi Seismic Downtime Model <https://sgavrilovicarup.github.io/REDi-docs/#>`_ using the open-source `PyREDI package <https://github.com/arup-group/REDi>`_ as the first tool in the PBE App to support functional recovery calculations.
