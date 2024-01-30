@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -157,11 +158,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -245,21 +241,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="damage-model">
-<span id="lblpelicun-damage"></span><h1><span class="section-number">2.7.1.3. </span>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h1>
+<span id="lblpelicun-damage"></span><h1><span class="section-number">2.7.1.3. </span>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this heading">¶</a></h1>
 <p>This tab configures the damage simulation (<a class="reference internal" href="#fig-dl-pelicun-damage"><span class="std std-numref">Fig. 2.7.1.3.1</span></a>). Note that components were already assigned to the asset in the earlier <a class="reference internal" href="asset.html#lblpelicun-asset"><span class="std std-ref">Asset Model</span></a> tab. These components have their fragility functions defined in the specified component vulnerability data files and they do not need to be further configured here. This tab provides a convenient way to create additional components that represent global vulnerabilities and allows you to specify a damage process that describes the interdependencies in damage simulation. These features are described in detail below.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dl-pelicun-damage"></span><img alt="../../../../../_images/dl_pelicun_damage.png" src="../../../../../_images/dl_pelicun_damage.png" />
 <p class="caption"><span class="caption-number">Fig. 2.7.1.3.1 </span><span class="caption-text">The Damage model inputs.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="global-vulnerabilities">
-<h2>Global Vulnerabilities<a class="headerlink" href="#global-vulnerabilities" title="Permalink to this headline">¶</a></h2>
+<h2>Global Vulnerabilities<a class="headerlink" href="#global-vulnerabilities" title="Permalink to this heading">¶</a></h2>
 <p>We use the term Global Vulnerabilities for damages that are at the building-level and usually affect multiple components in the building. In high-resolution assessments (e.g., FEMA P-58), the vulnerabilities listed below require building-specific fragility functions that are typically not part of a standard damage and loss model library. The data you provide here is used the automatically generate additional components for the analysis that can capture these types of vulnerabilities.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In analyses with building-level resolution (e.g., Hazus Earthquake Methodology), these vulnerabilities are typically handled with components that provide a holistic model for the entire building. In such cases, we recommend assinging those components to the building in the Asset tab and not include these vulnerabilities.</p>
 </div>
 <div class="section" id="irreparable-damage">
-<h3>Irreparable Damage<a class="headerlink" href="#irreparable-damage" title="Permalink to this headline">¶</a></h3>
+<h3>Irreparable Damage<a class="headerlink" href="#irreparable-damage" title="Permalink to this heading">¶</a></h3>
 <p>Irreparable damage is assumed to be triggered by excessive Residual Interstory Drift (RID) values. The corresponding limit state capacity is assumed to have a lognormal distribution with user-defined parameters.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -276,7 +272,7 @@
 </div>
 </div>
 <div class="section" id="collapse">
-<h3>Collapse<a class="headerlink" href="#collapse" title="Permalink to this headline">¶</a></h3>
+<h3>Collapse<a class="headerlink" href="#collapse" title="Permalink to this heading">¶</a></h3>
 <p>Collapse is assumed to be triggered by a particular demand exceeding the structure’s capacity for that demand. This generic approach allows you to consider collapse fragility curves that are typically controlled by intensity measures. It also supports modeling non-simulated collapses where exceeding a certain level of structural response is considered to result in collapse. For the latter, make sure the collapsed cases are not already filtered out by setting a collapse limit in the <a class="reference internal" href="demands.html#lblpelicun-demands"><span class="std std-ref">Demand Model</span></a>. Currently, only one demand type can be specified. Let us know if your work would benefit from having multiple collapse limits in an assessment.</p>
 <p>The following settings are available for the global collapse component:</p>
 <dl class="field-list">
@@ -315,7 +311,7 @@
 </div>
 </div>
 <div class="section" id="damage-process">
-<h2>Damage Process<a class="headerlink" href="#damage-process" title="Permalink to this headline">¶</a></h2>
+<h2>Damage Process<a class="headerlink" href="#damage-process" title="Permalink to this heading">¶</a></h2>
 <p>Damage processes characterize the interdependencies between various component damages. They allow modeling complex cascading damage phenomena and models where multiple different probabilistic events can trigger the same damage state.</p>
 <p>Damage processes are a list of tasks described using a JSON file. Each task identifies a source component and how a damage event in the source component triggers one or more damage events in target components. The following example illustrates the general notation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;27_sourceComp&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -415,7 +411,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

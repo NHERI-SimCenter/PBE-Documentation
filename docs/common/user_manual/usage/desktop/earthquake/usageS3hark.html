@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -171,11 +172,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -257,7 +253,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="site-response-analysis">
-<span id="lbl-usages3hark"></span><h1><span class="section-number">2.4.5. </span>Site Response Analysis<a class="headerlink" href="#site-response-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-usages3hark"></span><h1><span class="section-number">2.4.5. </span>Site Response Analysis<a class="headerlink" href="#site-response-analysis" title="Permalink to this heading">¶</a></h1>
 <p><em>s</em><sup>3</sup><em>hark</em> allows users to determine the event at the base of the building by performing an effective free-field site response analysis of a soil column.
 In this panel the user specifies a ground motion at the bottom of the soil column.
 After the soil layers have been properly defined, the motion at the ground surface are given at the end of the analysis
@@ -275,19 +271,19 @@ which makes the UI look like what is shown in <a class="reference internal" href
 </div>
 <p>The UI of <em>s</em><sup>3</sup><em>hark</em> consists of the following components:</p>
 <div class="section" id="soil-column-graphic">
-<span id="profilecolumn"></span><h2><span class="section-number">2.4.5.1. </span>Soil Column Graphic<a class="headerlink" href="#soil-column-graphic" title="Permalink to this headline">¶</a></h2>
+<span id="profilecolumn"></span><h2><span class="section-number">2.4.5.1. </span>Soil Column Graphic<a class="headerlink" href="#soil-column-graphic" title="Permalink to this heading">¶</a></h2>
 <p>The first graphic on the left of the panel shows a visualization of the soil column created.
 Each layer has a different randomly generated color.
 When the user add or delete a soil layer, this graphic will refresh.</p>
 </div>
 <div class="section" id="fe-mesh-graphic">
-<span id="mesh"></span><h2><span class="section-number">2.4.5.2. </span>FE Mesh Graphic<a class="headerlink" href="#fe-mesh-graphic" title="Permalink to this headline">¶</a></h2>
+<span id="mesh"></span><h2><span class="section-number">2.4.5.2. </span>FE Mesh Graphic<a class="headerlink" href="#fe-mesh-graphic" title="Permalink to this heading">¶</a></h2>
 <p>The second graphic on the left shows the finite element mesh and profile plots.
 Upon the finish of the analysis, selecting any of the tabs on the right inside this graphic (i.e., PGA, <span class="math notranslate nohighlight">\(\gamma max\)</span>, maxDisp, maxRu, maxRuPWP)
 will show various results from the simulation at the mesh points.</p>
 </div>
 <div class="section" id="operations-area">
-<h2><span class="section-number">2.4.5.3. </span>Operations Area<a class="headerlink" href="#operations-area" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.3. </span>Operations Area<a class="headerlink" href="#operations-area" title="Permalink to this heading">¶</a></h2>
 <p>The right side of this area shows some information of the created soil column, such as the total height and number of soil layers.
 The user also finds the Ground Water Table (GWT) input field, plus and minus buttons in this area.
 If the user pressed the plus button, a layer will be added below a currently selected layer.
@@ -301,7 +297,7 @@ The GWT input field allows the user to specify the level of the ground water tab
 </div>
 </div>
 <div class="section" id="soil-layer-table">
-<h2><span class="section-number">2.4.5.4. </span>Soil Layer Table<a class="headerlink" href="#soil-layer-table" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.4. </span>Soil Layer Table<a class="headerlink" href="#soil-layer-table" title="Permalink to this heading">¶</a></h2>
 <p>This table is where the user provides the characteristics of soil layers, such as layer thickness, density, Vs30, material type, and element size in the finite element mesh.</p>
 <p>Single click at a cell will make a soil layer selected, which will highlight the layer using green color in the table.</p>
 <p>Also the layer will be highlighted by red box in the <a class="reference internal" href="#profilecolumn"><span class="std std-ref">Soil Column Graphic</span></a>.</p>
@@ -310,10 +306,10 @@ The GWT input field allows the user to specify the level of the ground water tab
 <p>If you change the <code class="docutils literal notranslate"><span class="pre">Material</span></code> cell of a layer, the <a class="reference internal" href="#layerpropertiestab"><span class="std std-ref">Layer Properties Tab</span></a> will change correspondingly.</p>
 </div>
 <div class="section" id="tabbed-area">
-<h2><span class="section-number">2.4.5.5. </span>Tabbed Area<a class="headerlink" href="#tabbed-area" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.5. </span>Tabbed Area<a class="headerlink" href="#tabbed-area" title="Permalink to this heading">¶</a></h2>
 <p>This area contains the three tabbed widgets described below.</p>
 <div class="section" id="configure-tab">
-<h3>Configure Tab<a class="headerlink" href="#configure-tab" title="Permalink to this headline">¶</a></h3>
+<h3>Configure Tab<a class="headerlink" href="#configure-tab" title="Permalink to this heading">¶</a></h3>
 <p>This tab allows the user to specify the paths to the OpenSees executable and a ground motion file that represent the ground shaking at the
 bedrock. The rock motion file must follow the SimCenter event format.
 Examples of SimCenter event files are available in the <a class="reference download external" download="" href="https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip"><code class="xref download docutils literal notranslate"><span class="pre">motion</span> <span class="pre">demos</span></code></a>.
@@ -325,7 +321,7 @@ The definition of 2D and 3D slope are different. See <a class="reference interna
 <p>More details about this tab can be found in <a class="reference internal" href="#configure"><span class="std std-ref">Configure</span></a>.</p>
 </div>
 <div class="section" id="layer-properties-tab">
-<span id="layerpropertiestab"></span><h3>Layer Properties Tab<a class="headerlink" href="#layer-properties-tab" title="Permalink to this headline">¶</a></h3>
+<span id="layerpropertiestab"></span><h3>Layer Properties Tab<a class="headerlink" href="#layer-properties-tab" title="Permalink to this heading">¶</a></h3>
 <p>This tab allows the user to enter additional material properties for the selected soil layer <a class="reference internal" href="#layerediting"><span class="std std-numref">Fig. 2.4.5.5.1</span></a>.</p>
 <div class="align-center figure" id="id22">
 <span id="layerediting"></span><img alt="../../../../../_images/editing.png" src="../../../../../_images/editing.png" />
@@ -333,7 +329,7 @@ The definition of 2D and 3D slope are different. See <a class="reference interna
 </div>
 </div>
 <div class="section" id="response-tab">
-<span id="responsetab"></span><h3>Response Tab<a class="headerlink" href="#response-tab" title="Permalink to this headline">¶</a></h3>
+<span id="responsetab"></span><h3>Response Tab<a class="headerlink" href="#response-tab" title="Permalink to this heading">¶</a></h3>
 <p>Once the site response analysis has been performed, this tab provides information about element and nodal time varying response quantities. See <a class="reference internal" href="#response"><span class="std std-numref">Fig. 2.4.5.5.2</span></a>.</p>
 <div class="align-center figure" id="id23">
 <span id="response"></span><img alt="../../../../../_images/response.png" src="../../../../../_images/response.png" />
@@ -342,7 +338,7 @@ The definition of 2D and 3D slope are different. See <a class="reference interna
 </div>
 </div>
 <div class="section" id="analyze-button">
-<h2><span class="section-number">2.4.5.6. </span>Analyze Button<a class="headerlink" href="#analyze-button" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.6. </span>Analyze Button<a class="headerlink" href="#analyze-button" title="Permalink to this heading">¶</a></h2>
 <p>This <strong>Analyze</strong> button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer.
 A progress bar will show up at the bottom of the application indicating the status of the analysis.
 Upon the finish of the simulation, a message will be displayed (<a class="reference internal" href="#done"><span class="std std-numref">Fig. 2.4.5.6.1</span></a>).</p>
@@ -352,7 +348,7 @@ Upon the finish of the simulation, a message will be displayed (<a class="refere
 </div>
 </div>
 <div class="section" id="view-results">
-<h2><span class="section-number">2.4.5.7. </span>View Results<a class="headerlink" href="#view-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.7. </span>View Results<a class="headerlink" href="#view-results" title="Permalink to this heading">¶</a></h2>
 <p>Click the button to dismiss the message window, the response tab will be activated.</p>
 <p>The user can click on any element in the mesh graphic, the selected element will be highlighted in red and the selected nodes will be pointed out by blue arrows.</p>
 <p>The time history of selected element / node will be shown in the <a class="reference internal" href="#responsetab"><span class="std std-ref">Response Tab</span></a>.</p>
@@ -370,7 +366,7 @@ therefore no simulation is performed and there will be no ground motions provide
 </div>
 </div>
 <div class="section" id="configure">
-<span id="id1"></span><h2><span class="section-number">2.4.5.8. </span>Configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><span class="section-number">2.4.5.8. </span>Configure<a class="headerlink" href="#configure" title="Permalink to this heading">¶</a></h2>
 <div class="align-center figure" id="id26">
 <span id="configure-1d"></span><img alt="../../../../../_images/configure-1d.png" src="../../../../../_images/configure-1d.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.5.8.1 </span><span class="caption-text">Configuration with a 1D shaking motion</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
@@ -410,11 +406,11 @@ If you select this file as the input motion, your tab will look like the one sho
 <p>For flat ground <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> should be set as 0.</p>
 </div>
 <div class="section" id="modeling-spatial-variability-uncertainty-of-soil">
-<h2><span class="section-number">2.4.5.9. </span>Modeling Spatial Variability Uncertainty of Soil<a class="headerlink" href="#modeling-spatial-variability-uncertainty-of-soil" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.9. </span>Modeling Spatial Variability Uncertainty of Soil<a class="headerlink" href="#modeling-spatial-variability-uncertainty-of-soil" title="Permalink to this heading">¶</a></h2>
 <p>The most recent version of <em>s</em><sup>3</sup><em>hark</em> allows user to include spatial variability in the definition of soil profile.
 This functionality is achieved using several newly added SimCenter backend python scripts.</p>
 <div class="section" id="generating-gaussian-random-field">
-<h3>Generating Gaussian Random field<a class="headerlink" href="#generating-gaussian-random-field" title="Permalink to this headline">¶</a></h3>
+<h3>Generating Gaussian Random field<a class="headerlink" href="#generating-gaussian-random-field" title="Permalink to this heading">¶</a></h3>
 <p>Physical properties of soils vary from place to place within a soil deposit due to varying geologic formation
 and loading histories such as sedimentation, erosion, transportation, and weathering processes.
 This spatial variability in the soil properties cannot be simply described by a mean and variance since
@@ -464,7 +460,7 @@ Enumerated lists:</p>
 </div>
 </div>
 <div class="section" id="calibration-of-constitutive-model">
-<h3>Calibration of Constitutive Model<a class="headerlink" href="#calibration-of-constitutive-model" title="Permalink to this headline">¶</a></h3>
+<h3>Calibration of Constitutive Model<a class="headerlink" href="#calibration-of-constitutive-model" title="Permalink to this heading">¶</a></h3>
 <p>Since soil properties, instead of material input parameters, are randomized, it is imperative to choose representative input parameters for constitutive models based on the random variable chosen by user.
 An independent calibration process of constitutive model should be carried out carefully. Currently, a couple of pre-calibrated correlations are included in <em>s</em><sup>3</sup><em>hark</em>, including PM4Sand and PDMY03 based on relative
 density (<span class="math notranslate nohighlight">\(D_R\)</span>). The detailed corelation can be found in <em>calibration.py</em>. The user is also encouraged to modify the script to include their own calibration of constitutive models.</p>
@@ -481,7 +477,7 @@ the analysis will be carried out using SimCenter workflow. As a result, profile 
 </div>
 </div>
 <div class="section" id="elastic-isotropic">
-<h3>Elastic Isotropic<a class="headerlink" href="#elastic-isotropic" title="Permalink to this headline">¶</a></h3>
+<h3>Elastic Isotropic<a class="headerlink" href="#elastic-isotropic" title="Permalink to this heading">¶</a></h3>
 <p>Shear wave velocity (Vs) can be selected to be randomized for this material. Subsequently, Young’s modulus is calculated based the stochastic shear velocity profile at the center of each element. No special calibration is required.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/Elastic_Random.png"><img alt="../../../../../_images/Elastic_Random.png" src="../../../../../_images/Elastic_Random.png" style="width: 1076.3999999999999px; height: 543.0px;" /></a>
@@ -494,7 +490,7 @@ the analysis will be carried out using SimCenter workflow. As a result, profile 
 </div>
 </div>
 <div class="section" id="pm4sand">
-<h3>PM4Sand<a class="headerlink" href="#pm4sand" title="Permalink to this headline">¶</a></h3>
+<h3>PM4Sand<a class="headerlink" href="#pm4sand" title="Permalink to this heading">¶</a></h3>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/PM4Sand_Random.png"><img alt="../../../../../_images/PM4Sand_Random.png" src="../../../../../_images/PM4Sand_Random.png" style="width: 1071.6px; height: 540.6px;" /></a>
 </div>
@@ -526,7 +522,7 @@ in-situ data are available. This calibration process can become cumbersome when 
 a parametric study was conducted to establish a correlation among <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(G_o\)</span>, <span class="math notranslate nohighlight">\(h_{po}\)</span>, and CRR, i.e., <span class="math notranslate nohighlight">\(CRR = f(D_R, G_o, h_{po})\)</span>. The function, <span class="math notranslate nohighlight">\(f\)</span>, should be solvable for <span class="math notranslate nohighlight">\(h_{po}\)</span> when the other variables
 are known and eventually yield <span class="math notranslate nohighlight">\(h_{po} = g(CRR, D_R, G_o)\)</span>. This correlation is intended to provide a preliminary estimation of <span class="math notranslate nohighlight">\(h_{po}\)</span> and simplify the iterative calibration process under selected <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(G_o\)</span>, and CRR,
 especially when both SPT and <span class="math notranslate nohighlight">\(V_s\)</span> data are available and the user wants to make <span class="math notranslate nohighlight">\(G_o\)</span> independent to <span class="math notranslate nohighlight">\(D_R\)</span>. For this purpose, the Dakota platform, run through the uqFEM (now quoFEM) tool was used in this parametric study.
-uqFEM was modified to include UW MixedDriver tool. All the simulations were performed on the Texas Advanced Computing Center (<a class="reference external" href="http://www.tacc.utexas.edu">http://www.tacc.utexas.edu</a>) Stampede2 supercomputer made available through DesignSafe-ci.</p>
+uqFEM was modified to include UW MixedDriver tool. All the simulations were performed on the Texas Advanced Computing Center (<a class="reference external" href="http://www.tacc.utexas.edu">http://www.tacc.utexas.edu</a>) Frontera supercomputer made available through DesignSafe-ci.</p>
 <p>Using this tool, <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(G_o\)</span>, and <span class="math notranslate nohighlight">\(h_{po}\)</span> were varied while all the secondary parameters were kept of their default values (predefined by primary parameters and initial stresses). The Latin Hypercube Sampling (LHS) method was
 used to generate near-random variables. Each of these three variables was assigned an independent uniform distribution between minimum and maximum values. The range of these variables was chosen to cover a reasonable range of scenarios and can be
 extended in future studies. <span class="math notranslate nohighlight">\(D_R\)</span> was set to be between 0.2 to 0.9, <span class="math notranslate nohighlight">\(G_o\)</span> between <span class="math notranslate nohighlight">\(250\)</span> to <span class="math notranslate nohighlight">\(1200\)</span>, and <span class="math notranslate nohighlight">\(h_{po}\)</span> between <span class="math notranslate nohighlight">\(0.05\)</span> to <span class="math notranslate nohighlight">\(1.2\)</span>. A total of one million samples were generated. For each set of parameters,
@@ -559,7 +555,7 @@ CRR in a calibration process. The predictive equation can be used to provide goo
 </div>
 </div>
 <div class="section" id="pressuredenpendentmultiyield03">
-<h3>PressureDenpendentMultiYield03<a class="headerlink" href="#pressuredenpendentmultiyield03" title="Permalink to this headline">¶</a></h3>
+<h3>PressureDenpendentMultiYield03<a class="headerlink" href="#pressuredenpendentmultiyield03" title="Permalink to this heading">¶</a></h3>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/PDMY03_Random.png"><img alt="../../../../../_images/PDMY03_Random.png" src="../../../../../_images/PDMY03_Random.png" style="width: 1075.8px; height: 540.6px;" /></a>
 </div>
@@ -590,7 +586,7 @@ model is based on interpolating pre calibrated parameter sets for various of rel
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

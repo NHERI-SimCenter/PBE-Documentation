@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -128,11 +129,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -210,7 +206,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="about">
-<span id="lblabout"></span><h1><span class="section-number">1. </span>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
+<span id="lblabout"></span><h1><span class="section-number">1. </span>About<a class="headerlink" href="#about" title="Permalink to this heading">¶</a></h1>
 <p>This open-source research application, is released in GitHub (<a class="reference external" href="https://github.com/NHERI-SimCenter/PBE">PBE Github page</a>) under a <strong>BSD 2-Clause</strong> license (see <a class="reference internal" href="../../../front-matter/license.html#lbllicense"><span class="std std-ref">Copyright and License</span></a>). The PBE app can be used to characterize the performance of a building subjected to excitation from a natural hazard event. The application focuses on quantifying building performance through decision variables. Some of the building features and natural hazard event characteristics are often available with limited accuracy or not available at all. The PBE app allows users to consider the uncertainties due to such imperfect information and propagate their effects through the analysis.</p>
 <p>The seismic response of the structure can be estimated using the same modules that are avaiable in the SimCenter <a class="reference external" href="https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/">EE-UQ app</a>. The PBE app builds on the EE-UQ app and uses its response estimation features to assess the behavior of a building under a seismic event. Users can also choose to import response estimates from external simulations and focus only on the damage and loss estimation in the PBE app. Performance of a building under other, non-seismic, natural hazard events can also be considered by loading external demand data.</p>
 <p>In this application, users can characterize the seismic hazard, the structural model, the asset model, the demand model, the damage model, and loss models. All models are interconnected by a flexible probabilistic framework for uncertainty quantification. The calculation workflow starts with response estimation (e.g., nonlinear response history simulations) to obtain Engineering Demand Parameters (EDPs) that can serve as the demands for performance assessment. The component definitions in the Asset model are used to generate multiple realizations of the building with the prescribed component types and corresponding quantities assigned to each floor and direction. Fragility functions defined for each component type are then used to estimate component damage states throughout the building as a function of the demands calculated earlier. Finally, loss models are used to calculate the consequences of damages in each component.</p>
@@ -229,7 +225,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

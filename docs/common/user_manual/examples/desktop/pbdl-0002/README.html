@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -143,11 +144,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -227,7 +223,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="shear-building-hazus-assessment">
-<span id="pbdl-0002"></span><h1><span class="section-number">3.2. </span>Shear Building: HAZUS Assessment<a class="headerlink" href="#shear-building-hazus-assessment" title="Permalink to this headline">¶</a></h1>
+<span id="pbdl-0002"></span><h1><span class="section-number">3.2. </span>Shear Building: HAZUS Assessment<a class="headerlink" href="#shear-building-hazus-assessment" title="Permalink to this heading">¶</a></h1>
 <p>This study explores a simple uncertainty propagation problem in the following three story shear building and employs the HAZUS methodology for assessing damage and loss:</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../../_images/model3.png"><img alt="../../../../../_images/model3.png" src="../../../../../_images/model3.png" style="width: 400px;" /></a>
@@ -236,14 +232,14 @@
 <p>This example uses the PBE application to automatically prepare an column model that represents the three-story structure, subject it to a suite of ground motion time histories, and evaluate the seismic performance of the building using the Hazus Earthquake methodology.</p>
 <p>Each step of the workflow for this problem is explained below by sequentially walking through the input panels and highlighting their role in the simulation. The file <code class="docutils literal notranslate"><span class="pre">input.json</span></code> contains all of the settings for this exercise. It can be opened (using File/Open) to automatically populate the fields in the user interface.</p>
 <div class="section" id="step-1-uq">
-<h2><span class="section-number">3.2.1. </span>Step 1: UQ<a class="headerlink" href="#step-1-uq" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.1. </span>Step 1: UQ<a class="headerlink" href="#step-1-uq" title="Permalink to this heading">¶</a></h2>
 <p>This panel provides an interface to various forward propagation procedures which are used to sample the random variables defined in later panels and propagate each realization through the workflow. This process can be used to characterize the uncertainty in the workflow outputs. For this example, a latin hypercube sampling procedure (<strong>LHS</strong>) is used with <code class="docutils literal notranslate"><span class="pre">40</span></code> samples and a seed of <code class="docutils literal notranslate"><span class="pre">775</span></code>. Fixing the seed ensures the same random sample every time the calculation is run.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/2_UQ.png" src="../../../../../_images/2_UQ.png" />
 </div>
 </div>
 <div class="section" id="step-2-gi">
-<h2><span class="section-number">3.2.2. </span>Step 2: GI<a class="headerlink" href="#step-2-gi" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.2. </span>Step 2: GI<a class="headerlink" href="#step-2-gi" title="Permalink to this heading">¶</a></h2>
 <p>Next, the <strong>GI</strong> panel may be used to define metadata and other general information about the model. Some of the values are automatically updated by later panels while others are only providing information about the model and not used for the simulation.</p>
 <p>It is important to review and specify the desired Units for the calculation here. It is important to provide all inputs assuming these units when no other instructions are given by the following panels. The length unit is used to define velocity and acceleration units as well.</p>
 <div class="align-center figure">
@@ -251,7 +247,7 @@
 </div>
 </div>
 <div class="section" id="step-3-sim">
-<h2><span class="section-number">3.2.3. </span>Step 3: SIM<a class="headerlink" href="#step-3-sim" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.3. </span>Step 3: SIM<a class="headerlink" href="#step-3-sim" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>SIM</strong> panel can be used to define the simulation model. In this example we leverage the convenient MDOF tool which provides a high-level interface for defining simple parameterized structural analysis models. Either variable names, or literal values can be entered in the fields of this panel, as shown in the following figure.</p>
 <p>This model could have random properties that we could sample and propagate the corresponding uncertainty through the workflow. If a variable name is entered, PBE automatically identifies it as a random variable, and creates a corresponding entry in the <strong>RV</strong> panel. Several examples in the documentation of the EE-UQ application demonstrate this feature on models of various complexity. In this example, we use a deterministic structural model for the sake of simplicity.</p>
 <div class="align-center figure">
@@ -259,7 +255,7 @@
 </div>
 </div>
 <div class="section" id="step-4-evt">
-<h2><span class="section-number">3.2.4. </span>Step 4: EVT<a class="headerlink" href="#step-4-evt" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.4. </span>Step 4: EVT<a class="headerlink" href="#step-4-evt" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>EVT</strong> panel provides various <strong>Load Generator</strong> options that can either import ground motion loads from external files or connect to the PEER NGA database and obtain loads that represent a target spectrum or generate loads during the simulation using a stochastic process. We will use the latter solution in this example by selecting the <strong>Stochastic Ground Motion</strong> option.</p>
 <p>The Vlachos et al. (2018) model generates ground motion time histories based on three parameters: magnitude, distance, and shear-wave velocity in the top 30 meters of the soil. We specify a magnitude <code class="docutils literal notranslate"><span class="pre">7</span></code> earthquake <code class="docutils literal notranslate"><span class="pre">40</span></code> kms from the site of interest. As for the shear-wave velocity, we introduce a random variable by providing <code class="docutils literal notranslate"><span class="pre">vs</span></code> as input. This is recognized by PBE and the corresponding variable is automatically added to the <strong>RV</strong> panel.</p>
 <div class="align-center figure">
@@ -267,14 +263,14 @@
 </div>
 </div>
 <div class="section" id="step-5-fem">
-<h2><span class="section-number">3.2.5. </span>Step 5: FEM<a class="headerlink" href="#step-5-fem" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.5. </span>Step 5: FEM<a class="headerlink" href="#step-5-fem" title="Permalink to this heading">¶</a></h2>
 <p>We now proceed to the <strong>FEM</strong> panel where we can adjust settings for running the dynamic analysis. The default settings are typically appropriate for analyses that use the MDOF tool.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/2_FEM.png" src="../../../../../_images/2_FEM.png" />
 </div>
 </div>
 <div class="section" id="step-6-rv">
-<h2><span class="section-number">3.2.6. </span>Step 6: RV<a class="headerlink" href="#step-6-rv" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.6. </span>Step 6: RV<a class="headerlink" href="#step-6-rv" title="Permalink to this heading">¶</a></h2>
 <p>Now in the <strong>RV</strong> panel we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, when this tab is opened it already contains the <code class="docutils literal notranslate"><span class="pre">vs</span></code> random variable. We choose to model the uncertainty in the shear wave velocity using a normal distribution with a mean of 400 m/s and a standard deviation of 100 m/s.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/2_RV.png" src="../../../../../_images/2_RV.png" />
@@ -285,7 +281,7 @@
 </div>
 </div>
 <div class="section" id="step-7-dl">
-<h2><span class="section-number">3.2.7. </span>Step 7: DL<a class="headerlink" href="#step-7-dl" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.7. </span>Step 7: DL<a class="headerlink" href="#step-7-dl" title="Permalink to this heading">¶</a></h2>
 <p>The last step in the setup is the <strong>DL</strong> panel. We use the four tabs in this panel to specify the performance model following the Hazus Earthquake methodology.</p>
 <p>First, in the Asset tab, we choose the <code class="docutils literal notranslate"><span class="pre">Hazus</span> <span class="pre">Earthquake</span></code> component vulnerability database that is bundled with the PBE application. This loads all of the building archetypes handled by Hazus in the <code class="docutils literal notranslate"><span class="pre">Available</span> <span class="pre">in</span> <span class="pre">DB</span></code> list. We assign the <code class="docutils literal notranslate"><span class="pre">STR.S1M.MC</span></code> steel frame archetype as the structural component. <code class="docutils literal notranslate"><span class="pre">NSD</span></code> and <code class="docutils literal notranslate"><span class="pre">NSA.MC</span></code> components are added to represent drift and acceleration-sensitive non-structural components.</p>
 <p>Because Hazus components are assigned at the building level, there is only one performance group created for each. The acceleration-sensitive component is assigned to the roof of the building (to obtain roof acceleration from there) while the drift-sensitive components are assigned to the first floor. This latter assignment is used with roof drift EDPs in buildings regardless of the number of floors they have.</p>
@@ -306,7 +302,7 @@
 </div>
 </div>
 <div class="section" id="analysis-results">
-<h2><span class="section-number">3.2.8. </span>Analysis &amp; Results<a class="headerlink" href="#analysis-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.8. </span>Analysis &amp; Results<a class="headerlink" href="#analysis-results" title="Permalink to this heading">¶</a></h2>
 <p>Once a full workflow has been defined click on the <strong>Run</strong> button. When the analysis is complete the <strong>RES</strong> tab will be activated and the results will be displayed. When a HAZUS assessment has been conducted, the results panel will resemble the following figures which show the <strong>Summary</strong> and <strong>Data</strong> tabs, respectively.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/2_RES_summary.png" src="../../../../../_images/2_RES_summary.png" />
@@ -328,7 +324,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

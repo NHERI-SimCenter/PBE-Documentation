@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -140,11 +141,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -224,7 +220,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fema-p-58-assessment-using-external-demands">
-<span id="pbdl-0001"></span><h1><span class="section-number">3.1. </span>FEMA P-58 Assessment Using External Demands<a class="headerlink" href="#fema-p-58-assessment-using-external-demands" title="Permalink to this headline">¶</a></h1>
+<span id="pbdl-0001"></span><h1><span class="section-number">3.1. </span>FEMA P-58 Assessment Using External Demands<a class="headerlink" href="#fema-p-58-assessment-using-external-demands" title="Permalink to this heading">¶</a></h1>
 <p>This example focuses on the seismic performance assessment of a steel moment frame structure using the FEMA P-58 method. We look at demand, damage, and loss modeling in and show the inputs provided to PBE to perform the simulations.</p>
 <p>The file <code class="docutils literal notranslate"><span class="pre">input.json</span></code> contains all of the settings for this exercise. It can be opened (using File/Open) to automatically populate the fields in the user interface.</p>
 <p>The demands and the performance model for this example are based on the example building featured in FEMA P-58. More details are available in the following FEMA P-58 background documentation:</p>
@@ -233,7 +229,7 @@
 </div>
 <p>In this example, we are going to import demand data from simulations that were run outside of the PBE tool. This feature allows researchers to use PBE only for the performance assessment part of the workflow and connect it with any other response estimation solution they prefer to use. Because we do not need the response estimation part of the workflow for this example, we only need to focus on the <strong>DL</strong> panel in PBE.</p>
 <div class="section" id="dl-asset-model">
-<h2><span class="section-number">3.1.1. </span>DL - Asset Model<a class="headerlink" href="#dl-asset-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span>DL - Asset Model<a class="headerlink" href="#dl-asset-model" title="Permalink to this heading">¶</a></h2>
 <p>The first tab in the <strong>DL</strong> panel defines the asset model. The asset model assigns components to the building and defines where they are and how much of each component is at each location.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/asset_model.png" src="../../../../../_images/asset_model.png" />
@@ -247,7 +243,7 @@
 <p>We selected the built-in FEMA P-58 Component Vulnerability Database for this analysis and set the General Information features and component characteristics following the referenced example problem.</p>
 </div>
 <div class="section" id="dl-demand-model">
-<h2><span class="section-number">3.1.2. </span>DL - Demand Model<a class="headerlink" href="#dl-demand-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span>DL - Demand Model<a class="headerlink" href="#dl-demand-model" title="Permalink to this heading">¶</a></h2>
 <p>The first tab defines the demand model.Under <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Source</span></code> we specified that the demands are provided in a file and specified the location of that file.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/demand_model.png" src="../../../../../_images/demand_model.png" />
@@ -260,7 +256,7 @@
 <p>One the demands are imported, the settings in the panel instruct Pelicun to fit a truncated lognormal distribution to the data considering everything above a peak interstory drift (PID) of 6% as collapsed cases. Then, sample the fitted multivariate distribution to get 500 demand realizations and use the methodology from FEMA P-58 to infer residual drifts based on PID values.</p>
 </div>
 <div class="section" id="dl-damage-model">
-<h2><span class="section-number">3.1.3. </span>DL - Damage Model<a class="headerlink" href="#dl-damage-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.3. </span>DL - Damage Model<a class="headerlink" href="#dl-damage-model" title="Permalink to this heading">¶</a></h2>
 <p>We have already identified the components in the buildings and the component database includes the fragility functions that characterize component vulnerabilities through probabilistic capacities corresponding to various limit states.</p>
 <p>We use the Damage Model tab to extend the above dataset with two Global Vulnerabilities: Irreparable Damage and Collapse.</p>
 <div class="align-center figure">
@@ -271,7 +267,7 @@
 <p>We use the built-in FEMA P-58 damage process for this example.</p>
 </div>
 <div class="section" id="dl-loss-model">
-<h2><span class="section-number">3.1.4. </span>DL - Loss Model<a class="headerlink" href="#dl-loss-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.4. </span>DL - Loss Model<a class="headerlink" href="#dl-loss-model" title="Permalink to this heading">¶</a></h2>
 <p>Consequence modeling is decoupled from damage modeling in Pelicun. The Loss Model tab is used to identify the consequence database for each type of consequence we would like to include in the analysis and map the consequence models to the damaged components. This process is trivial if one wants to follow the FEMA P-58 methodology and the mapping is performed automatically by the PBE tool.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/loss_model.png" src="../../../../../_images/loss_model.png" />
@@ -279,7 +275,7 @@
 <p>We use this panel to add a replacement consequence to the FEMA P-58 dataset. This defines a replacement cost and time and the automatic mapping links these consequences with the collapse and irreparable damage events. Note that the replacement consequences are defined using random variables in this example to capture the uncertainty in those numbers. The deterministic replacement values that FEMA P-58 uses can be reproduced in PBE by choosing N/A for the Distribution of Cost and Time.</p>
 </div>
 <div class="section" id="analysis-results">
-<h2><span class="section-number">3.1.5. </span>Analysis &amp; Results<a class="headerlink" href="#analysis-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.5. </span>Analysis &amp; Results<a class="headerlink" href="#analysis-results" title="Permalink to this heading">¶</a></h2>
 <p>Once the performance assessment has been set up in the <strong>DL</strong> panel, click on the <strong>Run</strong> button. When the analysis is complete the <strong>RES</strong> tab will be activated and the results will be displayed. The <strong>Summary</strong> and <strong>Data</strong> tabs of the results panel are shown below.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/1_RES_summary.png" src="../../../../../_images/1_RES_summary.png" />
@@ -301,7 +297,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

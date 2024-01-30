@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -127,11 +128,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -209,7 +205,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pbe-verification">
-<h1>PBE Verification<a class="headerlink" href="#pbe-verification" title="Permalink to this headline">¶</a></h1>
+<h1>PBE Verification<a class="headerlink" href="#pbe-verification" title="Permalink to this heading">¶</a></h1>
 <p>Verification of the structural response simulation part of the workflow are presented in the <a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/index.html">EE-UQ user manual</a>.</p>
 <p>This example was designed to verify that the central tendencies estimated by the <code class="docutils literal notranslate"><span class="pre">PBE</span></code> App are appropriate. The dispersion of every variable is reduced to a sufficiently low value (i.e., a <span class="math notranslate nohighlight">\(10^{-4}\)</span> coefficient of variation is used) that makes it simple to obtain the decision variables analytically. Verification is performed by comparing analytical solutions to the estimated values. Note: this verification example is identical to the first system test of the <code class="docutils literal notranslate"><span class="pre">pelicun</span></code> Python library that the PBE App uses for loss estimation.</p>
 <p>The files required to run the verification are available in the <code class="docutils literal notranslate"><span class="pre">Verification/01_Central_tendency</span></code> folder. Most of the input information can be loaded automatically from the <code class="docutils literal notranslate"><span class="pre">test_central_tendency.json</span></code> file. After loading the file, the following locations need to be set manually:</p>
@@ -328,7 +324,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

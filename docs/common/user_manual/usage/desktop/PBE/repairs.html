@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -162,11 +163,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -252,7 +248,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="repair-consequences">
-<span id="lblpelicun-loss-repairs"></span><h1>Repair Consequences<a class="headerlink" href="#repair-consequences" title="Permalink to this headline">¶</a></h1>
+<span id="lblpelicun-loss-repairs"></span><h1>Repair Consequences<a class="headerlink" href="#repair-consequences" title="Permalink to this heading">¶</a></h1>
 <p>Repair consequences in Pelicun are calculated as a function of the quantity and severity of damage experienced by components (<a class="reference internal" href="#fig-dl-pelicun-loss-repairs"><span class="std std-numref">Fig. 2.7.1.4.1</span></a>). Alternatively, if corresponding consequence functions are provided by the user, Pelicun can also calculate repair consequences as a function of demands (i.e., intensity measures or structural response quantities). This latter approach can implement <em>loss functions</em> from the literature.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dl-pelicun-loss-repairs"></span><img alt="../../../../../_images/dl_pelicun_loss_repairs.png" src="../../../../../_images/dl_pelicun_loss_repairs.png" />
@@ -260,7 +256,7 @@
 </div>
 <p>The Repair Consequence model inputs are grouped into the following areas:</p>
 <div class="section" id="component-repair-consequences">
-<h2>Component Repair Consequences<a class="headerlink" href="#component-repair-consequences" title="Permalink to this headline">¶</a></h2>
+<h2>Component Repair Consequences<a class="headerlink" href="#component-repair-consequences" title="Permalink to this heading">¶</a></h2>
 <p>This area is used to specify the component repair consequence library (i.e., typically one or more files that provide parameters for consequence functions). The following libraries are built into the application:</p>
 <dl class="field-list simple">
 <dt class="field-odd">FEMA P-58</dt>
@@ -278,7 +274,7 @@
 </dl>
 <p>The <a class="reference internal" href="../../../../dldb/repair/index.html#lbl-dldb-repair"><span class="std std-ref">Repair Consequence Models</span></a> section of this manual provides detailed description of the components available in the built-in libraries.</p>
 <div class="section" id="user-defined-components">
-<h3>User-defined components<a class="headerlink" href="#user-defined-components" title="Permalink to this headline">¶</a></h3>
+<h3>User-defined components<a class="headerlink" href="#user-defined-components" title="Permalink to this heading">¶</a></h3>
 <p>The built-in component libraries provide a good starting point, but you will almost always need to add project- or problem-specific components to provide a comprehensive description of damage and losses for an asset. Pelicun stores consequence function parameters in a standardized format. We suggest using the <strong>Export DB</strong> button to export one of the built-in libraries to a file that can serve as a template for adding your own components. The file formats and data schema are described in detail under <span class="xref std std-ref">lbl-dldb_schema</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -288,12 +284,12 @@
 </div>
 </div>
 <div class="section" id="repair-consequence-types">
-<h2>Repair Consequence Types<a class="headerlink" href="#repair-consequence-types" title="Permalink to this headline">¶</a></h2>
+<h2>Repair Consequence Types<a class="headerlink" href="#repair-consequence-types" title="Permalink to this heading">¶</a></h2>
 <p>This area shows the consequence types available in the selected libraries and allows for requesting results on only a subset of them through the provided checkboxes.</p>
 <p>The PBE application currently only supports calculations for the four repair consequence types shown in <a class="reference internal" href="#fig-dl-pelicun-loss-repairs"><span class="std std-numref">Fig. 2.7.1.4.1</span></a>. Future versions will allow for arbitrary consequence types that are automatically parsed from the provided libraries. Such functionality is already available in Pelicun.</p>
 </div>
 <div class="section" id="available-consequence-models">
-<h2>Available Consequence Models<a class="headerlink" href="#available-consequence-models" title="Permalink to this headline">¶</a></h2>
+<h2>Available Consequence Models<a class="headerlink" href="#available-consequence-models" title="Permalink to this heading">¶</a></h2>
 <p>This area shows the consequence functions available in the component repair consequence library. The available components are listed under <strong>Component</strong> and the consequence types available for the selected component are listed under <strong>Consequence Type</strong>. Libraries do not need to have all consequence types provided for all components.</p>
 <p>When a user-defined component library is loaded, the PBE application attempts to generate figures of consequence functions and tabulated parameters for every component in the library. The Program Output window provides feedback on this process and shows error messages if the provided data seems invalid. The figures are generated as HTML files in the <code class="docutils literal notranslate"><span class="pre">resources/consequence_viz</span></code> folder under the local jobs directory (see its location under Preferences). These figures can be helpful when creating a report or documentation for the assessment performed in PBE.</p>
 <div class="admonition note">
@@ -311,7 +307,7 @@
 </div>
 </div>
 <div class="section" id="global-consequences">
-<h2>Global consequences<a class="headerlink" href="#global-consequences" title="Permalink to this headline">¶</a></h2>
+<h2>Global consequences<a class="headerlink" href="#global-consequences" title="Permalink to this heading">¶</a></h2>
 <p>This area allows you to add components to your loss model that handle global replacement consequences. If you choose Automatic mapping between damage and repair consequences (see the subsection on Mapping below for details), collapse and irreparable damage are automatically mapped to lead to these replacement consequences.</p>
 <p>Both deterministic and probabilistic replacement consequences are supported. Deterministic consequence models have their <strong>Distribution</strong> set to N/A. Probabilistic models use a prescribed distribution to model the uncertainty in the replacement consequence. Currently, <em>normal</em> and <em>lognormal</em> distributions are supported. The <strong>θ₁</strong> parameter is the coefficient of variation for a normal distribution and the log-standard deviation for a lognormal distribution.</p>
 <p>Currently, units of the replacement consequences need to match those of the component consequences used in the assessment. In a future update, we plan to automate conversion between frequently-used units and allow for different units for replacement inputs and component data.</p>
@@ -325,7 +321,7 @@
 </div>
 </div>
 <div class="section" id="mapping">
-<h2>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h2>
+<h2>Mapping<a class="headerlink" href="#mapping" title="Permalink to this heading">¶</a></h2>
 <p>The last step of repair consequence modeling is mapping demands or component damages to component loss models. This mapping is defined in a tabular format that is illustrated below (<a class="reference internal" href="#fig-dl-pelicun-loss-repairs-map"><span class="std std-numref">Fig. 2.7.1.4.2</span></a>).</p>
 <div class="align-center figure" id="id2">
 <span id="fig-dl-pelicun-loss-repairs-map"></span><a class="reference internal image-reference" href="../../../../../_images/dl_pelicun_loss_repairs_map.png"><img alt="../../../../../_images/dl_pelicun_loss_repairs_map.png" src="../../../../../_images/dl_pelicun_loss_repairs_map.png" style="width: 234.0px; height: 337.0px;" /></a>
@@ -370,7 +366,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

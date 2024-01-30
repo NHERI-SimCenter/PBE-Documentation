@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -155,11 +156,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -241,7 +237,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="peer-nga-records">
-<h1><span class="section-number">2.4.2. </span>PEER NGA Records<a class="headerlink" href="#peer-nga-records" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.4.2. </span>PEER NGA Records<a class="headerlink" href="#peer-nga-records" title="Permalink to this heading">¶</a></h1>
 <p>This event allows the user to perform ground motion records selection and scaling using <a class="reference external" href="https://peer.berkeley.edu/research/nga-west-2">PEER NGA West 2 ground motions database</a>. The suite of records can be selected from the database to represent the uncertainty in the ground motion. As shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.4.2.1</span></a> , the user must enter the following information for this event type:</p>
 <div class="align-center figure" id="id6">
 <span id="fig-nga-event"></span><img alt="../../../../../_images/peerNgaRecords.png" src="../../../../../_images/peerNgaRecords.png" />
@@ -254,7 +250,7 @@
 </ol>
 <p>Once the selection criteria has been entered, the user selects the  <strong>Select Records</strong> button. The Application at this point will interact with the NGA server to obtain a selection of records. After a suite of records is selected from the database, the list of records is shown in tabular form for the user to inspect their information, as shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.4.2.1</span></a>. Additionally a plot is generated showing the target spectrum, the average and standard deviation of the selected suite of records and the selected scaled ground motions spectra. Users can also highlight particular spectra on the plot by selecting the one or more records in the table provided. This enables the user to inspect the suite of records used to characterize the ground motions before running the building simulation.</p>
 <div class="section" id="target-spectrum">
-<h2><span class="section-number">2.4.2.1. </span>Target Spectrum<a class="headerlink" href="#target-spectrum" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2.1. </span>Target Spectrum<a class="headerlink" href="#target-spectrum" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Design Spectrum (ASCE 7-10)</strong>: three parameters <span class="math notranslate nohighlight">\(S_{DS}\)</span>, <span class="math notranslate nohighlight">\(S_{D1}\)</span>, and <span class="math notranslate nohighlight">\(T_L\)</span> are used to define a ASCE 7-10 design spectrum.</p></li>
 </ol>
@@ -350,7 +346,7 @@ Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are
 </dl>
 </div>
 <div class="section" id="configure-selection">
-<h2><span class="section-number">2.4.2.2. </span>Configure Selection<a class="headerlink" href="#configure-selection" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2.2. </span>Configure Selection<a class="headerlink" href="#configure-selection" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Number of Records</strong>: number of records to be selected (extensive selections may exceed the limit of PEER NGA-West 2 ground motion database).</p></li>
 <li><p><strong>Fault Type</strong>: filter - earthquake fault type of the ground event (e.g., strike-slip, normal oblique, reverse oblique);</p></li>
@@ -365,14 +361,14 @@ Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are
 </div>
 </div>
 <div class="section" id="output-directory">
-<h2><span class="section-number">2.4.2.3. </span>Output Directory<a class="headerlink" href="#output-directory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2.3. </span>Output Directory<a class="headerlink" href="#output-directory" title="Permalink to this heading">¶</a></h2>
 <p>Users can save the ground motion selection results and downloaded time history traces to local directories by clicking on the <strong>Browse</strong> button.</p>
 <div class="align-center figure" id="fig-output-dir">
 <a class="reference internal image-reference" href="../../../../../_images/output-dir.png"><img alt="../../../../../_images/output-dir.png" src="../../../../../_images/output-dir.png" style="width: 800px;" /></a>
 </div>
 </div>
 <div class="section" id="ground-motion-components">
-<h2><span class="section-number">2.4.2.4. </span>Ground Motion Components<a class="headerlink" href="#ground-motion-components" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2.4. </span>Ground Motion Components<a class="headerlink" href="#ground-motion-components" title="Permalink to this heading">¶</a></h2>
 <p>Ground motion selection is conducted for the selected component(s) to minimize the mean spectrum differences.
 Supported options include SRSS, RotD100, RotD50, GeoMean, H1 (1st horizontal), H2 (2nd horizontal), and V (vertical component).
 Supported options for the mean spectrum include Arithmetic and Geometric.</p>
@@ -381,7 +377,7 @@ Supported options for the mean spectrum include Arithmetic and Geometric.</p>
 </div>
 </div>
 <div class="section" id="scaling-and-selection">
-<h2><span class="section-number">2.4.2.5. </span>Scaling and Selection<a class="headerlink" href="#scaling-and-selection" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2.5. </span>Scaling and Selection<a class="headerlink" href="#scaling-and-selection" title="Permalink to this heading">¶</a></h2>
 <p>Three different scaling methods are available: (1) no scaling (No Scaling), (2) scaling factors applied individually to records to minimize differences between mean spectra (Minimize MSE),
 and (3) scaling factors applied individually to pin all spectra at a given period (Single Period).</p>
 <div class="align-center figure" id="fig-scaling-selection">
@@ -426,7 +422,7 @@ the number of samples is the total number of selected records, each record will 
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>
