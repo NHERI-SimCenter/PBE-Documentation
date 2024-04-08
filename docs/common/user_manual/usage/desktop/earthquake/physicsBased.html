@@ -243,13 +243,63 @@ areas studied. As more datasets are made available, more options will be added t
 <div class="section" id="m9-dataset">
 <h2><span class="section-number">2.4.7.1. </span>M9 Dataset<a class="headerlink" href="#m9-dataset" title="Permalink to this heading">¶</a></h2>
 <p>With funding support from the National Science Foundation, a United States Geological Survey and University of Washington team studied the impacts of
-large magnitude, megathrust earthquakes on the Cascadia subduction zone as part of the <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/">M9 Project</a> . The researchers used physics-based simulations to generate possible ground motions for the entire Pacific Northwest region during a magnitude-9 (M9) event. Broadband ground motions were developed from these M9 simulations for seven grids (A, B, C, D, E, Y and Z), each corresponding to a particular combination of region and/or <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/extent-of-model/">grid resolution</a></p>
+large magnitude, megathrust earthquakes on the Cascadia subduction zone as part of the <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/">M9 Project</a> . The researchers used physics-based simulations to generate possible ground motions for the entire Pacific Northwest region during a magnitude-9 (M9) event. Broadband ground motions were developed from these M9 simulations for a number of grids (A, B, C, D, E, Y and Z), each corresponding to a particular combination of region and/or <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/extent-of-model/">grid resolution</a>.</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-number">Table 2.4.7.1.1 </span><span class="caption-text">Title</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 30%" />
+<col style="width: 10%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Grid</p></th>
+<th class="head"><p>Location</p></th>
+<th class="head"><p>Grid Spacing</p></th>
+<th class="head"><p>Latitude Range</p></th>
+<th class="head"><p>Longitude Range</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>Pugent Sound</p></td>
+<td><p>1 km</p></td>
+<td><p>46.9 to 48.3</p></td>
+<td><p>-123.2 to -121.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>Entire Area</p></td>
+<td><p>20 km</p></td>
+<td><p>40.3 to 48.6</p></td>
+<td><p>-127.7 to -125.4</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>Portland, Oregon</p></td>
+<td><p>1 km</p></td>
+<td><p>45.2 to 45.9</p></td>
+<td><p>-123.3 to -122.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>Vancouver, BC</p></td>
+<td><p>1 km</p></td>
+<td><p>49.0 to 49.4</p></td>
+<td><p>-123.3 to -122.4</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>Victoria, BC</p></td>
+<td><p>1 km</p></td>
+<td><p>48.3 to 48.7</p></td>
+<td><p>-123.9 to -123.2</p></td>
+</tr>
+</tbody>
+</table>
 <p>M9 Grids</p>
 <p>To use this M9 dataset the user inputs a number of options, <strong>grid type</strong>, <strong>latitude</strong> and <strong>longitude</strong> being the location for which the motions are sought, and <strong>numMotions</strong> for the number of motions desired at the location.  The location on the users computer that the motions will be downloaded to for a staging area is specified by the user in <strong>tmp Directory</strong>, by default it is specified to be in the users <strong>Documents/EE-UQ/LocalWorkDir</strong> directory.</p>
 <p>Once the user has entered the inputs they press the <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Motions</span></code> button. This will start the download process in the <strong>background</strong>, i.e. behind the scenes. The download is being done in the background because the download process is painfully slow, a few minutes per ground motion. While the motions are downloading, the user can work on other parts of the interface. Should the user attempt to <code class="docutils literal notranslate"><span class="pre">Run</span></code> a simulation before the motions are finished downloading, a pop up window will appear informing the user that the run should be cancelled.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../../../../../_images/M9.png"><img alt="../../../../../_images/M9.png" src="../../../../../_images/M9.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.7.1.1 </span><span class="caption-text">M9 Interface</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.7.1.1 </span><span class="caption-text">M9 Interface</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
