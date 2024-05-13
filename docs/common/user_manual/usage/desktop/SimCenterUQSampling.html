@@ -50,7 +50,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.3.2. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
+    <link rel="next" title="2.1.4.1. Calibration of Non-hierarchical Model" href="UCSD_UQ_TMCMC.html" />
     <link rel="prev" title="2.1.2.1. Forward Propagation" href="DakotaSampling.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -121,9 +121,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UQ.html#dakota-uq-engine">2.1.2. Dakota UQ Engine</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="UQ.html#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.3.1. Forward Propagation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#sampling-from-dataset">Sampling from dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/DL.html">2.7. DL: Damage and Loss Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PBE/resPBE.html">2.9. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">3. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/PBE.html">5. Requirements</a></li>
@@ -136,7 +157,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -227,7 +250,7 @@
 <p>To enable this feature, the user can explicitly define the group of RVs that will share the index samples in the UQ tab using the <code class="docutils literal notranslate"><span class="pre">Resample</span> <span class="pre">RVs</span> <span class="pre">from</span> <span class="pre">correlated</span> <span class="pre">dataset</span></code>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>The actual datasets of the RVs written in this field should be imported in the RV tab, through <code class="docutils literal notranslate"><span class="pre">parameters</span></code>-<code class="docutils literal notranslate"><span class="pre">discrete</span></code> option.</p></li>
+<li><p>The actual datasets of the RVs written in this field should be imported in the RV tab, through the <code class="docutils literal notranslate"><span class="pre">parameters</span></code>-<code class="docutils literal notranslate"><span class="pre">discrete</span></code> option.</p></li>
 <li><p>The RVs inside each group should be provided with the same length of the samples (e.g. in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figSimSamp3</span></code>, <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> should have the same sample size <span class="math notranslate nohighlight">\(N_1\)</span> and <span class="math notranslate nohighlight">\(alp\)</span> and <span class="math notranslate nohighlight">\(F_y\)</span> should have the same sample size <span class="math notranslate nohighlight">\(N_2\)</span>)</p></li>
 </ul>
 </div></blockquote>

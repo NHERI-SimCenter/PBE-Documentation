@@ -155,7 +155,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -238,18 +240,18 @@
 <p>This panel allows users to generate synthetic ground motions for a
 target seismic event. In order to do so, the stochastic ground motion
 model is selected from the <code class="docutils literal notranslate"><span class="pre">drop-down</span> <span class="pre">menu</span></code>, which is as shown
-in :numref:fig-stochasticVlachos-event’. Two stochastic motion models are currently available:
+in <a class="reference internal" href="#fig-stochasticvlachos-event"><span class="std std-numref">Fig. 2.4.1.1</span></a>. Two stochastic motion models are currently available:
 Vlachoes et al. (2018) <span id="id1">[<a class="reference internal" href="../../../../../index.html#id7" title="Christos Vlachos, Konstantinos G. Papakonstantinou, and George Deodatis. Predictive model for site specific simulation of ground motions based on earthquake scenarios. Earthquake Engineering &amp; Structural Dynamics, 47(1):195-218, 2018. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948, doi:10.1002/eqe.2948.">VPD18</a>]</span> and  Dabaghi &amp; Der Kiureghian (2014, 2017, 2018)
 <span id="id2">[<a class="reference internal" href="../../../../../index.html#id18" title="Mayssa Dabaghi and Armen Der Kiureghian. Stochastic model for simulation of near-fault ground motions. Earthquake Engineering &amp; Structural Dynamics, 46(6):963-984, 2017. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839, arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839, doi:10.1002/eqe.2839.">DDK17</a>, <a class="reference internal" href="../../../../../index.html#id17" title="Mayssa Dabaghi and Armen Der Kiureghian. Simulation of orthogonal horizontal components of near-fault ground motion for specified earthquake source and site characteristics. Earthquake Engineering &amp; Structural Dynamics, 47(6):1369-1393, 2018. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.3021, arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.3021, doi:10.1002/eqe.3021.">DDK18</a>, <a class="reference internal" href="../../../../../index.html#id16" title="Mayssa Dabaghi and Armen Der Kiureghian. Stochastic Modeling and Simulation of Near-Fault Ground Motions for Performance-Based Earthquake Engineering. Technical Report, Pacific Earthquake Engineering Research Center, 2014.">DK14</a>]</span>. Depending on the
 model selected, the user will be asked to enter values for a number of parameters that are
-used to generate a seismic event. For the Vlachos er al. model users is required to input the <code class="docutils literal notranslate"><span class="pre">moment</span> <span class="pre">magnitude',</span> <span class="pre">``site</span> <span class="pre">to</span> <span class="pre">rupture</span> <span class="pre">distance</span></code> and the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">shear</span> <span class="pre">wave</span> <span class="pre">velocity</span></code>.</p>
+used to generate a seismic event. For the Vlachos et al. model users are required to input the <code class="docutils literal notranslate"><span class="pre">moment</span> <span class="pre">magnitude</span></code>, <code class="docutils literal notranslate"><span class="pre">site</span> <span class="pre">to</span> <span class="pre">rupture</span> <span class="pre">distance</span></code> and the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">shear</span> <span class="pre">wave</span> <span class="pre">velocity</span></code>.</p>
 <div class="align-center figure" id="id4">
-<span id="fig-stochasticvlachos-event"></span><img alt="../../../../../_images/stochasticVlachos.png" src="../../../../../_images/stochasticVlachos.png" />
+<span id="fig-stochasticvlachos-event"></span><a class="reference internal image-reference" href="../../../../../_images/stochasticVlachos.png"><img alt="../../../../../_images/stochasticVlachos.png" src="../../../../../_images/stochasticVlachos.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.4.1.1 </span><span class="caption-text">Vlachos et al. (2018) model inputs.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p id="fig-stochasticdabaghi-event">For the Dabaghi and Der Kiureghian model geometric directivity parameters, as shown in <a class="reference internal" href="#fig-dabaghi"><span class="std std-numref">Fig. 2.4.1.2</span></a>, required by the Dabaghi and Der Kiureghian model are described completely in Somerville et al. (1997) <span id="id3">[<a class="reference internal" href="../../../../../index.html#id19" title="Paul G. Somerville, Nancy F. Smith, Robert W. Graves, and Norman A. Abrahamson. Modification of Empirical Strong Ground Motion Attenuation Relations to Include the Amplitude and Duration Effects of Rupture Directivity. Seismological Research Letters, 68(1):199-222, 01 1997. URL: https://doi.org/10.1785/gssrl.68.1.199, arXiv:https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf, doi:10.1785/gssrl.68.1.199.">SSGA97</a>]</span>.</p>
 <div class="align-center figure" id="id5">
-<span id="fig-dabaghi"></span><img alt="../../../../../_images/stochasticDabaghi.png" src="../../../../../_images/stochasticDabaghi.png" />
+<span id="fig-dabaghi"></span><a class="reference internal image-reference" href="../../../../../_images/stochasticDabaghi.png"><img alt="../../../../../_images/stochasticDabaghi.png" src="../../../../../_images/stochasticDabaghi.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.4.1.2 </span><span class="caption-text">Dabaghi &amp; Der Kiureghian (2018) model inputs.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Additionally, users can provide a seed for either model if they desire the same
@@ -259,8 +261,8 @@ will be generated for each run. The backend application that generates
 the stochastic ground motions relies on <strong>smelt</strong>, a modular and
 extensible C++ library for generating stochastic time histories. Users
 interested in learning more about the implementation and design of
-<strong>smelt</strong> are referred to its .. _ GitHub Repository: <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">https://github.com/NHERI-SimCenter/smelt</a> .</p>
-<p>All input parameters can be specified as random variables by entering
+<strong>smelt</strong> are referred to its <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">GitHub Repository</a>.</p>
+<p>All input parameters can be specified as <strong>random variables</strong> by entering
 a string in the parameter field. Please note that information for the
 inputs that are identified as random variables needs to be provided in
 the <strong>UQ</strong> tab.</p>

@@ -163,7 +163,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -249,11 +251,11 @@
 <p class="caption"><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">PEER NGA records event.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li><p>A target response spectrum must be specified by the user to be used for records selection and scaling.</p></li>
-<li><p>The user specifies a selection criteria, such as the number of records and optional ranges of earthquake magnitude, distance to rupture (<span class="math notranslate nohighlight">\(R_{rup}\)</span>) and shear wave velocity in the top 30 meter of soil (<span class="math notranslate nohighlight">\(V_s 30\)</span>).</p></li>
-<li><p>The user specifies via a drop down menu, the number of component directions, one or two horizontal, or two horizontal and one vertical.</p></li>
+<li><p>A target response spectrum must be specified by the user to be used for record selection and scaling.</p></li>
+<li><p>The user specifies selection criteria, such as the number of records and optional ranges of earthquake magnitude, distance to rupture (<span class="math notranslate nohighlight">\(R_{rup}\)</span>) and shear wave velocity in the top 30 meters of soil (<span class="math notranslate nohighlight">\(V_{s 30}\)</span>).</p></li>
+<li><p>The user specifies via a drop-down menu, the number of component directions, one or two horizontal, or two horizontal and one vertical.</p></li>
 </ol>
-<p>Once the selection criteria has been entered, the user selects the  <strong>Select Records</strong> button. The Application at this point will interact with the NGA server to obtain a selection of records. After a suite of records is selected from the database, the list of records is shown in tabular form for the user to inspect their information, as shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.4.2.1</span></a>. Additionally a plot is generated showing the target spectrum, the average and standard deviation of the selected suite of records and the selected scaled ground motions spectra. Users can also highlight particular spectra on the plot by selecting the one or more records in the table provided. This enables the user to inspect the suite of records used to characterize the ground motions before running the building simulation.</p>
+<p>Once the selection criteria have been entered, the user selects the  <strong>Select Records</strong> button. The Application at this point will interact with the NGA server to obtain a selection of records. After a suite of records is selected from the database, the list of records is shown in tabular form for the user to inspect their information, as shown in <a class="reference internal" href="#fig-nga-event"><span class="std std-numref">Fig. 2.4.2.1</span></a>. Additionally, a plot is generated showing the target spectrum, the average and standard deviation of the selected suite of records and the selected scaled ground motion spectra. Users can also highlight particular spectra on the plot by selecting one or more records in the table provided. This enables the user to inspect the suite of records used to characterize the ground motions before running the building simulation.</p>
 <div class="section" id="target-spectrum">
 <h2><span class="section-number">2.4.2.1. </span>Target Spectrum<a class="headerlink" href="#target-spectrum" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
@@ -285,7 +287,7 @@ uploading a csv file with the first column for <span class="math notranslate noh
 <ol class="arabic simple" start="4">
 <li><p><strong>Uniform Hazard Spectrum (USGS NSHMP)</strong>: Uniform Hazard Spectrum (UHS) can be retrieved from <a class="reference external" href="https://earthquake.usgs.gov/nshmp-haz-ws/apps/services.html">USGS NSHMP Service</a> to
 be used as the target spectrum for ground motion selection. User-specified parameters include return period, site location, site <span class="math notranslate nohighlight">\(V_{S30}\)</span>, and NSHM edition. Available
-NSHM editions are (1) Static: Conterminous U.S. 2008 (v3.1.0), (1) Static: Conterminous U.S. 2008 (v3.2.0), (3) Dynamic: Conterminous U.S. 2008 (v3.3.3),
+NSHM editions are (1) Static: Conterminous U.S. 2008 (v3.1.0), (2) Static: Conterminous U.S. 2008 (v3.2.0), (3) Dynamic: Conterminous U.S. 2008 (v3.3.3),
 (4) Static: Conterminous U.S. 2014 (v4.0.0), (5) Dynamic: Conterminous U.S. 2014 (v4.1.4), and (6) Dynamic: Conterminous U.S. 2014 (update) (v4.2.0).</p></li>
 </ol>
 <blockquote id="fig-uhs">
@@ -297,8 +299,8 @@ NSHM editions are (1) Static: Conterminous U.S. 2008 (v3.1.0), (1) Static: Conte
 <li><p><strong>Conditional Mean Spectrum (USGS Disagg.)</strong>: Conditional Mean Spectrum (CMS) is also supported as a target spectrum type. Seismic Disaggregation data (i.e., mean magnitude, distance, and <span class="math notranslate nohighlight">\(\epsilon\)</span>)
 will be first retrieved from <a class="reference external" href="https://earthquake.usgs.gov/nshmp-haz-ws/apps/services.html">USGS NSHMP Service</a> given the site location, site <span class="math notranslate nohighlight">\(V_{S30}\)</span>, disaggregation model edition,
 return period, and conditional intensity measure (IM). Depending on the NSHM edition, available conditional IM can be different. Users can manually define the conditional period which leads
-to interpolating the results between the two neighboring periods that are supported by USGS NSHMP Service. With the disaggregated hazard, users cane
-select a ground motion model (GM Model), and a CMS will be computed using the defined GM Model with the NGA-West2 IM correlation model (<a class="reference internal" href="#bakerbradley2017" id="id2"><span>[BakerBradley2017]</span></a>).</p></li>
+to interpolating the results between the two neighboring periods that are supported by USGS NSHMP Service. With the disaggregated hazard, users can
+select a ground motion model (GM Model), and a CMS will be computed using the defined GM Model with the NGA-West2 IM correlation model <a class="reference internal" href="#bakerbradley2017" id="id2"><span>[BakerBradley2017]</span></a>.</p></li>
 </ol>
 <blockquote id="fig-cms-usgs-disagg">
 <div><div class="align-center figure">
@@ -308,11 +310,11 @@ select a ground motion model (GM Model), and a CMS will be computed using the de
 <ol class="arabic simple" start="6">
 <li><p><strong>Spectrum from Hazard Surrogate</strong>: Target spectrum is evaluated via a user-provided Gaussian Process (GP) surrogate model that follows the default format produced by <a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">quoFEM
 GP surrogate modeling</a>. Users will provide two input files
-for the pretrained GP model (the default names are <cite>SimGpModel.json</cite> and <cite>SimGPModel.pkl</cite>,
+for the pre-trained GP model (the default names are <cite>SimGpModel.json</cite> and <cite>SimGPModel.pkl</cite>,
 please see more descriptions in <a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#saving-options">quoFEM documentation</a>).
-Once the model is successfully loaded, the intensity measure names in the trained GP model will be displayed in the <cite>Options</cite> panel.  Users need to provide the periods correspond to the
-spectral accelerations in the GP model.  Along with the <cite>Options</cite> panel, the input random variables in the pretrained model will also be displayed with text edit box(es) for evaluating
-the GP model. For instance, <a class="reference internal" href="#figsurrogatehazard"><span class="std std-numref">Fig. 2.4.2.1.1</span></a> shows one example that the surrogate GP model is trained for Hayward earthquake scenarios at San Francisco Bay Area in which the
+Once the model is successfully loaded, the intensity measure names in the trained GP model will be displayed in the <cite>Options</cite> panel.  Users need to provide the periods corresponding to the
+spectral accelerations in the GP model.  Along with the <cite>Options</cite> panel, the input random variables in the pre-trained model will also be displayed with a text edit box(es) for evaluating
+the GP model. For instance, <a class="reference internal" href="#figsurrogatehazard"><span class="std std-numref">Fig. 2.4.2.1.1</span></a> shows one example that the surrogate GP model is trained for Hayward earthquake scenarios in San Francisco Bay Area in which the
 Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are input variables to predict response spectral acceleration at various periods from 0.01 to 10 sec.</p></li>
 </ol>
 <div class="align-center figure" id="id7">
@@ -320,11 +322,11 @@ Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are
 <p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">Target spectrum from hazard surrogate</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="7">
-<li><p><strong>No Spectrum - Uniform IMs</strong>: This option does not select ground motions based on a target spectrum. Instead, it selects ground motion to have as diverse intensity measure (IM) combinations as possible. Based on the IM quantities and their range that user provides, it will select the ground records to uniformly fill in the IM domain. This is done by first uniformly binning the IM domain, and then, for each bin, allocating ground motion records that has IM values closest to the center of each bin.</p>
+<li><p><strong>No Spectrum - Uniform IMs</strong>: This option does not select ground motions based on a target spectrum. Instead, it selects ground motion to have as diverse intensity measure (IM) combinations as possible. Based on the IM quantities and their range that the user provides, it will select the ground records to uniformly fill in the IM domain. This is done by first uniformly binning the IM domain, and then, for each bin, allocating ground motion records that have IM values closest to the center of each bin.</p>
 <ul class="simple">
-<li><p><strong># samples per bin</strong>: 1 is recommended. If the number is 2, for example, twice number of ground motions will be selected.</p></li>
-<li><p><strong>Intensity Measure Calculation</strong>: Choose the intensity measures and their range to be uniformly populated. In order to achieve this, it is recommended to avoid having highly correlated IMs together in the list, for example, both peak spectral acceleration and peak ground acceleration. An example of good mildly correlated IM combinations is [spectral acceleration, significant duration, and sa ratio] as shown in the figure below <a class="reference internal" href="#zhong2023" id="id3"><span>[Zhong2023]</span></a>.</p></li>
-<li><p><strong>Ground motion coverage</strong>: When the number of IMs in the list are either 2 or 3, a plot that shows the covered domain of IM will be provided. Note that if no matching ground motions are found for the bins, corresponding anchor points (center of each bin) are colored red.</p></li>
+<li><p><strong># samples per bin</strong>: 1 is recommended. If the number is 2, for example, twice the number of ground motions will be selected.</p></li>
+<li><p><strong>Intensity Measure Calculation</strong>: Choose the intensity measures and their range to be uniformly populated. In order to achieve this, it is recommended to avoid having highly correlated IMs together in the list, for example, both peak spectral acceleration and peak ground acceleration. An example of good mildly correlated IM combinations is [spectral acceleration, significant duration, and Sa ratio] as shown in the figure below <a class="reference internal" href="#zhong2023" id="id3"><span>[Zhong2023]</span></a>.</p></li>
+<li><p><strong>Ground motion coverage</strong>: When the number of IMs in the list is either 2 or 3, a plot that shows the covered domain of IM will be provided. Note that if no matching ground motions are found for the bins, corresponding anchor points (center of each bin) are colored red.</p></li>
 </ul>
 </li>
 </ol>
@@ -338,7 +340,7 @@ Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The IMs of each ground motion shown in the figure (yellow points) are obtained by looking up the library of pre-computed IMs and it’s proximity to each anchor point is calculated using <strong>geometric mean</strong> of the two horizontal directional components. Therefore, the IMs of the finally selected ground motions may not be <em>exactly</em> located at the yellow points shown in the below figure, but will have close proximity. The range of allowed scaling factor without any penalty is 0.5~10.0. The ground motions that are scaled beyond this range will get de-prioritized.</p>
+<p>The IMs of each ground motion shown in the figure (yellow points) are obtained by looking up the library of pre-computed IMs and its proximity to each anchor point is calculated using <strong>geometric mean</strong> of the two horizontal directional components. Therefore, the IMs of the finally selected ground motions may not be <em>exactly</em> located at the yellow points shown in the below figure, but will have close proximity. The range of the allowed scaling factor without any penalty is 0.5~10.0. The ground motions that are scaled beyond this range will get de-prioritized.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -394,13 +396,13 @@ and (3) scaling factors applied individually to pin all spectra at a given perio
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web <a class="footnote-reference brackets" href="#id5" id="id4">1</a>.</p>
+<p>It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign-up web <a class="footnote-reference brackets" href="#id5" id="id4">1</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The record-to-record uncertainty in assessing the structural responses under earthquakes are taken into account by running
+<p>The record-to-record uncertainty in assessing the structural responses under earthquakes is taken into account by running
 a set of ground motion records. This can be realized by using the <strong>Forward Propagation</strong> method under the <strong>UQ</strong> tab. Once the
-ground motion records are selected, users have the control of how many records to be run in the time history analyses by seleting
+ground motion records are selected, users have the control over how many records to be run in the time history analyses by selecting
 the Latin Hypercube Sample (<strong>LHS</strong>) and specifying the number of samples (<strong># Sample</strong>). Note that with the LHS algorithm, when
 the number of samples is the total number of selected records, each record will be used once in the time history analyses.</p>
 </div>

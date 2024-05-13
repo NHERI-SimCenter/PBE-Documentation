@@ -134,7 +134,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -212,9 +214,9 @@
 <span id="lbl-testbed-ac-sample-results"></span><h1>Verification Results<a class="headerlink" href="#verification-results" title="Permalink to this heading">¶</a></h1>
 <p>This page summarizes sample results from the testbed runs with three major focuses:</p>
 <ol class="arabic simple">
-<li><p>verifying the estimated loss ratios by hand-calculations,</p></li>
-<li><p>demonstrating the sensitivity study with different hurricane categories, and</p></li>
-<li><p>illustrating the influence of building properties on the hurricane loss using the observations from the sample results.</p></li>
+<li><p>Verifying the estimated loss ratios by hand calculations,</p></li>
+<li><p>Demonstrating the sensitivity study with different hurricane categories, and</p></li>
+<li><p>Illustrating the influence of building properties on the hurricane loss using the observations from the sample results.</p></li>
 </ol>
 <div class="section" id="building-inventory">
 <h2>Building Inventory<a class="headerlink" href="#building-inventory" title="Permalink to this heading">¶</a></h2>
@@ -230,35 +232,44 @@ roughness (<span class="math notranslate nohighlight">\(z_0\)</span>), peak wind
 <h2>Hand Calculation<a class="headerlink" href="#hand-calculation" title="Permalink to this heading">¶</a></h2>
 <p>Hand calculations of wind, flood, and combined losses are conducted using the
 input building information and intensity measures for the sampled buildings.
-The calculations are made for all the four hurricane categories:</p>
+The calculations are made for all four hurricane categories:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Cat-5: PWS (3s-gust) ~= 190 mph, maximum surge depth ~= 18 ft</p></li>
+<li><p>Cat-4: PWS ~= 140 mph, maximum surge depth ~= 15 ft</p></li>
+<li><p>Cat-3: PWS ~= 120 mph, maximum surge depth ~= 10 ft</p></li>
+<li><p>Cat-2: PWS ~= 100 mph, maximum surge depth ~= 7 ft</p></li>
+</ol>
+</div>
 <p><code class="xref std std-numref docutils literal notranslate"><span class="pre">hand_calc</span></code> compares the hand-calculated loss ratios and the simulated
-results which are in good agreement. The finite differences seen in the flood loss ratios
+results, which are in good agreement. The finite differences seen in the flood loss ratios
 are due to the random sampling process in estimating the expected loss ratios.</p>
 <div class="align-center figure" id="hand-calc">
 <a class="reference internal image-reference" href="../../../_images/SimuVSHandCalc.png"><img alt="../../../_images/SimuVSHandCalc.png" src="../../../_images/SimuVSHandCalc.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Hand-calculated results vs. simulated results.</span><a class="headerlink" href="#hand-calc" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Hand-calculated results vs. simulated results</span><a class="headerlink" href="#hand-calc" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="wind-loss-by-building-class-and-year">
 <h2>Wind Loss by Building Class and Year<a class="headerlink" href="#wind-loss-by-building-class-and-year" title="Permalink to this heading">¶</a></h2>
-<p>To understand the driving factors that influence the regional loss assessment results.
-The 85 sampled buildings are grouped into five building classes and the average wind loss values
+<p>To understand the driving factors that influence the regional loss assessment results,
+the 85 sampled buildings are grouped into five building classes and the average wind loss values
 are computed (<code class="xref std std-numref docutils literal notranslate"><span class="pre">wind_loss_bt</span></code>). Regardless of the hurricane category, concrete, steel,
 and masonry buildings perform better than wood buildings and manufactured homes on average.</p>
 <div class="align-center figure" id="wind-loss-bt">
 <a class="reference internal image-reference" href="../../../_images/WindLossBuildingType.png"><img alt="../../../_images/WindLossBuildingType.png" src="../../../_images/WindLossBuildingType.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text">Average expected wind losses by building class.</span><a class="headerlink" href="#wind-loss-bt" title="Permalink to this image">¶</a></p>
 </div>
-<p>To further investigate the influence of built year on the wind loss of wood buildings,
-<code class="xref std std-numref docutils literal notranslate"><span class="pre">wind_loss_yr</span></code> shows the estimated expected wind loss ratios by the year of built.
-Coupled with the hurricane category effect, in the Category 5 hurricane, the built year does not
-show as a driving factor, but in the other three scenarios, the wind losses are shown to be
-related to the built year. The worst cases are seen in 1970s and 1980s, while the building in the
-past two decades perform much better than the other groups.  Note that this
+<p>To further investigate the influence of the year built on the wind loss of wood buildings,
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">wind_loss_yr</span></code> shows the estimated expected wind loss ratios by the year built.
+Coupled with the hurricane category effect, in the Category 5 hurricane, the year built does not
+appear as a driving factor, but in the other three scenarios, the wind losses are shown to be
+related to the year built. The worst cases are seen in the 1970s and 1980s, while the buildings from the
+past two decades perform much better than the other groups. Note that this
 comparison is made for the limited sample size in this verification study.</p>
 <div class="align-center figure" id="wind-loss-yr">
 <a class="reference internal image-reference" href="../../../_images/WoodBuildingWindLoss.png"><img alt="../../../_images/WoodBuildingWindLoss.png" src="../../../_images/WoodBuildingWindLoss.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Average expected wind losses of wood buildings by built year.</span><a class="headerlink" href="#wind-loss-yr" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Average expected wind losses of wood buildings by year built.</span><a class="headerlink" href="#wind-loss-yr" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

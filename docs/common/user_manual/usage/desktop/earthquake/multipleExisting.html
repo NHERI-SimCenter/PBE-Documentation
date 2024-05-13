@@ -155,7 +155,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -251,21 +253,21 @@ the button has been pressed twice, and data entered to load the two example SimC
 <p>The name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, %, etc.</p>
 </div>
 <p>The  <strong>Remove</strong> button is used to remove events. To remove an
-event, the user must first select events they wish to remove,
-which is done by clicking in the small circle at the left side of the event frame. All of the selected events are removed when the <strong>Remove</strong> button is pressed.</p>
+event, the user must first select the events they wish to remove,
+which is done by clicking on the small circle at the left side of the event frame. All of the selected events are removed when the <strong>Remove</strong> button is pressed.</p>
 <p>The <strong>Load Directory</strong> button provides a convenient method to load multiple events. All event files shall
 first be placed into the same folder. We recommend to put the files in a folder of their own, with no other
 files besides the earthquake events in it. After pressing the <strong>Load Directory</strong> button, the user will be
 able to choose the directory that contains the files, and the application will load all event files (i.e.,
 every file with a <strong>.json</strong> extension) into the widget automatically.</p>
-<p>Initially, every event will be given a load factor of 1.0. Load factors can be assigned automatically by preparing a <a class="reference download internal" download="" href="../../../../../_downloads/d719dd5f94fc378fd674aba5f381d63b/Records.txt"><code class="xref download docutils literal notranslate"><span class="pre">Records.txt</span></code></a> file in the directory with the events. Each line in the <em>Records.txt</em> shall represent one event file, and contain two comma separated values: the event file name and the desired scale factor. The application will open that file automatically and assign the prescribed load factors to the events. Using a <em>Records.txt</em> file also allows users to load only a subset of the events from a folder by listing only those in the file. An example <em>Records.txt</em> is shown below:</p>
+<p>Initially, every event will be given a load factor of 1.0. Load factors can be assigned automatically by preparing a <a class="reference download internal" download="" href="../../../../../_downloads/d719dd5f94fc378fd674aba5f381d63b/Records.txt"><code class="xref download docutils literal notranslate"><span class="pre">Records.txt</span></code></a> file in the directory with the events. Each line in the <em>Records.txt</em> shall represent one event file, and contain two comma-separated values: the event file name and the desired scale factor. The application will open that file automatically and assign the prescribed load factors to the events. Using a <em>Records.txt</em> file also allows users to load only a subset of the events from a folder by listing only those in the file. An example <em>Records.txt</em> is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PEER-Record-9.json,1.5
 PEER-Record-28.json,2.0
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Random Variables</strong>: Scale factors can be defined as being random variables by entering a string in the factor field. The variable name entered will appear as a Random Variable in the <strong>UQ</strong> tab and the user must specify its distribution there. If multiple events are specified, the event itself will be also be treated as a random variable, with each event being part of the discrete set of possible events. For this discrete set the user does not define a distribution as this is done automatically.</p>
+<p><strong>Random Variables</strong>: Scale factors can be defined as being random variables by entering a string in the factor field. The variable name entered will appear as a Random Variable in the <strong>UQ</strong> tab and the user must specify its distribution there. If multiple events are specified, the event itself will be also be treated as a random variable, with each event being part of the discrete set of possible events. For this discrete set, the user does not define a distribution as this is done automatically.</p>
 </div>
 </div>
 

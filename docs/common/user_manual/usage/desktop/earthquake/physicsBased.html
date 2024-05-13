@@ -158,7 +158,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -238,14 +240,15 @@
             
   <div class="section" id="physics-based-ground-motions">
 <h1><span class="section-number">2.4.7. </span>Physics Based Ground Motions<a class="headerlink" href="#physics-based-ground-motions" title="Permalink to this heading">¶</a></h1>
-<p>This panel allows users to use the results of previously run physics based earthquake rupture simulations that generated suites of ground motions for the
-areas studied. As more datasets are made available, more options will be added to the options in the pull down menu.</p>
+<p>This panel allows users to use the results of previously run physics-based earthquake rupture simulations that generated suites of ground motions for the
+areas studied. As more datasets are made available, more options will be added to the options in the pull-down menu.</p>
 <div class="section" id="m9-dataset">
 <h2><span class="section-number">2.4.7.1. </span>M9 Dataset<a class="headerlink" href="#m9-dataset" title="Permalink to this heading">¶</a></h2>
+<p>With funding support from the National Science Foundation, the United States Geological Survey and the University of Washington team studying the impacts of large magnitude, megathrust earthquakes on the Cascadia subduction zone as part of the <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/">M9 Project</a> . The researchers used physics-based simulations to generate possible ground motions for the entire Pacific Northwest region during a magnitude-9 (M9) event. Broadband ground motions were developed from these M9 simulations for seven grids (A, B, C, D, E, Y and Z), each corresponding to a particular combination of region and/or <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/extent-of-model/">grid resolution</a>. It is these motions developed as part of the <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/">M9 Project</a> that are made available through this option.</p>
 <p>With funding support from the National Science Foundation, a United States Geological Survey and University of Washington team studied the impacts of
 large magnitude, megathrust earthquakes on the Cascadia subduction zone as part of the <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/">M9 Project</a> . The researchers used physics-based simulations to generate possible ground motions for the entire Pacific Northwest region during a magnitude-9 (M9) event. Broadband ground motions were developed from these M9 simulations for a number of grids (A, B, C, D, E, Y and Z), each corresponding to a particular combination of region and/or <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/extent-of-model/">grid resolution</a>.</p>
-<table class="colwidths-given docutils align-default" id="id1">
-<caption><span class="caption-number">Table 2.4.7.1.1 </span><span class="caption-text">Title</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id4">
+<caption><span class="caption-number">Table 2.4.7.1.1 </span><span class="caption-text">Title</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 30%" />
@@ -295,11 +298,11 @@ large magnitude, megathrust earthquakes on the Cascadia subduction zone as part 
 </tbody>
 </table>
 <p>M9 Grids</p>
-<p>To use this M9 dataset the user inputs a number of options, <strong>grid type</strong>, <strong>latitude</strong> and <strong>longitude</strong> being the location for which the motions are sought, and <strong>numMotions</strong> for the number of motions desired at the location.  The location on the users computer that the motions will be downloaded to for a staging area is specified by the user in <strong>tmp Directory</strong>, by default it is specified to be in the users <strong>Documents/EE-UQ/LocalWorkDir</strong> directory.</p>
-<p>Once the user has entered the inputs they press the <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Motions</span></code> button. This will start the download process in the <strong>background</strong>, i.e. behind the scenes. The download is being done in the background because the download process is painfully slow, a few minutes per ground motion. While the motions are downloading, the user can work on other parts of the interface. Should the user attempt to <code class="docutils literal notranslate"><span class="pre">Run</span></code> a simulation before the motions are finished downloading, a pop up window will appear informing the user that the run should be cancelled.</p>
-<div class="align-center figure" id="id2">
+<p>To use the dataset, the user inputs a number of options: <strong>latitude</strong> and <strong>longitude</strong> being the locations for which the motions are sought, and <strong>numMotions</strong> for the number of motions desired, and the <strong>grid type</strong>.  The location in the user’s computer that the motions will be downloaded to is specified by the user in <strong>tmp Directory</strong>, by default it is in the user’s <strong>Documents/EE-UQ/LocalWorkDir</strong> directory.</p>
+<p>Once the user has entered the inputs they press the <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Motions</span></code> button. This will start the download process in the background. This process is painfully slow, a few minutes per ground motion. While the motions are downloading the user can work on other parts of the interface. If the user attempts to run a simulation before motions are downloaded, pop-ups will appear informing the user that the run should be canceled.</p>
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/M9.png"><img alt="../../../../../_images/M9.png" src="../../../../../_images/M9.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.7.1.1 </span><span class="caption-text">M9 Interface</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.7.1.1 </span><span class="caption-text">M9 Interface</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
