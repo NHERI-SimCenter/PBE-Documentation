@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Software Architecture &mdash; Performance Based Engineering Application  documentation</title>
+  <title>&lt;no title&gt; &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -188,7 +188,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Software Architecture</li>
+      <li>&lt;no title&gt;</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,63 +207,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="software-architecture">
-<span id="lblarchitecture"></span><h1>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this heading">¶</a></h1>
-<p>The PBE app is one of the SimCenter’s computational applications, which are <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_workflow_system">scientific workflow systems</a> that executes a sequence of computational tasks specialized for natural hazard engineering (NHE) problems. In contrast to more general-purpose scientific workflow systems (such as <a class="reference external" href="https://taverna.incubator.apache.org/">Taverna</a>, <a class="reference external" href="https://kepler-project.org/">Kepler</a>, and <a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a>), SimCenter workflow systems include the following features:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>access to high-performance computing resources, available on the cloud through <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>, to enable parallel workflows for non-trivial large-scale NHE problems;</p></li>
-<li><p>uncertainty quantification capabilities using <a class="reference external" href="https://dakota.sandia.gov/">Dakota</a>, which allows users to introduce input uncertainties that are propagated through the workflow with random variables;</p></li>
-<li><p>streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as <a class="reference external" href="https://openfoam.org/">OpenFOAM</a>, <a class="reference external" href="https://opensees.berkeley.edu">OpenSees</a>, <a class="reference external" href="http://adcirc.org/">ADCIRC</a>, and <a class="reference external" href="https://peer.berkeley.edu/peer-strong-ground-motion-databases">PEER Strong Ground Motion Databases</a>. To do this, the SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services;</p></li>
-<li><p>additional custom software applications produced by the SimCenter. Among these are applications that automate the acquisition of building inventory data (<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/">BRAILS</a>), applications that simulate hazard events and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (<a class="reference external" href="https://nheri-simcenter.github.io/pelicun/">pelicun</a>), and more.</p></li>
-<li><p>a modular framework that allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.</p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id2">
-<span id="figframework"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterFramework.png"><img alt="../../../../_images/SimCenterFramework.png" src="../../../../_images/SimCenterFramework.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-text">SimCenter Software Framework</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-<p>The SimCenter scientific workflow systems aim to facilitate the use, reuse, and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying software skills. This chapter presents the software architecture for the SimCenter framework and PBE app using the <a class="reference external" href="https://c4model.com">C4 model</a> to encourage this use and adoption. The <strong>C4</strong> model is a graphical approach for documenting software architecture through diagrams describing and communicating the software architecture at various levels of abstraction. It is a top-down approach that starts at a high level (level 1), showing how a user would interact with the software, and drills down through three more levels, with level 4 containing the typical UML diagrams. The <strong>C4</strong> model was chosen to provide NHE researchers with a diverse range of software architecture knowledge to understand the software architecture behind SimCenter applications that fit their skill level. The four levels:</p>
-<ul class="simple">
-<li><p>Level 1: The level one diagram is a system diagram that shows how the software system fits in the real world in terms of people who use it and other software systems it interacts with.</p></li>
-<li><p>Level 2: Level 2 is a container diagram showing the containers (applications, databases, etc.) that make up the software system.</p></li>
-<li><p>Level 3: Level three diagrams are component diagrams, showing how the components of the individual containers.</p></li>
-<li><p>Level 4: The level four diagrams show how the individual components are implemented. They are typically UML class diagrams.</p></li>
-</ul>
-<p>The following sections present the architecture of SimCenter the SimCenter to level 3:</p>
-<p>Documentation of the SimCenter software architecture is detailed in the following pages:</p>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file-types.html">File Types and Schemas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file-types/Inputs.html">Inputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file-types/Outputs.html">Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Software Architecture</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c4model.html">C4 Model of the SimCenter Ecosystem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-1-context-diagram">Level 1: Context Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-2-container-diagram">Level 2: Container Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-3-component-diagram">Level 3: Component Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-4-code-diagram">Level 4: Code Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-ee-uq">UML EE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-we-uq">UML WE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-hydrouq">UML HydroUQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-pbe">UML PBE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-earthquakeevents">UML EarthquakeEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-windevents">UML WindEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-hydroevents">UML HydroEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-simcentercommon">UML SimCenterCommon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html#uml-simcenterbackendapplications">UML SimCenterBackendApplications</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="backendApplications.html">Backend Applications</a><ul>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="c4model.html">C4 Model of Software Architecture</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-1-context-diagram">Level 1: Context Diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-2-container-diagram">Level 2: Container Diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-3-component-diagram">Level 3: Component Diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c4model.html#level-4-code-diagram">Level 4: Code Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-types.html">File Types and Schemas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file-types/Inputs.html">Inputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#configuration-file">Configuration File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#building-source-file">Building Source File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#transportation-network-source-file-option-1">Transportation Network Source File Option 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#model-file">Model File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#edp-specifications-file">EDP specifications file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Inputs.html#event-files">Event Files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file-types/Outputs.html">Outputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Outputs.html#edp-output-file">EDP Output File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Outputs.html#dm-output-file">DM Output File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-types/Outputs.html#dv-output-file">DV Output File</a></li>
 </ul>
 </li>
 </ul>
-</div>
-<p>Within the natural hazards engineering community, there exist several widely used open-source applications, e.g., OpenFOAM, and online datasets, e.g., PEER NGA, that researchers are currently using. Consequently, and to avoid duplication, SimCenter applications incorporate many widely used applications, e.g., OpenFOAM. To do this, SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Definitions</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Workflow</strong>: “The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules.” [Workflow Management Coalition].</p></li>
-<li><p><strong>Application</strong>: A software application performs operations on data residing in a computer for a user or another program; it can be self-contained, typically termed a program or part of a group of programs.</p></li>
-<li><p><strong>Scientific Workflow</strong>: A sequence of steps propagating input data through various applications to produce output. It is a loosely coupled application performing workflows in which each coordinated task is performed using an individual application. Each of the individual applications takes some data inputs and produces data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever-increasing amounts of data using “scientific” applications.</p></li>
-<li><p><strong>Scientific Workflow System</strong>: One or more applications that aid a user in setting up, scheduling, running, and monitoring a user-defined scientific workflow.</p></li>
-<li><p><strong>Software Framework</strong>: A collection of software for building applications in a specific domain. The framework defines the interfaces between the software components, provides example applications that can be developed using the provided software, and represents a clear set of interfaces. The software can be extended to build other applications.</p></li>
-</ol>
-</div>
+</li>
+</ul>
 </div>
 
 
