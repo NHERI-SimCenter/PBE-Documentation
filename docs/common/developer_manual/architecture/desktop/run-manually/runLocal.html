@@ -209,7 +209,7 @@
             
   <div class="section" id="run-locally-on-your-desktop">
 <span id="lblrunlocal"></span><h1>Run Locally on Your Desktop<a class="headerlink" href="#run-locally-on-your-desktop" title="Permalink to this heading">¶</a></h1>
-<p>Running applications locally on a personal desktop is convenient for running small-scale jobs and debugging. For larger jobs, the applications are available on DesignSafe for utilizing high-performance computing resources.</p>
+<p>Running applications locally on a personal desktop is convenient for small-scale jobs and debugging. For larger jobs, the applications are available on DesignSafe to utilize high-performance computing resources.</p>
 <ol class="arabic">
 <li><p>Follow the directions in <a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html#lblhowtobuild"><span class="std std-ref">How to Build</span></a> to install the backend applications on your local desktop. Move the applications folder to a separate directory (such as <code class="docutils literal notranslate"><span class="pre">C:/rWHALE/</span></code>).</p></li>
 <li><p>Prepare the input files in a folder called <code class="docutils literal notranslate"><span class="pre">input_data</span></code>, then zip the folder. You may use this example input file set (<code class="xref download docutils literal notranslate"><span class="pre">input_data_eq.zip</span></code>) as a template.</p></li>
@@ -222,8 +222,6 @@
 </ul>
 </div></blockquote>
 </li>
-</ol>
-<ol class="arabic simple" start="3">
 <li><p>The workflow is run through the command window by calling on Python and specifying paths to the application files, input files, and desired location for the results folder. The following is an example of the <strong>initialization command</strong>:</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">R2D_workflow</span><span class="o">.</span><span class="n">py</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">rWHALE_config</span><span class="o">.</span><span class="n">json</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">registry</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">WorkflowApplications</span><span class="o">.</span><span class="n">json</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">input_data</span> <span class="n">folder</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">output</span> <span class="n">results</span> <span class="n">folder</span><span class="o">&gt;</span>
@@ -239,7 +237,7 @@
 </ul>
 </dd>
 </dl>
-<ol class="arabic simple" start="4">
+<ol class="arabic simple" start="5">
 <li><p>A results folder is produced, which contains both the aggregated output files (EDP_{min id}_{max id}.csv, DM_{min id}_{max id}.csv, DV_{min id}_{max id}.csv), as well as the individual output files (EDP.csv, DM.csv, DV.csv) for each built asset in their respective folders.</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>results
