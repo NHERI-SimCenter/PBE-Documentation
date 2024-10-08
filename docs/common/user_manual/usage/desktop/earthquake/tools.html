@@ -1,0 +1,684 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tools &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/earthquake/tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tools">
+<span id="eeuq-tools"></span><h1>Tools<a class="headerlink" href="#tools" title="Permalink to this heading">¶</a></h1>
+<p>The main menu toolbar features the tools dropdown menu. In EEUQ, tools are applications designed to generate inputs for specific workflow applications. For instance, the <strong>ShakerMaker</strong> tool helps to simulate ground motions from earthquakes, providing essential input data for further structural analysis and engineering assessments.</p>
+<div class="section" id="domain-reduction-method-analysis">
+<span id="drm-modeltools"></span><h2>Domain Reduction Method Analysis<a class="headerlink" href="#domain-reduction-method-analysis" title="Permalink to this heading">¶</a></h2>
+<p>Domain Reduction Method analysis tool in EE-UQ is user interface through which users can create a model in OpenSees and use the implemented DRM loading in OpenSees to perform a high fidelity analysis of a structure subjected to earthquake ground motions. The DRM analysis tool is designed to simplify the process of creating a model using parallel processing and doing the analysis using OpenSeesMP through TACC facilities. The tool is designed to be user-friendly and to provide a seamless experience for users to perform a DRM analysis.</p>
+<div class="section" id="domain-reduction-method">
+<h3>Domain Reduction Method<a class="headerlink" href="#domain-reduction-method" title="Permalink to this heading">¶</a></h3>
+<p>The <strong>Domain Reduction Method (DRM)</strong> helps to simplify complex earthquake simulations, making it easier and faster to compute how buildings and structures react to earthquakes. Here’s a simple breakdown:</p>
+<div class="section" id="why-is-this-needed">
+<h4>Why is this needed?<a class="headerlink" href="#why-is-this-needed" title="Permalink to this heading">¶</a></h4>
+<p>In areas near a fault (the break in the Earth’s crust where earthquakes happen), the ground moves in a unique way. To study how earthquakes affect large regions, we need to run computer models of these ground motions. However, these models are often very slow and take up a lot of computing power. That’s where the DRM comes in—it helps reduce the amount of computing needed while still getting accurate results.</p>
+</div>
+<div class="section" id="what-is-drm">
+<h4>What is DRM?<a class="headerlink" href="#what-is-drm" title="Permalink to this heading">¶</a></h4>
+<p>DRM is a method that divides the problem into two smaller parts, which makes the whole process faster and more manageable. It was first developed by researchers named <strong>Bielak</strong> and <strong>Yoshimura</strong> in 2003.</p>
+</div>
+<div class="section" id="how-does-it-work">
+<h4>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this heading">¶</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Step 1: Solve a Big Picture Problem (Background Problem)</strong>
+First, you solve a “big picture” problem. This means you model a large area that includes both the earthquake waves and the area around the structure (like a building) you are interested in. In this step, you focus on how the earthquake waves move through the ground, not the specific details of what happens to the building.</p></li>
+<li><p><strong>Step 2: Focus on the Area Near the Structure (Local Problem)</strong>
+After you have a good idea of how the earthquake waves move, you can zoom in and focus just on the building or structure. The earthquake waves from Step 1 are applied to the building, and you can study how the building reacts to these waves. This step allows you to include detailed effects, like cracks or bending that might happen to the structure.</p></li>
+</ol>
+<p>figure fig-ShakerMaker_DRM shows two stages of the DRM process.</p>
+<div class="figure align-center" id="id2">
+<span id="fig-shakermaker-drm"></span><img alt="../../../../../_images/ShakerMaker_DRM.png" src="../../../../../_images/ShakerMaker_DRM.png" />
+<p class="caption"><span class="caption-text">Two stages of the DRM.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="why-is-this-method-useful">
+<h4>Why is this method useful?<a class="headerlink" href="#why-is-this-method-useful" title="Permalink to this heading">¶</a></h4>
+<p>This two-step method saves a lot of time. Instead of having to model both the entire earthquake region and the building in one big, slow calculation, DRM breaks it down. First, you solve the larger, simpler problem (earthquake waves in a big region), and then you use that information to do a more detailed and focused analysis on just the building.</p>
+<p>Despite its advantages, the DRM has seen limited use due to challenges in handling large, complex datasets, which require specialized tools for creation. ShakerMaker addresses these issues by offering a straightforward solution for generating DRM-compatible motions and an accessible format for working with extensive datasets, making it easier for researchers and practitioners to leverage this powerful method in their analyses.
+There is functionality in OpenSees which accept a DRM load in hdf5 format. The DRM loading should be in a special format which some software like ShakerMaker can generate. The DRM loading is applied to the model in OpenSeesMP and the analysis is performed using TACC facilities.</p>
+</div>
+</div>
+<div class="section" id="domain-reduction-method-analysis-user-interface">
+<h3>Domain Reduction Method Analysis user interface<a class="headerlink" href="#domain-reduction-method-analysis-user-interface" title="Permalink to this heading">¶</a></h3>
+<p>The DRM analysis tool user interface is consists of the six sections:</p>
+<ul class="simple">
+<li><p><strong>Soil Properties</strong>: This section allows the user to define soil geometry and properties.</p></li>
+<li><p><strong>DRM Layer</strong>: This section allows the user to define the number of DRM layers and the properties input DRM load.</p></li>
+<li><p><strong>Absorbing Layers</strong>: This section allows the user to define the number of absorbing layers and the properties of the absorbing layers.</p></li>
+<li><p><strong>Partitiones</strong>: This section allows the user to define the number of partitions for each of soil, DRM and absorbing layers.</p></li>
+<li><p><strong>Analysis Information</strong>: This section allows the user to define the analysis parameters for the OpenSees model.</p></li>
+<li><p><strong>Job Information</strong>: This section allows the user to submit the job to TACC facilities and get the results back.</p></li>
+</ul>
+<div class="section" id="soil-properties">
+<h4>Soil Properties<a class="headerlink" href="#soil-properties" title="Permalink to this heading">¶</a></h4>
+<p>Right now, the DRM analysis tool only supports a single soil layer with cube geometry. The user can define the geometry by inputting the Width in X, Y and Z directions in meters and the number of elements in X, Y and Z directions.
+For the properties of the single layer of soil, the user can input the density, shear wave velocity and Poisson’s ratio.</p>
+<div class="figure align-center" id="id3">
+<img alt="../../../../../_images/DRM_Mode_SoilProp.png" src="../../../../../_images/DRM_Mode_SoilProp.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Soil Properties Section.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="drm-layer">
+<h4>DRM Layer<a class="headerlink" href="#drm-layer" title="Permalink to this heading">¶</a></h4>
+<p>The DRM layer section allows the user to define the number of DRM layers and the properties of the DRM load.
+The <strong>DRM Software</strong> dropdown allows the user to select the software used to generate the DRM load. The only change that this dropdown does is to change the default values of the properties of the DRM load.
+Right now, <strong>ShakerMaker</strong> and <strong>Custom</strong> are the only options in the dropdown.
+The Propertises of the DRM Load is aligned with the parameters in <strong>H5DRM pattern</strong>: <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/H5DRM.html">H5DRM Documentation</a> in OpenSees. The user can input the properties of the DRM load in the textboxes provided. The properties are:</p>
+<ul class="simple">
+<li><p><strong>Number of Layers</strong>: The number of layers around the Soil layer.</p></li>
+<li><p><strong>Coordinate Transformation check</strong>: The checkbox to enable the coordinate transformation. if checked, the DRM load used the coordinate transformation provided by the user otherwise the default coordinate in the DRM load is used.</p></li>
+<li><p><strong>Load Factor</strong>: The load factor applied to the DRM load.</p></li>
+<li><p><strong>Coordinate Scale</strong>: The scale factor applied to the DRM points coordinates to match the point coordinates in the model.</p></li>
+<li><p><strong>Tolerance</strong>: The tolerance used in the DRM pattern to match the points in the DRM load to the points in the model.</p></li>
+<li><p><strong>T11, T12, T13, T21, T22, T23, T31, T32, T33</strong>: The transformation matrix for coordinate transformation if the coordinate transformation is checked.</p></li>
+<li><p><strong>DRM File Location</strong>: The location of the DRM load file. The user can access the file in their local machine or in the DesignSafe workspace.</p></li>
+<li><p><strong>DRM File Path</strong>: The path to the DRM load file in either the local machine or the DesignSafe workspace.</p></li>
+</ul>
+<div class="figure align-center" id="id4">
+<img alt="../../../../../_images/DRM_Model_DRMLayer.png" src="../../../../../_images/DRM_Model_DRMLayer.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool DRM Layer Section.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notes:
+- Right now for submitting job to TACC, the DRM load file should be in the DesignSafe workspace other wise users will need to upload the DRM load file to the DesignSafe workspace and provide the path to the file in the DRM File Path textbox.
+- If user want to browse the DRM load file in the DesignSafe workspace, they can click on the <strong>Browse</strong> button and a window will pop up showing the files in the DesignSafe workspace. User may need to login to DesignSafe first by passing username and password in another window that will pop up when the <strong>Browse</strong> button is clicked. Users then can use backward and forward buttons to navigate through the files and folders and select button to select the file. The path to the file will be automatically filled in the DRM File Path textbox.</p>
+<div class="figure align-center" id="id5">
+<img alt="../../../../../_images/DRM_Model_Browse_remote.png" src="../../../../../_images/DRM_Model_Browse_remote.png" />
+<p class="caption"><span class="caption-text">Browse DRM Load File in DesignSafe Workspace.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="absorbing-layers">
+<h4>Absorbing Layers<a class="headerlink" href="#absorbing-layers" title="Permalink to this heading">¶</a></h4>
+<p>The Absorbing Layers section allows the user to define the type and number of absorbing layers.
+The user can select the type of absorbing layers from the dropdown. The options are <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/PML.html">PML elements</a>, <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/ASDAbsorbingBoundary.html">ASDA elements</a>, and <strong>Normal Elements with Rayleigh Damping</strong>.
+In the case of <strong>Normal Elements with Rayleigh Damping</strong>, the user can input the damping ratio in the provided text box. However, for <strong>PML elements</strong> and <strong>ASDA elements</strong>, the text box is disabled, as the damping ratio is not required.</p>
+<div class="figure align-center" id="id6">
+<img alt="../../../../../_images/DRM_Model_Absorbing.png" src="../../../../../_images/DRM_Model_Absorbing.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Absorbing Layers Section.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="partitiones">
+<h4>Partitiones<a class="headerlink" href="#partitiones" title="Permalink to this heading">¶</a></h4>
+<p>The Partitiones section allows the user to define the number of partitions for each of soil, DRM and absorbing layers.
+The user can select the partitioning method from the dropdown. Right now, the only option in the dropdown is <strong>KD-Tree</strong>. The user can input the number of partitions in the text
+For each of the soil, DRM and absorbing layers, at least one partition is required so the minimum cores required for the analysis is 3.</p>
+<div class="figure align-center" id="id7">
+<img alt="../../../../../_images/DRM_Model_partition.png" src="../../../../../_images/DRM_Model_partition.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Partitiones Section.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notes:
+- KD-Tree needs power of 2 number of partitions. If the user inputs a number that is not a power of 2, the tool will automatically round it up to the next power of 2.</p>
+</div>
+<div class="section" id="analysis-information">
+<h4>Analysis Information<a class="headerlink" href="#analysis-information" title="Permalink to this heading">¶</a></h4>
+<p>The Analysis Information section allows the user to define the analysis parameters for the OpenSees model and create the model.
+The user can input the analysis parameters in the textboxes provided. The parameters are:</p>
+<ul class="simple">
+<li><p><strong>Time Step (s)</strong>: The time step for the analysis.</p></li>
+<li><p><strong>Final Time (s)</strong>: The final time for the analysis.</p></li>
+<li><p><strong>Recording Time Step (s)</strong>: The time step for recording the results.</p></li>
+<li><p><strong>Output Directory</strong>: The directory where the output files will be saved. The default directory is the local EE-UQ workspace in the subdirectory DRM_Model.</p></li>
+</ul>
+<p>The user can click on the <strong>Create Model</strong> button to create the model in OpenSees. By clicking on the button, the tool will create Model in the subdirectory of Mesh from the choosen output directory and shows the mesh int Visualization window on the right side of the tool under different tabs. The user can click on the tabs to see the mesh of the soil, DRM and absorbing layers. The user can also click on the <strong>Download Model</strong> button to download the model in the zip format.</p>
+<div class="figure align-center" id="id8">
+<img alt="../../../../../_images/DRM_Model_Analysis.png" src="../../../../../_images/DRM_Model_Analysis.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Analysis Information Section.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../../../../_images/DRM_Model_Mesh_Domain.png"><img alt="../../../../../_images/DRM_Model_Mesh_Domain.png" src="../../../../../_images/DRM_Model_Mesh_Domain.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Domain mesh visualization.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="../../../../../_images/DRM_Model_Mesh_Partitioned.png"><img alt="../../../../../_images/DRM_Model_Mesh_Partitioned.png" src="../../../../../_images/DRM_Model_Mesh_Partitioned.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Partitioned mesh visualization.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="job-information">
+<h4>Job Information<a class="headerlink" href="#job-information" title="Permalink to this heading">¶</a></h4>
+<p>The Job Information section allows the user to submit the job to TACC facilities and get the results back.
+The user can input the job parameters in the textboxes provided. The parameters are:</p>
+<ul class="simple">
+<li><p><strong>System</strong>: The system to run the job on. The options are available systems in TACC.</p></li>
+<li><p><strong>Allocation</strong>: The allocation of the user in TACC.</p></li>
+<li><p><strong>Maximum Run Time</strong>: The maximum run time for the job.</p></li>
+<li><p><strong>Job UUID</strong>: The unique identifier for the job.</p></li>
+</ul>
+<p>By pressing the <strong>Submit Job</strong> button, the tool will create a model first and then submit the job to TACC facilities. The UUID of the job will be shown in the Job UUID textbox. The user can click on the <strong>Get Results</strong> button to get the results of the job. The results will be downloaded in the output directory provided in the Analysis Information section in the subdirectory Results.
+The result of these analysis will be the accelration, velocity and displacement time history of the model at center of the soil layer in X, Y and Z directions in a json format. User can use this json files to continue the analysis in the EEUQ by putting the time histories on different structures and running the analysis.</p>
+<div class="figure align-center" id="id11">
+<img alt="../../../../../_images/DRM_Model_job.png" src="../../../../../_images/DRM_Model_job.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Job Information Section.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="shakermaker-tool">
+<span id="shakermakertools"></span><h2>ShakerMaker Tool<a class="headerlink" href="#shakermaker-tool" title="Permalink to this heading">¶</a></h2>
+<p>ShakerMaker is a Python library designed for generating and analyzing seismic wave motions. Its core functionality is built upon the FK method, which is implemented in Fortran. This allows ShakerMaker to leverage the high-performance capabilities of Fortran while providing a user-friendly interface through Python. ShakerMaker is designed to assist both earthquake engineers and seismologists by providing an easy-to-use tool for generating and exploring ground motions using the frequency-wavenumber (FK) method on 1-D crustal models. This innovative tool allows users to create realistic, physics-based waveforms for various earthquake scenarios, which can then be analyzed using the Domain Reduction Method (DRM).</p>
+<p>The DRM facilitates the simulation of how soil and structures respond to ground motions during earthquakes by connecting large regional earthquake simulations with smaller local soil-structure models without losing critical details. This method significantly improves the accuracy of ground-motion simulations.</p>
+<p><strong>ShakerMaker tool</strong> is a graphical user interface within the EEUQ framework that allows users to create ShakerMaker models easily. This tool simplifies the process of modeling seismic events by providing a visual platform for users to define and manipulate various parameters related to faults, crustal layers and stations. Users can load available fault models and select the type of station they wish to use based on the crustal model. The ShakerMaker tool then generates the necessary input files for the ShakerMaker engine and runs the simulation, providing users with the resulting ground motions for further analysis.</p>
+<div class="section" id="coordinate-system-in-shakermaker">
+<h3>Coordinate system in ShakerMaker<a class="headerlink" href="#coordinate-system-in-shakermaker" title="Permalink to this heading">¶</a></h3>
+<p>ShakerMaker defines it’s coordinate system with x positive towards the north, y positive towards the east and z positive downwards.
+Strike is defined clockwise from the north, dip is measured from the horizontal, and rake increases in the down-dip direction.</p>
+<div class="align-center figure" id="id12">
+<span id="fig-shakermaker-coordinate"></span><img alt="../../../../../_images/ShakerMaker_coordinate.png" src="../../../../../_images/ShakerMaker_coordinate.png" />
+<p class="caption"><span class="caption-text">ShakerMaker coordinate system.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="shakermaker-tool-workflow">
+<h3>ShakerMaker tool workflow<a class="headerlink" href="#shakermaker-tool-workflow" title="Permalink to this heading">¶</a></h3>
+<p>The ShakerMaker tool in EEUQ follows a simple workflow to generate ground motions. The interface is divided into five main sections:</p>
+<ol class="arabic simple">
+<li><p><strong>Analysis Information</strong>: This section allows users to define the analysis parameters.</p></li>
+<li><p><strong>Source Information</strong>: This section provides options to define the fault model.</p></li>
+<li><p><strong>Material Layers</strong>: This section allows users to define the crustal model.</p></li>
+<li><p><strong>Station Information</strong>: This section provides options to define the station model.</p></li>
+<li><p><strong>Job and Visualization</strong>: This section allows users to view the fualt model and submit the job for processing.</p></li>
+</ol>
+<div class="section" id="id1">
+<h4>Analysis Information<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
+<p>The Analysis Information section allows users to define the analysis parameters. The parammeters which can be defined are:</p>
+<ul class="simple">
+<li><p><strong>dt</strong>: Time step for the simulation in seconds.</p></li>
+<li><p><strong>nfft</strong> : Number of points in the frequency domain. It needs to be a power of 2. Not e that the more number of points, the more accurate the simulation will be but it will also take more time.</p></li>
+<li><p><strong>dk</strong>: Wavelength increment in the frequency domain. The default value is 0.2 which is a good value for most simulations but can be changed if needed.</p></li>
+<li><p><strong>tmin</strong>: Minimum time for the simulation in seconds</p></li>
+<li><p><strong>tmax</strong>: Maximum time for the simulation in seconds. The simulation will run from tmin to tmax. Note that the duration of should be greater than nfft*dt.</p></li>
+<li><p><strong>dh</strong>: Horizontal spacing critera for creating green’s functions database for DRM load. This parameters is only used when your are creating a DRM load. The default value is 40 meters.</p></li>
+<li><p><strong>dv_rec</strong>: Vertical spacing critera between station points in a DRM station for creating green’s functions database for DRM load. This parameters is only used when your are creating a DRM load. The default value is 200 meters.</p></li>
+<li><p><strong>dv_src</strong>: Vertical spacing critera between source points in a fault for creating green’s functions database for DRM load. This parameters is only used when your are creating a DRM load. The default value is 5 meters.</p></li>
+<li><p><strong>tmp Directory</strong>: Temporary directory where the simulation files will be stored. This directory should have enough space to store the simulation files. The default value is the ShakerMaker folder in the EEUQ working directory.</p></li>
+</ul>
+<p>Note: The default values are good for most simulations. Only parameters which are needed to be changed may be tmax based on the durtion and distance of the stations from the fault.</p>
+<div class="align-center figure" id="id13">
+<span id="fig-shakermaker-analysis"></span><img alt="../../../../../_images/ShakerMaker_AnalysisInfo.png" src="../../../../../_images/ShakerMaker_AnalysisInfo.png" />
+<p class="caption"><span class="caption-text">Analysis box interface.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="source-information">
+<h4>Source Information<a class="headerlink" href="#source-information" title="Permalink to this heading">¶</a></h4>
+<p>The Source Information section provides options to define the fault model. The base idea is that user can just load the fault model from the available fault models in the ShakerMaker tool.</p>
+<p>for the fault model user can pick the fault considered fault model from the drop down menu. The drop down menu is in the <strong>Load From Database</strong> section. The laoding section has 5 drop down menus.  the first one is for the country of the fault model, the second one is for the name of the fault model (which shows the region) and the other three are Magnitude, Type and Realization which are specific to a specific fault. By pressing the the <strong>Load Database</strong> button the fault information automatically gets loaded in the <strong>Source Information</strong> and fault files will be downloaded in the <strong>tmp Directory</strong> user defined in the <strong>Analysis Information</strong> under the subfolder of fault.</p>
+<div class="align-center figure" id="id14">
+<span id="fig-shakermaker-loadfault"></span><img alt="../../../../../_images/ShakerMaker_faultLoad.png" src="../../../../../_images/ShakerMaker_faultLoad.png" />
+<p class="caption"><span class="caption-text">Load fault interface.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>user can also define their own fault model by providing the fault latitude, longitude and the realted json fault files. The fault files should be in special format which will be explained in the next release of the ShakerMaker tool.</p>
+</div>
+<div class="section" id="material-layers">
+<h4>Material Layers<a class="headerlink" href="#material-layers" title="Permalink to this heading">¶</a></h4>
+<p>The Material Layers section allows users to define the crustal model. The crustal model is defined by the number of layers and the properties of each layer. for definig the layers a table is provided where user can add rows and define the properties of each layer. properties of each layer are:</p>
+<ul class="simple">
+<li><p><strong>Layer Name</strong>: Name of the layer. This is just for the user to identify the layer.</p></li>
+<li><p><strong>Thickness</strong>: Thickness of the layer in km.</p></li>
+<li><p><strong>Vp</strong>: P wave velocity in km/s.</p></li>
+<li><p><strong>Vs</strong>: S wave velocity in km/s.</p></li>
+<li><p><strong>Density</strong>: Density of the layer in g/cm^3.</p></li>
+<li><p><strong>Qp</strong>: Q factor for P wave.</p></li>
+<li><p><strong>Qs</strong>: Q factor for S wave.</p></li>
+</ul>
+<p>Each crustal layer at least has one infite layer which is the half space and is shown by the last row with a tickness of 0.</p>
+<p>Also there is a <strong>load from File</strong> section which allows user to load the crustal model from a json file. the json file should be array of objects where each object is a layer with the keys (name, thickness, vp, vs, density, qp, qs).</p>
+<div class="align-center figure" id="id15">
+<span id="fig-shakermaker-material"></span><img alt="../../../../../_images/ShakerMaker_material.png" src="../../../../../_images/ShakerMaker_material.png" />
+<p class="caption"><span class="caption-text">Material Layers interface.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="station-information">
+<h4>Station Information<a class="headerlink" href="#station-information" title="Permalink to this heading">¶</a></h4>
+<p>The Station Information section provides options to define the station model. The stations can be single stations or a DRM station. which each one can be choosen from the drop down menu.</p>
+<div class="section" id="single-station">
+<h5>single station<a class="headerlink" href="#single-station" title="Permalink to this heading">¶</a></h5>
+<p>For the single station user can define the station latitude, longitude and the depth of the station. The depth is the distance from the surface of the earth to the station in km.
+Users can add multiple stations by pressing the <strong>Add Station</strong> button. The stations can be removed by pressing the <strong>Remove Station</strong> button.
+Also, user can open a map to select the station location by pressing the <strong>Open Map</strong> button and find the station latitude, longitude and using the google map.</p>
+<div class="align-center figure" id="id16">
+<span id="fig-shakermaker-singlestation"></span><img alt="../../../../../_images/ShakerMaker_singleStation.png" src="../../../../../_images/ShakerMaker_singleStation.png" />
+<p class="caption"><span class="caption-text">Single Station interface.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="drm-station">
+<h5>DRM station<a class="headerlink" href="#drm-station" title="Permalink to this heading">¶</a></h5>
+<p>DRM Station is available by choosing the DRM box from the menu. The DRM station is a set of stations around a center on a surface in terms of cube. so the parameters for the DRM station are:</p>
+<ul class="simple">
+<li><p><strong>Latitude</strong>: Latitude of the center of the cube.</p></li>
+<li><p><strong>Longitude</strong>: Longitude of the center of the cube.</p></li>
+<li><p><strong>Width X</strong>: Width of the cube in the North-South direction in m.</p></li>
+<li><p><strong>Width Y</strong>: Width of the cube in the East-West direction in m.</p></li>
+<li><p><strong>Depth</strong>: Depth of the cube in m.</p></li>
+<li><p><strong>Mesh Size (x)</strong>: Mesh size in the North-South direction in m to discretize the cube.</p></li>
+<li><p><strong>Mesh Size (y)</strong>: Mesh size in the East-West direction in m to discretize the cube.</p></li>
+<li><p><strong>Mesh Size (z)</strong>: Mesh size in the vertical direction in m to discretize the cube.</p></li>
+</ul>
+<div class="align-center figure" id="id17">
+<span id="fig-shakermaker-drmstation"></span><img alt="../../../../../_images/ShakerMaker_DRMStation.png" src="../../../../../_images/ShakerMaker_DRMStation.png" />
+<p class="caption"><span class="caption-text">DRM Station interface.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="job-and-visualization">
+<h4>Job and Visualization<a class="headerlink" href="#job-and-visualization" title="Permalink to this heading">¶</a></h4>
+<p>The Job and Visualization section allows users to sumit a job and run shakermaker model in TACC facilities and visualize the fault.
+This part contains of two serated box. The job box and the visualization box.
+.. _fig-ShakerMaker_Job:</p>
+<div class="align-center figure" id="id18">
+<img alt="../../../../../_images/ShakerMaker_Job.png" src="../../../../../_images/ShakerMaker_Job.png" />
+<p class="caption"><span class="caption-text">Job interface.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="job">
+<h5>Job<a class="headerlink" href="#job" title="Permalink to this heading">¶</a></h5>
+<p>The job part get information about the job and submit the job to the TACC facilities. The parameters are:</p>
+<ul class="simple">
+<li><p><strong>System</strong>: The system which the job will be submitted. The default value is frontera.</p></li>
+<li><p><strong>Allocation</strong>: The allocation which the job will be charged. Users should provide their own allocation.</p></li>
+<li><p><strong>Number of Nodes</strong>: Number of nodes which the job will be run on. The default value is 1.</p></li>
+<li><p><strong>Cores per Node</strong>: Number of cores per node. The default value is 56 for frontera.</p></li>
+<li><p><strong>Maximum run time</strong>: Maximum run time for the job in hours. The default value is 2 hours.</p></li>
+</ul>
+<p>Note : if you are using DRM station it is recommended to use at least 200 cores (Nodes multiply by cores per node) for the job with a mximum run time of at least 10 hours.</p>
+</div>
+<div class="section" id="visualization">
+<h5>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">¶</a></h5>
+<p>The visualization part allows users to visualize the fault model. The visulaization will be shown in the right side of the ShakerMaker panel.
+The visualization consits of two tabs. One that shows the plane of the fault in the plot tab and other one that shows the fault on the map.
+In the visualization box there are two other check boxes, one for showing the stations on the map and the other one for showing the crustal model on the plot tab.
+By pressing the <strong>Visualize</strong> button a python code will be run and the fault will be shown in the plot tab and the map tab after a while. Both plots are interactive and user can zoom in and out and move the plot.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id19">
+<a class="reference internal image-reference" href="../../../../../_images/ShakerMaker_Vis_fault.png"><img alt="../../../../../_images/ShakerMaker_Vis_fault.png" src="../../../../../_images/ShakerMaker_Vis_fault.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Fault visualization.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id20">
+<a class="reference internal image-reference" href="../../../../../_images/ShakerMaker_Vis_map.png"><img alt="../../../../../_images/ShakerMaker_Vis_map.png" src="../../../../../_images/ShakerMaker_Vis_map.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Fault visualization on the map.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Also in the visulaization box there is a <strong>Load Model</strong> button. By pressing this button a browsing window will be opened and user can load whole model from a json file.
+In the <strong>applications</strong> folder, under the subdirectory <cite>tools/Shakermaker/Examples</cite>, there are two example files:</p>
+<ul class="simple">
+<li><p><strong>DRM_Sanramon.json</strong></p></li>
+<li><p><strong>Single_Sanramon.json</strong></p></li>
+</ul>
+<p>Here is an example of the json file for the loading ShakerMaker parameters with a DRM station:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;dt&quot;: 0.005,
+    &quot;nfft&quot;: 2048,
+    &quot;dk&quot;: 0.2,
+    &quot;tmin&quot;: 0,
+    &quot;tmax&quot;: 60,
+    &quot;dh&quot;: 40.0,
+    &quot;dv_rec&quot;: 5.0,
+    &quot;dv_src&quot;: 200,
+    &quot;layers&quot;: [
+        {&quot;Layer Name&quot;: &quot;Layer1&quot;, &quot;Thickness&quot;: 0.20, &quot;Vp&quot;: 1.32, &quot;Vs&quot;: 0.75, &quot;Density&quot;: 2.4, &quot;Qp&quot;: 1000, &quot;Qs&quot;: 1000},
+        {&quot;Layer Name&quot;: &quot;Layer2&quot;, &quot;Thickness&quot;: 0.80, &quot;Vp&quot;: 2.75, &quot;Vs&quot;: 1.57, &quot;Density&quot;: 2.5, &quot;Qp&quot;: 1000, &quot;Qs&quot;: 1000},
+        {&quot;Layer Name&quot;: &quot;Layer3&quot;, &quot;Thickness&quot;: 14.5, &quot;Vp&quot;: 5.50, &quot;Vs&quot;: 3.14, &quot;Density&quot;: 2.5, &quot;Qp&quot;: 1000, &quot;Qs&quot;: 1000},
+        {&quot;Layer Name&quot;: &quot;Half Space Layer&quot;, &quot;Thickness&quot;: 0, &quot;Vp&quot;: 7.00, &quot;Vs&quot;: 4.00, &quot;Density&quot;: 2.67, &quot;Qp&quot;: 1000, &quot;Qs&quot;: 1000}
+    ],
+    &quot;station_type&quot;: &quot;DRM&quot;,
+    &quot;station_info&quot;: {
+        &quot;Latitude&quot;: -33.40657,
+        &quot;Longitude&quot;: -70.50653,
+        &quot;Width X&quot;: 105,
+        &quot;Width Y&quot;: 105,
+        &quot;Depth&quot;: 30,
+        &quot;Mesh Size X&quot;: 2.5,
+        &quot;Mesh Size Y&quot;: 2.5,
+        &quot;Mesh Size Z&quot;: 2.5
+    },
+    &quot;fault_type&quot;: &quot;Database&quot;,
+    &quot;fault_info&quot;: {
+        &quot;Country&quot;: &quot;Chile&quot;,
+        &quot;Fault&quot;: &quot;Sanramon&quot;,
+        &quot;Magnitude&quot;: &quot;6.7&quot;,
+        &quot;Fault Type&quot;: &quot;bl&quot;,
+        &quot;Realization&quot;: &quot;3&quot;
+    },
+    &quot;System&quot;: &quot;Frontera&quot;,
+    &quot;Queue&quot;: &quot;development&quot;,
+    &quot;Number of Nodes&quot;: 40,
+    &quot;Cores per Node&quot;: 50,
+    &quot;Max Run Time&quot;: &quot;02:00:00&quot;
+}
+
+
+.. [Abell 2022] José A. Abell, Jorge G.F. Crempien, Matías Recabarren, ShakerMaker: A framework that simplifies the simulation of seismic ground-motions, SoftwareX, Volume 17, 2022, 100911, ISSN 2352-7110, https://doi.org/10.1016/j.softx.2021.100911. (https://www.sciencedirect.com/science/article/pii/S235271102100159X)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Domain Reduction Method Analysis &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Domain Reduction Method Analysis</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/earthquake/DRM_Model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="domain-reduction-method-analysis">
+<span id="drm-modeltools"></span><h1>Domain Reduction Method Analysis<a class="headerlink" href="#domain-reduction-method-analysis" title="Permalink to this heading">¶</a></h1>
+<p>Domain Reduction Method analysis tool in EE-UQ is user interface through which users can create a model in OpenSees and use the implemented DRM loading in OpenSees to perform a high fidelity analysis of a structure subjected to earthquake ground motions. The DRM analysis tool is designed to simplify the process of creating a model using parallel processing and doing the analysis using OpenSeesMP through TACC facilities. The tool is designed to be user-friendly and to provide a seamless experience for users to perform a DRM analysis.</p>
+<div class="section" id="domain-reduction-method">
+<h2>Domain Reduction Method<a class="headerlink" href="#domain-reduction-method" title="Permalink to this heading">¶</a></h2>
+<p>The <strong>Domain Reduction Method (DRM)</strong> helps to simplify complex earthquake simulations, making it easier and faster to compute how buildings and structures react to earthquakes. Here’s a simple breakdown:</p>
+<div class="section" id="why-is-this-needed">
+<h3>Why is this needed?<a class="headerlink" href="#why-is-this-needed" title="Permalink to this heading">¶</a></h3>
+<p>In areas near a fault (the break in the Earth’s crust where earthquakes happen), the ground moves in a unique way. To study how earthquakes affect large regions, we need to run computer models of these ground motions. However, these models are often very slow and take up a lot of computing power. That’s where the DRM comes in—it helps reduce the amount of computing needed while still getting accurate results.</p>
+</div>
+<div class="section" id="what-is-drm">
+<h3>What is DRM?<a class="headerlink" href="#what-is-drm" title="Permalink to this heading">¶</a></h3>
+<p>DRM is a method that divides the problem into two smaller parts, which makes the whole process faster and more manageable. It was first developed by researchers named <strong>Bielak</strong> and <strong>Yoshimura</strong> in 2003.</p>
+</div>
+<div class="section" id="how-does-it-work">
+<h3>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Step 1: Solve a Big Picture Problem (Background Problem)</strong>
+First, you solve a “big picture” problem. This means you model a large area that includes both the earthquake waves and the area around the structure (like a building) you are interested in. In this step, you focus on how the earthquake waves move through the ground, not the specific details of what happens to the building.</p></li>
+<li><p><strong>Step 2: Focus on the Area Near the Structure (Local Problem)</strong>
+After you have a good idea of how the earthquake waves move, you can zoom in and focus just on the building or structure. The earthquake waves from Step 1 are applied to the building, and you can study how the building reacts to these waves. This step allows you to include detailed effects, like cracks or bending that might happen to the structure.</p></li>
+</ol>
+<p>figure fig-ShakerMaker_DRM shows two stages of the DRM process.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-shakermaker-drm"></span><img alt="../../../../../_images/ShakerMaker_DRM.png" src="../../../../../_images/ShakerMaker_DRM.png" />
+<p class="caption"><span class="caption-text">Two stages of the DRM.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="why-is-this-method-useful">
+<h3>Why is this method useful?<a class="headerlink" href="#why-is-this-method-useful" title="Permalink to this heading">¶</a></h3>
+<p>This two-step method saves a lot of time. Instead of having to model both the entire earthquake region and the building in one big, slow calculation, DRM breaks it down. First, you solve the larger, simpler problem (earthquake waves in a big region), and then you use that information to do a more detailed and focused analysis on just the building.</p>
+<p>Despite its advantages, the DRM has seen limited use due to challenges in handling large, complex datasets, which require specialized tools for creation. ShakerMaker addresses these issues by offering a straightforward solution for generating DRM-compatible motions and an accessible format for working with extensive datasets, making it easier for researchers and practitioners to leverage this powerful method in their analyses.
+There is functionality in OpenSees which accept a DRM load in hdf5 format. The DRM loading should be in a special format which some software like ShakerMaker can generate. The DRM loading is applied to the model in OpenSeesMP and the analysis is performed using TACC facilities.</p>
+</div>
+</div>
+<div class="section" id="domain-reduction-method-analysis-user-interface">
+<h2>Domain Reduction Method Analysis user interface<a class="headerlink" href="#domain-reduction-method-analysis-user-interface" title="Permalink to this heading">¶</a></h2>
+<p>The DRM analysis tool user interface is consists of the six sections:</p>
+<ul class="simple">
+<li><p><strong>Soil Properties</strong>: This section allows the user to define soil geometry and properties.</p></li>
+<li><p><strong>DRM Layer</strong>: This section allows the user to define the number of DRM layers and the properties input DRM load.</p></li>
+<li><p><strong>Absorbing Layers</strong>: This section allows the user to define the number of absorbing layers and the properties of the absorbing layers.</p></li>
+<li><p><strong>Partitiones</strong>: This section allows the user to define the number of partitions for each of soil, DRM and absorbing layers.</p></li>
+<li><p><strong>Analysis Information</strong>: This section allows the user to define the analysis parameters for the OpenSees model.</p></li>
+<li><p><strong>Job Information</strong>: This section allows the user to submit the job to TACC facilities and get the results back.</p></li>
+</ul>
+<div class="section" id="soil-properties">
+<h3>Soil Properties<a class="headerlink" href="#soil-properties" title="Permalink to this heading">¶</a></h3>
+<p>Right now, the DRM analysis tool only supports a single soil layer with cube geometry. The user can define the geometry by inputting the Width in X, Y and Z directions in meters and the number of elements in X, Y and Z directions.
+For the properties of the single layer of soil, the user can input the density, shear wave velocity and Poisson’s ratio.</p>
+<div class="figure align-center" id="id2">
+<img alt="../../../../../_images/DRM_Mode_SoilProp.png" src="../../../../../_images/DRM_Mode_SoilProp.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Soil Properties Section.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="drm-layer">
+<h3>DRM Layer<a class="headerlink" href="#drm-layer" title="Permalink to this heading">¶</a></h3>
+<p>The DRM layer section allows the user to define the number of DRM layers and the properties of the DRM load.
+The <strong>DRM Software</strong> dropdown allows the user to select the software used to generate the DRM load. The only change that this dropdown does is to change the default values of the properties of the DRM load.
+Right now, <strong>ShakerMaker</strong> and <strong>Custom</strong> are the only options in the dropdown.
+The Propertises of the DRM Load is aligned with the parameters in <strong>H5DRM pattern</strong>: <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/H5DRM.html">H5DRM Documentation</a> in OpenSees. The user can input the properties of the DRM load in the textboxes provided. The properties are:</p>
+<ul class="simple">
+<li><p><strong>Number of Layers</strong>: The number of layers around the Soil layer.</p></li>
+<li><p><strong>Coordinate Transformation check</strong>: The checkbox to enable the coordinate transformation. if checked, the DRM load used the coordinate transformation provided by the user otherwise the default coordinate in the DRM load is used.</p></li>
+<li><p><strong>Load Factor</strong>: The load factor applied to the DRM load.</p></li>
+<li><p><strong>Coordinate Scale</strong>: The scale factor applied to the DRM points coordinates to match the point coordinates in the model.</p></li>
+<li><p><strong>Tolerance</strong>: The tolerance used in the DRM pattern to match the points in the DRM load to the points in the model.</p></li>
+<li><p><strong>T11, T12, T13, T21, T22, T23, T31, T32, T33</strong>: The transformation matrix for coordinate transformation if the coordinate transformation is checked.</p></li>
+<li><p><strong>DRM File Location</strong>: The location of the DRM load file. The user can access the file in their local machine or in the DesignSafe workspace.</p></li>
+<li><p><strong>DRM File Path</strong>: The path to the DRM load file in either the local machine or the DesignSafe workspace.</p></li>
+</ul>
+<div class="figure align-center" id="id3">
+<img alt="../../../../../_images/DRM_Model_DRMLayer.png" src="../../../../../_images/DRM_Model_DRMLayer.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool DRM Layer Section.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notes:
+- Right now for submitting job to TACC, the DRM load file should be in the DesignSafe workspace other wise users will need to upload the DRM load file to the DesignSafe workspace and provide the path to the file in the DRM File Path textbox.
+- If user want to browse the DRM load file in the DesignSafe workspace, they can click on the <strong>Browse</strong> button and a window will pop up showing the files in the DesignSafe workspace. User may need to login to DesignSafe first by passing username and password in another window that will pop up when the <strong>Browse</strong> button is clicked. Users then can use backward and forward buttons to navigate through the files and folders and select button to select the file. The path to the file will be automatically filled in the DRM File Path textbox.</p>
+<div class="figure align-center" id="id4">
+<img alt="../../../../../_images/DRM_Model_Browse_remote.png" src="../../../../../_images/DRM_Model_Browse_remote.png" />
+<p class="caption"><span class="caption-text">Browse DRM Load File in DesignSafe Workspace.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="absorbing-layers">
+<h3>Absorbing Layers<a class="headerlink" href="#absorbing-layers" title="Permalink to this heading">¶</a></h3>
+<p>The Absorbing Layers section allows the user to define the type and number of absorbing layers.
+The user can select the type of absorbing layers from the dropdown. The options are <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/PML.html">PML elements</a>, <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/ASDAbsorbingBoundary.html">ASDA elements</a>, and <strong>Normal Elements with Rayleigh Damping</strong>.
+In the case of <strong>Normal Elements with Rayleigh Damping</strong>, the user can input the damping ratio in the provided text box. However, for <strong>PML elements</strong> and <strong>ASDA elements</strong>, the text box is disabled, as the damping ratio is not required.</p>
+<div class="figure align-center" id="id5">
+<img alt="../../../../../_images/DRM_Model_Absorbing.png" src="../../../../../_images/DRM_Model_Absorbing.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Absorbing Layers Section.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="partitiones">
+<h3>Partitiones<a class="headerlink" href="#partitiones" title="Permalink to this heading">¶</a></h3>
+<p>The Partitiones section allows the user to define the number of partitions for each of soil, DRM and absorbing layers.
+The user can select the partitioning method from the dropdown. Right now, the only option in the dropdown is <strong>KD-Tree</strong>. The user can input the number of partitions in the text
+For each of the soil, DRM and absorbing layers, at least one partition is required so the minimum cores required for the analysis is 3.</p>
+<div class="figure align-center" id="id6">
+<img alt="../../../../../_images/DRM_Model_partition.png" src="../../../../../_images/DRM_Model_partition.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Partitiones Section.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notes:
+- KD-Tree needs power of 2 number of partitions. If the user inputs a number that is not a power of 2, the tool will automatically round it up to the next power of 2.</p>
+</div>
+<div class="section" id="analysis-information">
+<h3>Analysis Information<a class="headerlink" href="#analysis-information" title="Permalink to this heading">¶</a></h3>
+<p>The Analysis Information section allows the user to define the analysis parameters for the OpenSees model and create the model.
+The user can input the analysis parameters in the textboxes provided. The parameters are:</p>
+<ul class="simple">
+<li><p><strong>Time Step (s)</strong>: The time step for the analysis.</p></li>
+<li><p><strong>Final Time (s)</strong>: The final time for the analysis.</p></li>
+<li><p><strong>Recording Time Step (s)</strong>: The time step for recording the results.</p></li>
+<li><p><strong>Output Directory</strong>: The directory where the output files will be saved. The default directory is the local EE-UQ workspace in the subdirectory DRM_Model.</p></li>
+</ul>
+<p>The user can click on the <strong>Create Model</strong> button to create the model in OpenSees. By clicking on the button, the tool will create Model in the subdirectory of Mesh from the choosen output directory and shows the mesh int Visualization window on the right side of the tool under different tabs. The user can click on the tabs to see the mesh of the soil, DRM and absorbing layers. The user can also click on the <strong>Download Model</strong> button to download the model in the zip format.</p>
+<div class="figure align-center" id="id7">
+<img alt="../../../../../_images/DRM_Model_Analysis.png" src="../../../../../_images/DRM_Model_Analysis.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Analysis Information Section.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../../../../../_images/DRM_Model_Mesh_Domain.png"><img alt="../../../../../_images/DRM_Model_Mesh_Domain.png" src="../../../../../_images/DRM_Model_Mesh_Domain.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Domain mesh visualization.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../../../../_images/DRM_Model_Mesh_Partitioned.png"><img alt="../../../../../_images/DRM_Model_Mesh_Partitioned.png" src="../../../../../_images/DRM_Model_Mesh_Partitioned.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Partitioned mesh visualization.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="job-information">
+<h3>Job Information<a class="headerlink" href="#job-information" title="Permalink to this heading">¶</a></h3>
+<p>The Job Information section allows the user to submit the job to TACC facilities and get the results back.
+The user can input the job parameters in the textboxes provided. The parameters are:</p>
+<ul class="simple">
+<li><p><strong>System</strong>: The system to run the job on. The options are available systems in TACC.</p></li>
+<li><p><strong>Allocation</strong>: The allocation of the user in TACC.</p></li>
+<li><p><strong>Maximum Run Time</strong>: The maximum run time for the job.</p></li>
+<li><p><strong>Job UUID</strong>: The unique identifier for the job.</p></li>
+</ul>
+<p>By pressing the <strong>Submit Job</strong> button, the tool will create a model first and then submit the job to TACC facilities. The UUID of the job will be shown in the Job UUID textbox. The user can click on the <strong>Get Results</strong> button to get the results of the job. The results will be downloaded in the output directory provided in the Analysis Information section in the subdirectory Results.
+The result of these analysis will be the accelration, velocity and displacement time history of the model at center of the soil layer in X, Y and Z directions in a json format. User can use this json files to continue the analysis in the EEUQ by putting the time histories on different structures and running the analysis.</p>
+<div class="figure align-center" id="id10">
+<img alt="../../../../../_images/DRM_Model_job.png" src="../../../../../_images/DRM_Model_job.png" />
+<p class="caption"><span class="caption-text">DRM Analysis Tool Job Information Section.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
