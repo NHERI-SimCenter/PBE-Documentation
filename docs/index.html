@@ -122,10 +122,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/reqments/PBE.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/PBE/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/reqments/PBE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
 <ul>
@@ -136,7 +137,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/damping.html">2. Damping Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -212,7 +212,7 @@
 <h1>Performance Based Engineering Application<a class="headerlink" href="#full-tool-name" title="Permalink to this heading">¶</a></h1>
 <p><strong>Adam Zsarnoczay</strong> , <strong>Frank McKenna</strong> , <strong>Charles Wang</strong> , <strong>Stevan Gavrilovic</strong> , <strong>Michael Gardner</strong> , <strong>Sang-ri Yi</strong> , <strong>Aakash Bangalore Satish</strong> , <strong>Wael Elhaddad</strong> , <strong>&amp; Peter Mackenzie-Helnwein</strong></p>
 <p>The Performance Based Engineering Application (PBE app) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding component limit states (i.e., experiencing damage). The PBE app provides a convenient user interface and uses the settings provided by the user to prepare a simulation workflow description in a JSON file. This workflow description is used to run a simulation workflow on SimCenter’s backend engine using sWHALE. The structural response estimation part of the workflow can run on the TACC high-performance computing cluster made available through <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>. The performance assessment part runs locally using SimCenter’s PELICUN performance assessment engine.</p>
-<p>This document covers the features and capabilities of Version 3.4 of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/pbe">github discussion page</a>.</p>
+<p>This document covers the features and capabilities of Version 4.1 of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/pbe">github discussion page</a>.</p>
 <div class="toctree-wrapper compound" id="lbl-front-matter">
 <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
@@ -232,10 +232,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/reqments/PBE.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/PBE/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/reqments/PBE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound" id="lbl-testbeds-manual">
@@ -252,7 +253,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/damping.html">2. Damping Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound" id="lbl-developer-manual">

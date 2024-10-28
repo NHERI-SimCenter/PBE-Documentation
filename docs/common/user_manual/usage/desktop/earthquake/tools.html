@@ -121,10 +121,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PBE/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
 <ul>
@@ -135,7 +136,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -209,7 +209,7 @@
             
   <div class="section" id="tools">
 <span id="eeuq-tools"></span><h1>Tools<a class="headerlink" href="#tools" title="Permalink to this heading">¶</a></h1>
-<p>The main menu toolbar features the tools dropdown menu. In EEUQ, tools are applications designed to generate inputs for specific workflow applications. For instance, the <strong>ShakerMaker</strong> tool helps to simulate ground motions from earthquakes, providing essential input data for further structural analysis and engineering assessments.</p>
+<p>The main menu toolbar features the tools dropdown menu. In <strong>EE-UQ</strong>, tools are applications designed to generate inputs for specific workflow applications or are tools providing useful functionality for our users. For instance, the <strong>ShakerMaker</strong> tool helps to simulate ground motions from earthquakes, providing essential input data for further structural analysis and engineering assessments.</p>
 <div class="section" id="domain-reduction-method-analysis">
 <span id="drm-modeltools"></span><h2>Domain Reduction Method Analysis<a class="headerlink" href="#domain-reduction-method-analysis" title="Permalink to this heading">¶</a></h2>
 <p>Domain Reduction Method analysis tool in EE-UQ is user interface through which users can create a model in OpenSees and use the implemented DRM loading in OpenSees to perform a high fidelity analysis of a structure subjected to earthquake ground motions. The DRM analysis tool is designed to simplify the process of creating a model using parallel processing and doing the analysis using OpenSeesMP through TACC facilities. The tool is designed to be user-friendly and to provide a seamless experience for users to perform a DRM analysis.</p>
@@ -233,9 +233,9 @@ First, you solve a “big picture” problem. This means you model a large area 
 After you have a good idea of how the earthquake waves move, you can zoom in and focus just on the building or structure. The earthquake waves from Step 1 are applied to the building, and you can study how the building reacts to these waves. This step allows you to include detailed effects, like cracks or bending that might happen to the structure.</p></li>
 </ol>
 <p>figure fig-ShakerMaker_DRM shows two stages of the DRM process.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id5">
 <span id="fig-shakermaker-drm"></span><img alt="../../../../../_images/ShakerMaker_DRM.png" src="../../../../../_images/ShakerMaker_DRM.png" />
-<p class="caption"><span class="caption-text">Two stages of the DRM.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Two stages of the DRM.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="why-is-this-method-useful">
@@ -260,9 +260,9 @@ There is functionality in OpenSees which accept a DRM load in hdf5 format. The D
 <h4>Soil Properties<a class="headerlink" href="#soil-properties" title="Permalink to this heading">¶</a></h4>
 <p>Right now, the DRM analysis tool only supports a single soil layer with cube geometry. The user can define the geometry by inputting the Width in X, Y and Z directions in meters and the number of elements in X, Y and Z directions.
 For the properties of the single layer of soil, the user can input the density, shear wave velocity and Poisson’s ratio.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id6">
 <img alt="../../../../../_images/DRM_Mode_SoilProp.png" src="../../../../../_images/DRM_Mode_SoilProp.png" />
-<p class="caption"><span class="caption-text">DRM Analysis Tool Soil Properties Section.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DRM Analysis Tool Soil Properties Section.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="drm-layer">
@@ -281,16 +281,16 @@ The Propertises of the DRM Load is aligned with the parameters in <strong>H5DRM 
 <li><p><strong>DRM File Location</strong>: The location of the DRM load file. The user can access the file in their local machine or in the DesignSafe workspace.</p></li>
 <li><p><strong>DRM File Path</strong>: The path to the DRM load file in either the local machine or the DesignSafe workspace.</p></li>
 </ul>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id7">
 <img alt="../../../../../_images/DRM_Model_DRMLayer.png" src="../../../../../_images/DRM_Model_DRMLayer.png" />
-<p class="caption"><span class="caption-text">DRM Analysis Tool DRM Layer Section.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DRM Analysis Tool DRM Layer Section.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Notes:
 - Right now for submitting job to TACC, the DRM load file should be in the DesignSafe workspace other wise users will need to upload the DRM load file to the DesignSafe workspace and provide the path to the file in the DRM File Path textbox.
 - If user want to browse the DRM load file in the DesignSafe workspace, they can click on the <strong>Browse</strong> button and a window will pop up showing the files in the DesignSafe workspace. User may need to login to DesignSafe first by passing username and password in another window that will pop up when the <strong>Browse</strong> button is clicked. Users then can use backward and forward buttons to navigate through the files and folders and select button to select the file. The path to the file will be automatically filled in the DRM File Path textbox.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id8">
 <img alt="../../../../../_images/DRM_Model_Browse_remote.png" src="../../../../../_images/DRM_Model_Browse_remote.png" />
-<p class="caption"><span class="caption-text">Browse DRM Load File in DesignSafe Workspace.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Browse DRM Load File in DesignSafe Workspace.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="absorbing-layers">
@@ -298,9 +298,9 @@ The Propertises of the DRM Load is aligned with the parameters in <strong>H5DRM 
 <p>The Absorbing Layers section allows the user to define the type and number of absorbing layers.
 The user can select the type of absorbing layers from the dropdown. The options are <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/PML.html">PML elements</a>, <a class="reference external" href="https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/ASDAbsorbingBoundary.html">ASDA elements</a>, and <strong>Normal Elements with Rayleigh Damping</strong>.
 In the case of <strong>Normal Elements with Rayleigh Damping</strong>, the user can input the damping ratio in the provided text box. However, for <strong>PML elements</strong> and <strong>ASDA elements</strong>, the text box is disabled, as the damping ratio is not required.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id9">
 <img alt="../../../../../_images/DRM_Model_Absorbing.png" src="../../../../../_images/DRM_Model_Absorbing.png" />
-<p class="caption"><span class="caption-text">DRM Analysis Tool Absorbing Layers Section.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DRM Analysis Tool Absorbing Layers Section.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="partitiones">
@@ -308,9 +308,9 @@ In the case of <strong>Normal Elements with Rayleigh Damping</strong>, the user 
 <p>The Partitiones section allows the user to define the number of partitions for each of soil, DRM and absorbing layers.
 The user can select the partitioning method from the dropdown. Right now, the only option in the dropdown is <strong>KD-Tree</strong>. The user can input the number of partitions in the text
 For each of the soil, DRM and absorbing layers, at least one partition is required so the minimum cores required for the analysis is 3.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id10">
 <img alt="../../../../../_images/DRM_Model_partition.png" src="../../../../../_images/DRM_Model_partition.png" />
-<p class="caption"><span class="caption-text">DRM Analysis Tool Partitiones Section.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DRM Analysis Tool Partitiones Section.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>Notes:
 - KD-Tree needs power of 2 number of partitions. If the user inputs a number that is not a power of 2, the tool will automatically round it up to the next power of 2.</p>
@@ -326,9 +326,9 @@ The user can input the analysis parameters in the textboxes provided. The parame
 <li><p><strong>Output Directory</strong>: The directory where the output files will be saved. The default directory is the local EE-UQ workspace in the subdirectory DRM_Model.</p></li>
 </ul>
 <p>The user can click on the <strong>Create Model</strong> button to create the model in OpenSees. By clicking on the button, the tool will create Model in the subdirectory of Mesh from the choosen output directory and shows the mesh int Visualization window on the right side of the tool under different tabs. The user can click on the tabs to see the mesh of the soil, DRM and absorbing layers. The user can also click on the <strong>Download Model</strong> button to download the model in the zip format.</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id11">
 <img alt="../../../../../_images/DRM_Model_Analysis.png" src="../../../../../_images/DRM_Model_Analysis.png" />
-<p class="caption"><span class="caption-text">DRM Analysis Tool Analysis Information Section.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DRM Analysis Tool Analysis Information Section.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -336,14 +336,14 @@ The user can input the analysis parameters in the textboxes provided. The parame
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-center" id="id9">
+<tr class="row-odd"><td><div class="figure align-center" id="id12">
 <a class="reference internal image-reference" href="../../../../../_images/DRM_Model_Mesh_Domain.png"><img alt="../../../../../_images/DRM_Model_Mesh_Domain.png" src="../../../../../_images/DRM_Model_Mesh_Domain.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Domain mesh visualization.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Domain mesh visualization.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </td>
-<td><div class="figure align-center" id="id10">
+<td><div class="figure align-center" id="id13">
 <a class="reference internal image-reference" href="../../../../../_images/DRM_Model_Mesh_Partitioned.png"><img alt="../../../../../_images/DRM_Model_Mesh_Partitioned.png" src="../../../../../_images/DRM_Model_Mesh_Partitioned.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Partitioned mesh visualization.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Partitioned mesh visualization.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
@@ -362,9 +362,9 @@ The user can input the job parameters in the textboxes provided. The parameters 
 </ul>
 <p>By pressing the <strong>Submit Job</strong> button, the tool will create a model first and then submit the job to TACC facilities. The UUID of the job will be shown in the Job UUID textbox. The user can click on the <strong>Get Results</strong> button to get the results of the job. The results will be downloaded in the output directory provided in the Analysis Information section in the subdirectory Results.
 The result of these analysis will be the accelration, velocity and displacement time history of the model at center of the soil layer in X, Y and Z directions in a json format. User can use this json files to continue the analysis in the EEUQ by putting the time histories on different structures and running the analysis.</p>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id14">
 <img alt="../../../../../_images/DRM_Model_job.png" src="../../../../../_images/DRM_Model_job.png" />
-<p class="caption"><span class="caption-text">DRM Analysis Tool Job Information Section.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DRM Analysis Tool Job Information Section.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -378,9 +378,9 @@ The result of these analysis will be the accelration, velocity and displacement 
 <h3>Coordinate system in ShakerMaker<a class="headerlink" href="#coordinate-system-in-shakermaker" title="Permalink to this heading">¶</a></h3>
 <p>ShakerMaker defines it’s coordinate system with x positive towards the north, y positive towards the east and z positive downwards.
 Strike is defined clockwise from the north, dip is measured from the horizontal, and rake increases in the down-dip direction.</p>
-<div class="align-center figure" id="id12">
+<div class="align-center figure" id="id15">
 <span id="fig-shakermaker-coordinate"></span><img alt="../../../../../_images/ShakerMaker_coordinate.png" src="../../../../../_images/ShakerMaker_coordinate.png" />
-<p class="caption"><span class="caption-text">ShakerMaker coordinate system.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">ShakerMaker coordinate system.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="shakermaker-tool-workflow">
@@ -408,18 +408,18 @@ Strike is defined clockwise from the north, dip is measured from the horizontal,
 <li><p><strong>tmp Directory</strong>: Temporary directory where the simulation files will be stored. This directory should have enough space to store the simulation files. The default value is the ShakerMaker folder in the EEUQ working directory.</p></li>
 </ul>
 <p>Note: The default values are good for most simulations. Only parameters which are needed to be changed may be tmax based on the durtion and distance of the stations from the fault.</p>
-<div class="align-center figure" id="id13">
+<div class="align-center figure" id="id16">
 <span id="fig-shakermaker-analysis"></span><img alt="../../../../../_images/ShakerMaker_AnalysisInfo.png" src="../../../../../_images/ShakerMaker_AnalysisInfo.png" />
-<p class="caption"><span class="caption-text">Analysis box interface.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Analysis box interface.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="source-information">
 <h4>Source Information<a class="headerlink" href="#source-information" title="Permalink to this heading">¶</a></h4>
 <p>The Source Information section provides options to define the fault model. The base idea is that user can just load the fault model from the available fault models in the ShakerMaker tool.</p>
 <p>for the fault model user can pick the fault considered fault model from the drop down menu. The drop down menu is in the <strong>Load From Database</strong> section. The laoding section has 5 drop down menus.  the first one is for the country of the fault model, the second one is for the name of the fault model (which shows the region) and the other three are Magnitude, Type and Realization which are specific to a specific fault. By pressing the the <strong>Load Database</strong> button the fault information automatically gets loaded in the <strong>Source Information</strong> and fault files will be downloaded in the <strong>tmp Directory</strong> user defined in the <strong>Analysis Information</strong> under the subfolder of fault.</p>
-<div class="align-center figure" id="id14">
+<div class="align-center figure" id="id17">
 <span id="fig-shakermaker-loadfault"></span><img alt="../../../../../_images/ShakerMaker_faultLoad.png" src="../../../../../_images/ShakerMaker_faultLoad.png" />
-<p class="caption"><span class="caption-text">Load fault interface.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Load fault interface.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>user can also define their own fault model by providing the fault latitude, longitude and the realted json fault files. The fault files should be in special format which will be explained in the next release of the ShakerMaker tool.</p>
 </div>
@@ -437,9 +437,9 @@ Strike is defined clockwise from the north, dip is measured from the horizontal,
 </ul>
 <p>Each crustal layer at least has one infite layer which is the half space and is shown by the last row with a tickness of 0.</p>
 <p>Also there is a <strong>load from File</strong> section which allows user to load the crustal model from a json file. the json file should be array of objects where each object is a layer with the keys (name, thickness, vp, vs, density, qp, qs).</p>
-<div class="align-center figure" id="id15">
+<div class="align-center figure" id="id18">
 <span id="fig-shakermaker-material"></span><img alt="../../../../../_images/ShakerMaker_material.png" src="../../../../../_images/ShakerMaker_material.png" />
-<p class="caption"><span class="caption-text">Material Layers interface.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Material Layers interface.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="station-information">
@@ -450,9 +450,9 @@ Strike is defined clockwise from the north, dip is measured from the horizontal,
 <p>For the single station user can define the station latitude, longitude and the depth of the station. The depth is the distance from the surface of the earth to the station in km.
 Users can add multiple stations by pressing the <strong>Add Station</strong> button. The stations can be removed by pressing the <strong>Remove Station</strong> button.
 Also, user can open a map to select the station location by pressing the <strong>Open Map</strong> button and find the station latitude, longitude and using the google map.</p>
-<div class="align-center figure" id="id16">
+<div class="align-center figure" id="id19">
 <span id="fig-shakermaker-singlestation"></span><img alt="../../../../../_images/ShakerMaker_singleStation.png" src="../../../../../_images/ShakerMaker_singleStation.png" />
-<p class="caption"><span class="caption-text">Single Station interface.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Single Station interface.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="drm-station">
@@ -468,9 +468,9 @@ Also, user can open a map to select the station location by pressing the <strong
 <li><p><strong>Mesh Size (y)</strong>: Mesh size in the East-West direction in m to discretize the cube.</p></li>
 <li><p><strong>Mesh Size (z)</strong>: Mesh size in the vertical direction in m to discretize the cube.</p></li>
 </ul>
-<div class="align-center figure" id="id17">
+<div class="align-center figure" id="id20">
 <span id="fig-shakermaker-drmstation"></span><img alt="../../../../../_images/ShakerMaker_DRMStation.png" src="../../../../../_images/ShakerMaker_DRMStation.png" />
-<p class="caption"><span class="caption-text">DRM Station interface.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DRM Station interface.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -479,9 +479,9 @@ Also, user can open a map to select the station location by pressing the <strong
 <p>The Job and Visualization section allows users to sumit a job and run shakermaker model in TACC facilities and visualize the fault.
 This part contains of two serated box. The job box and the visualization box.
 .. _fig-ShakerMaker_Job:</p>
-<div class="align-center figure" id="id18">
+<div class="align-center figure" id="id21">
 <img alt="../../../../../_images/ShakerMaker_Job.png" src="../../../../../_images/ShakerMaker_Job.png" />
-<p class="caption"><span class="caption-text">Job interface.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Job interface.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="job">
 <h5>Job<a class="headerlink" href="#job" title="Permalink to this heading">¶</a></h5>
@@ -507,14 +507,14 @@ By pressing the <strong>Visualize</strong> button a python code will be run and 
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-center" id="id19">
+<tr class="row-odd"><td><div class="figure align-center" id="id22">
 <a class="reference internal image-reference" href="../../../../../_images/ShakerMaker_Vis_fault.png"><img alt="../../../../../_images/ShakerMaker_Vis_fault.png" src="../../../../../_images/ShakerMaker_Vis_fault.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Fault visualization.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Fault visualization.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 </td>
-<td><div class="figure align-center" id="id20">
+<td><div class="figure align-center" id="id23">
 <a class="reference internal image-reference" href="../../../../../_images/ShakerMaker_Vis_map.png"><img alt="../../../../../_images/ShakerMaker_Vis_map.png" src="../../../../../_images/ShakerMaker_Vis_map.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Fault visualization on the map.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Fault visualization on the map.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
@@ -574,6 +574,56 @@ In the <strong>applications</strong> folder, under the subdirectory <cite>tools/
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="opensees-designsafe-tool">
+<span id="openseestool"></span><h2><a class="reference external" href="mailto:OpenSees&#37;&#52;&#48;DesignSafe">OpenSees<span>&#64;</span>DesignSafe</a> Tool<a class="headerlink" href="#opensees-designsafe-tool" title="Permalink to this heading">¶</a></h2>
+<p>This tool allows users to submit <strong>OpenSees</strong>, <strong>OpenSeesSP</strong>, <strong>OpenSeesMP</strong>, and <strong>OpenSeesPy</strong> scripts to
+** <a class="reference external" href="https://tacc.utexas.edu/">TACC</a> ** to be run on some of the most powerful HPC computers in the
+world. The only requirement for users is that they have a ** <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> **
+account and an allocation at TACC, which can be obtained by <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">submitting a ticket to
+DesignSafe</a> requesting HPC access
+to ** <a class="reference external" href="https://tacc.utexas.edu/systems/frontera/">Frontera</a> ** and ** <a class="reference external" href="https://tacc.utexas.edu/systems/stampede3/">Stampede3</a> <a href="#id3"><span class="problematic" id="id4">**</span></a>.</p>
+<p>As shown in the figure below, the user provides a memorable job name, the input script to run, the application
+to use, and its version. When the user selects the <strong>Run at DesignSafe</strong> button, additional inputs are
+requested, such as the number of nodes, the number of processors per node, the maximum runtime in minutes, and the allocation to use.</p>
+<div class="align-center figure" id="id24">
+<img alt="../../../../../_images/OpenSeesTool.png" src="../../../../../_images/OpenSeesTool.png" />
+<p class="caption"><span class="caption-text"><a class="reference external" href="mailto:OpenSees&#37;&#52;&#48;DesignSafe">OpenSees<span>&#64;</span>DesignSafe</a> Tool</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>After pressing the <strong>Submit</strong> button, the tool will zip the folder containing the script and, using Tapis,
+create a folder in your DesignSafe DataDepot account. The zipped file will be sent to this folder, and a
+<strong>simcenter-opensees</strong> job will be submitted to run with this folder and the selected application. Once the
+job is complete, the contents of the folder, now containing output files, will be zipped again and stored in
+DesignSafe for you.</p>
+<p>To check the status of the submitted job and download the final folder, click the <strong>Get from DesignSafe</strong>
+button. A table will appear, showing the status of all submitted jobs. By right-clicking on any job in the
+table, a menu will appear with the option to <strong>Retrieve Data</strong>. If this option is selected, the zipped
+folder will be retrieved, unzipped, and the contents will be placed in the currently specified
+<strong>Output Folder</strong>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<dl class="simple">
+<dt>Gotcha’s to running OpenSees scripts at DesignSafe</dt><dd><p>Given how this application runs, or any DesignSafe OpenSees offering, the script you run can only reference files in it’s current directory or directories below the current. Nor can the script save files outside of these locations.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>** 1. Which version of OpenSeesPy is run? **</p>
+<p>The version run depends on your setup on the TACC HPC machine. All the tool does is run <strong>python3</strong> in your working environment. What is run as a consequence is the first python3 application found on your path.</p>
+<p>** 2. Why run OpenSees Jobs utilzing this application at DesignSafe? **</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>DesignSafe is providing access to some of the fastest HPC computers in the world, you can run for example OpenSeesMP jobs that utilize thousands of processors.</p></li>
+<li><p>You can be running multiple jobs at the same time, though here is a limit to how many you can have runing at once!</p></li>
+<li><p>The resulting folder containing your scripts is stored at DesignSafe. You can get that data. assuming you gave them a memorable job name, for jobs that ran today, yesterday, last week, last month, last year, …</p></li>
+</ol>
+</div></blockquote>
+<p>** 3. Why this tool and not submit through DesignSafe Workspace OpenSees offerings? **</p>
+<blockquote>
+<div><p>It’s simply the quickest way of getting the files to DesignSafe and submitting the job!</p>
+</div></blockquote>
 </div>
 </div>
 </div>

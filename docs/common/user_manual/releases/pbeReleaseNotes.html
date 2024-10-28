@@ -115,9 +115,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pbeCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-3">6.1. Version 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2">6.2. Version 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-1">6.3. Version 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-4">6.1. Version 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3">6.2. Version 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2">6.3. Version 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1">6.4. Version 1</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pbePlans.html">7. Release Plans</a></li>
@@ -128,10 +129,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reqments/PBE.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/PBE/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/PBE.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
 <ul>
@@ -142,7 +144,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -216,19 +217,45 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-pbe"></span><h1><span class="section-number">6. </span>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
-<div class="section" id="version-3">
-<h2><span class="section-number">6.1. </span>Version 3<a class="headerlink" href="#version-3" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="version-4">
+<h2><span class="section-number">6.1. </span>Version 4<a class="headerlink" href="#version-4" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Version 3.5 (<span class="blue">Current</span>)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Version 4.1 (<span class="blue">Current</span>)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Release date:</strong> September 2024</p>
+<p class="sd-card-text"><strong>Major updates:</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Domain Reduction Method option added in tools to create events for buildings given large physics- based simulations.</p></li>
+<li><p class="sd-card-text">ShakerMaker option added to tool to perform earthquake rupture simulations.</p></li>
+<li><p class="sd-card-text"><a class="reference external" href="mailto:OpenSees&#37;&#52;&#48;DesignSafe">OpenSees<span>&#64;</span>DesignSafe</a> option added in tools to allow users to run OpenSees, OpenSeesMP, OpenSeesSP, and OpenSeesPy simulations utilizing TACC HPC resources from their desktop.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Version 4.0</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Release date:</strong> August 2024</p>
+<p class="sd-card-text"><strong>Major updates:</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">A needed release for changes required to interact with DesignSafe and new TapisV3 interface.</p></li>
+<li><p class="sd-card-text">Due to AI generated spam on message board, users now directed to post questions using github discussions.</p></li>
+</ul>
+</div>
+</details></div></blockquote>
+</div>
+<div class="section" id="version-3">
+<h2><span class="section-number">6.2. </span>Version 3<a class="headerlink" href="#version-3" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Version 3.5</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong> June 2024</p>
 <p class="sd-card-text"><strong>Major updates:</strong></p>
 <ul class="simple">
 <li><p class="sd-card-text">Ability to include different events in multi-model and multi-fidelity simulations</p></li>
 </ul>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Version 3.4</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong> March 2024</p>
@@ -275,7 +302,7 @@
 </li>
 </ul>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Version 3.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong> Jan 2024</p>
@@ -399,7 +426,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="version-2">
-<h2><span class="section-number">6.2. </span>Version 2<a class="headerlink" href="#version-2" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Version 2<a class="headerlink" href="#version-2" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -438,7 +465,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="version-1">
-<h2><span class="section-number">6.3. </span>Version 1<a class="headerlink" href="#version-1" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Version 1<a class="headerlink" href="#version-1" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
