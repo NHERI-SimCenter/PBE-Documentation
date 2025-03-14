@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>1.2. Install on MacOS &mdash; Performance Based Engineering Application  documentation</title>
+  <title>1.1.2. Install on MacOS &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="1.3. Running Jobs at DesignSafe" href="setupTACC.html" />
-    <link rel="prev" title="1.1. Install on Windows 10" href="install_Windows.html" />
+    <link rel="next" title="1.1.3. Running Jobs at DesignSafe" href="setupTACC.html" />
+    <link rel="prev" title="1.1.1. Install on Windows 10" href="install_Windows.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -121,15 +121,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="installation.html">1. Installation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="install_Windows.html">1.1. Install on Windows 10</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1.2. Install on MacOS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install-python-3-9">1.2.1. Install Python 3.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#download-the-application">1.2.5. <strong>Download the Application</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-the-installation">1.2.6. Test the Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="installation.html">1. Running Application</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html#as-a-desktop-application">1.1. As A Desktop Application</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install_Windows.html">1.1.1. Install on Windows 10</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1.2. Install on MacOS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-python-3-9">1.1.2.1. Install Python 3.9</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-the-application">1.1.2.5. <strong>Download the Application</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-the-installation">1.1.2.6. Test the Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="setupTACC.html">1.3. Running Jobs at DesignSafe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setupTACC.html">1.1.3. Running Jobs at DesignSafe</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#through-your-browser">1.2. Through Your Browser</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
@@ -200,9 +204,9 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="installation.html"><span class="section-number">1. </span>Installation</a> &raquo;</li>
+          <li><a href="installation.html"><span class="section-number">1. </span>Running Application</a> &raquo;</li>
         
-      <li><span class="section-number">1.2. </span>Install on MacOS</li>
+      <li><span class="section-number">1.1.2. </span>Install on MacOS</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -222,66 +226,56 @@
            <div itemprop="articleBody">
             
   <div class="section" id="install-on-macos">
-<span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on MacOS<a class="headerlink" href="#install-on-macos" title="Permalink to this heading">¶</a></h1>
+<span id="lblinstallmac"></span><h1><span class="section-number">1.1.2. </span>Install on MacOS<a class="headerlink" href="#install-on-macos" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="install-python-3-9">
-<h2><span class="section-number">1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this heading">¶</a></h2>
-<p>SimCenter tools require an x86-based Python 3.9. If your current Python version is incompatible, follow these steps to install the required version from <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a>.</p>
+<h2><span class="section-number">1.1.2.1. </span>Install Python 3.9<a class="headerlink" href="#install-python-3-9" title="Permalink to this heading">¶</a></h2>
+<p>SimCenter tools require an <strong>x86-based Python 3.9</strong> installation. To check if your current Python installation is compatible, follow Steps <strong>1</strong> and <strong>2</strong> below. If it is incompatible, proceed with Steps <strong>3</strong> through <strong>6</strong> below to install a compatible version.</p>
 <ol class="arabic">
-<li><p>To check your Python version compatibility, issue the following in a terminal window.</p>
+<li><p>Open a Terminal Window. To do this on your Mac:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1) Press Command (⌘) + Spacebar to open Spotlight Search
+2) Type “Terminal” and press Enter in Spotlight Search.
+</pre></div>
+</div>
+</li>
+<li><p>To check if your Python version is compatible, run the following commands in your terminal window:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
-<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
 <span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
 <span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Ensure the output indicates Python 3.9 and <cite>machine=’x86_64’</cite>, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.</p>
-<div class="align-center figure" id="id5">
+<p>Ensure the output indicates Python 3.9 and <cite>machine=’x86_64’</cite>, as shown in the screenshot below. If your python installation does not meet these requirements, proceed with the installation outlined in steps <strong>3</strong> and <strong>4</strong> below. If your system does meet the requirements, skip to step <strong>5</strong>.</p>
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/pythonKernel.png"><img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>To download a Python installer with your browser open the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE">PBE Download</a> page. There, you will find various files and directories available for download. Locate the file named <strong>python-3.9.13-macosx10.9.pkg</strong>, which we copied from <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a>. Proceed to download this installer file and then open it on your local machine to initiate the Python installation process.</p></li>
-<li><p>Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> by double-clicking each.</p>
-<div class="align-center figure" id="id6">
+<li><p>Clink on the this link -&gt; <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE">PBE Download</a>. On the browser page that this brings up,  you will find various files and directories available for download. Locate the file named <strong>python-3.9.13-macosx10.9.pkg</strong>, which we copied from <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a>. Proceed to download this installer file.</p></li>
+<li><p>Locate this installer file on your system and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> by double-clicking each.</p>
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../_images/pythonInstallShell.png"><img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.1.2 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Install additional packages via the <strong>nheri_simcenter</strong> package by starting a Terminal window and type the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>nheri_simcenter<span class="w"> </span>--upgrade
+<li><p>In the terminal window you have opened in step <strong>1</strong>, you need to issue the following <strong>2</strong> commands to ensure the command line tools for x-code and some additional python modules are installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xcode-select<span class="w"> </span>--install
 python3<span class="w"> </span>-m<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nheri_simcenter
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Use of <cite>pip</cite> versus <cite>pip3</cite>, and <cite>python</cite> versus <cite>python3</cite> or <cite>python3.9</cite> may vary depending on your system configuration.
-If the above commands fail, try using <cite>pip</cite> and <cite>python</cite> instead.</p>
-</div>
-<p>Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.</p>
 </li>
+<li><p>Repeat steps <strong>1</strong> and <strong>2</strong> to ensure that python was correctly installed. See note below if you still see the incorrect version and platform in the <code class="docutils literal notranslate"><span class="pre">NEW</span></code> terminal window.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ol class="arabic">
-<li><p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always execute the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.
-On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, and the up-and-coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the user’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from every time the program is started.
-When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.</p>
-<p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>SHELL
-</pre></div>
-</div>
-<p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
-</li>
-<li><p>Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend its usage is that there are additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically <strong>python3-intel64</strong>.</p></li>
-</ol>
+<p>If you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the <strong>Update Shell Profile Command.command</strong> script at the end of step <strong>4</strong>. You can still do it using <strong>Finder</strong>. Open Finder and navigate to the <strong>/Applications/Python 3.9</strong> folder. Here you will see a number of files, including the two you forgot to run: <strong>Install Cerificates Command.command</strong> and <strong>Update Shell Profile Command.commnd</strong>. Double click on these files to run them. Finally repeat steps <strong>1</strong> and <strong>2</strong> again. If this still fails to produce the correct output for step <strong>2</strong>, please contact us for direct support.</p>
 </div>
 </div>
 <div class="section" id="download-the-application">
-<h2><span class="section-number">1.2.5. </span><strong>Download the Application</strong><a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
-<p>To download the PBE app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE">PBE Download</a> page which should resemble <a class="reference internal" href="#figdownload-pbe"><span class="std std-numref">Fig. 1.2.5.2</span></a>. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id8">
+<h2><span class="section-number">1.1.2.5. </span><strong>Download the Application</strong><a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
+<p>To download the PBE app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE">PBE Download</a> page which should resemble <a class="reference internal" href="#figdownload-pbe"><span class="std std-numref">Fig. 1.1.2.5.2</span></a>. The download page contains a list of downloadable files and directories.</p>
+<div class="align-center figure" id="id7">
 <span id="figdownload-pbe"></span><img alt="../../../../_images/pbeDownload.png" src="../../../../_images/pbeDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.5.2 </span><span class="caption-text">PBE download page.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.5.2 </span><span class="caption-text">PBE download page.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the PBE app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and <strong>copy</strong> the PBE app <strong>to a location in your filesystem</strong>.</p>
 <div class="admonition note">
@@ -290,7 +284,7 @@ When the frontend application is running the computations it is actually running
 </div>
 </div>
 <div class="section" id="test-the-installation">
-<h2><span class="section-number">1.2.6. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">1.1.2.6. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this heading">¶</a></h2>
 <p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the PBE.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -300,17 +294,17 @@ When the frontend application is running the computations it is actually running
 <a class="reference internal image-reference" href="../../../../_images/AppleSecurity.png"><img alt="../../../../_images/AppleSecurity.png" src="../../../../_images/AppleSecurity.png" style="width: 50%;" /></a>
 </div>
 </div>
-<p>Once the application starts, verify the setup by running an example problem <a class="reference internal" href="../../examples/desktop/pbdl-0001/README.html#pbdl-0001"><span class="std std-ref">FEMA P-58 Assessment Using External Demands</span></a>, see <a class="reference internal" href="#figui-pbe"><span class="std std-numref">Fig. 1.2.6.2</span></a>.</p>
-<div class="align-center figure" id="id14">
+<p>Once the application starts, verify the setup by running an example problem <a class="reference internal" href="../../examples/desktop/pbdl-0001/README.html#pbdl-0001"><span class="std std-ref">FEMA P-58 Assessment Using External Demands</span></a>, see <a class="reference internal" href="#figui-pbe"><span class="std std-numref">Fig. 1.1.2.6.2</span></a>.</p>
+<div class="align-center figure" id="id13">
 <span id="figui-pbe"></span><a class="reference internal image-reference" href="../../../../_images/PBE_startup.png"><img alt="../../../../_images/PBE_startup.png" src="../../../../_images/PBE_startup.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.6.2 </span><span class="caption-text">PBE application on startup.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.6.2 </span><span class="caption-text">PBE application on startup.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When the PBE app is running, open the app/preferences or File/Preferences and make sure that <code class="docutils literal notranslate"><span class="pre">python3</span></code> appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of Python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response in the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
-<div class="align-center figure" id="id19">
+<div class="align-center figure" id="id18">
 <span id="figui-preferences"></span><a class="reference internal image-reference" href="../../../../_images/pythonPreferences.png"><img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.6.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.6.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -326,7 +320,7 @@ When the frontend application is running the computations it is actually running
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2024, The Regents of the University of California.
+        &#169; Copyright 2025, The Regents of the University of California.
 
     </p>
   </div>
