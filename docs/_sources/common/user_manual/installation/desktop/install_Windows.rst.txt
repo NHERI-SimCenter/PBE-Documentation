@@ -32,7 +32,7 @@ Install on Windows 10
    
    .. code:: bash
       
-      wsl --install --distribution Ubuntu
+      wsl --install --distribution Ubuntu-22.04
 
    .. figure:: figures/weuq_wsl_installation.png
       :align: center
@@ -40,7 +40,7 @@ Install on Windows 10
 
       Installing WSL(Ubuntu) Subsystem.
 
-   This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your user name and password to setup the system as shown bellow.
+   This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your username and password to set up the system as shown below.
 
       .. figure:: figures/weuq_wsl_configuration.png
          :align: center
@@ -65,8 +65,29 @@ Install on Windows 10
       Installing OpenFOAM-10 on WSL.
 
       
+   .. note::
 
+      To verify that **OpenFOAM** has been installed correctly for **WE-UQ**, follow these steps:
 
+      Once WE-UQ is installed, open the application. From the **Examples** pull-down menu, select **Example E5**. When this example loads, WE-UQ calls OpenFOAM in the background to create a mesh of the model. If the mesh does not display, OpenFOAM is not functioning correctly for your setup.
+
+      There are a few possible causes:
+
+      1. **Missing .bashrc entry**  
+	 During OpenFOAM installation, you are instructed to edit your ``.bashrc`` file.  
+	 If you have not done so, add the following line to the file:
+
+	 ``. /opt/openfoam10/etc/bashrc``
+
+	 You can edit the file using a text editor such as **nano** or **vi**.
+
+      2. **Different default shell**  
+	 If you have already added the above line, your Ubuntu system may be configured to use a shell other than the default **bash** shell.  In that case, try replacing the previous line with:
+
+	 ``source /opt/openfoam10/etc/bashrc``
+
+      3. WE-UQ sets the path to it's backend applications the first time the application starts. If you move the application subsequent to this or download the application again, you need to **reset** these paths. To do this go to **File**, **Preferences** and press the **Reset** and **Save** buttons.
+      
 .. only:: HydroUQ_app
 
    This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. Backend mesh generation and visualization, which the GUI relies on, are powered by *OpenFOAM-10* and *OpenFOAM-7*'s built-in meshing tools.  
@@ -177,7 +198,7 @@ After installation, perform basic checks by running the |short tool id|.exe from
 
 .. note::
 
-   Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the |short tool name| application for the first time. It is safe to bypass this warning for SimCenter applications.
+   Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the |short tool name| for the first time. It is safe to bypass this warning for SimCenter applications.
 
 
 Launch the application to view the user interface as shown in |figWinUI|. It's recommended to run the |test example| to ensure proper operation.
@@ -255,4 +276,4 @@ If the test example fails, refer to :ref:`troubleshooting<lblTroubleshooting>`.
 
    - Avoid setting the local working directory under cloud-synced folders like OneDrive or Box, which may cause file-not-found errors.
    - Avoid including non-alphabetic characters or spaces in the path, which may potentially lead to encoding or file-not-found errors.
-   - Avoid setting the local working directory on a different drive than the app executable (.exe), which may result in permission errors , e.g. the executable is under the C drive, and the working directory is under the E drive.
+   - Avoid setting the local working directory on a different drive than the app executable (.exe), which may result in permission errors, e.g. the executable is under the C drive, and the working directory is under the E drive.
