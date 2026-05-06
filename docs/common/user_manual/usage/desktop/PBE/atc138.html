@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.8.2. ATC-138 &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../_static/copybutton.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.9. RES: Results" href="resPBE.html" />
+    <link rel="prev" title="2.8.1. REDi" href="redi.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DL.html">2.7. DL: Damage and Loss Assessment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="performance.html">2.8. PRF: Recovery Performance Assessment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="redi.html">2.8.1. REDi</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.8.2. ATC-138</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#building-information">2.8.2.1. Building Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-custom-inputs">2.8.2.2. Optional Custom Inputs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#custom-tenant-unit-list">Custom tenant unit list</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#custom-optional-inputs">Custom optional inputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="resPBE.html">2.9. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Misc.html">9. Misc</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
+        
+          <li><a href="performance.html"><span class="section-number">2.8. </span>PRF: Recovery Performance Assessment</a> &raquo;</li>
+        
+      <li><span class="section-number">2.8.2. </span>ATC-138</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/PBE/atc138.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="atc-138">
+<span id="lblprf-atc138"></span><h1><span class="section-number">2.8.2. </span>ATC-138<a class="headerlink" href="#atc-138" title="Permalink to this heading">¶</a></h1>
+<p>This panel collects the building-specific inputs needed by the ATC-138
+functional recovery assessment. The inputs supplement the damage and
+loss results produced by Pelicun (under the DL tab) so the underlying
+engine can simulate the functional recovery process – including the
+delays imposed by inspection, financing, design, permitting, and
+contractor mobilization, the construction repair schedule, and the
+fault-tree evaluation of when each tenant unit and the building as a
+whole can be occupied again and regains full functional operation.
+After the analysis runs, the Results panel reports per-realization
+Reoccupancy, Functional Recovery, and Full Recovery times along with
+summary statistics.</p>
+<p>The methodology is described in detail on the official
+<a class="reference external" href="https://femap58.atcouncil.org/fr-methodology">ATC-138 Functional Recovery Methodology</a>
+page. The Python implementation invoked by PBE lives at
+<a class="reference external" href="https://github.com/OpenPBEE/Functional-Recovery-Python">OpenPBEE/Functional-Recovery-Python</a>.
+The example <a class="reference internal" href="../../../examples/desktop/pbdl-0004/README.html#pbdl-0004"><span class="std std-ref">FEMA P-58 Assessment with ATC-138 Functional Recovery</span></a> demonstrates the panel end-to-end and can
+be used as a starting template; it also ships ready-to-use template
+files for the custom tenant unit list and the custom optional inputs
+described below.</p>
+<div class="align-center figure" id="id1">
+<span id="fig-prf-atc138"></span><img alt="../../../../../_images/prf_atc138.png" src="../../../../../_images/prf_atc138.png" />
+<p class="caption"><span class="caption-number">Fig. 2.8.2.1 </span><span class="caption-text">The ATC-138 input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The panel groups its inputs into the following areas:</p>
+<div class="section" id="building-information">
+<h2><span class="section-number">2.8.2.1. </span>Building Information<a class="headerlink" href="#building-information" title="Permalink to this heading">¶</a></h2>
+<p>This area collects geometry and inventory information about the
+building, plus a few parameters that drive specific parts of the
+functional recovery assessment (egress, repair crew sizing, casualty
+modeling, engineering cost). Several of the fields are linked to the
+General Information (GI) panel and to the Loss tab of the DL panel –
+editing them here pushes the change back to those tabs and vice
+versa, so values stay consistent across the workflow.</p>
+<p>You can work in any length unit you prefer in the GI panel. ATC-138
+itself uses feet internally, so the linked values in this panel are
+always displayed in feet; PBE handles the conversion automatically.</p>
+<p>The fields linked to the GI panel are:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Length Side 1 (ft)</dt>
+<dd class="field-odd"><p>The length of one of the two principal building sides.
+Corresponds to <strong>Width</strong> in the GI panel.</p>
+</dd>
+<dt class="field-even">Length Side 2 (ft)</dt>
+<dd class="field-even"><p>The length of the other principal building side. Corresponds to
+<strong>Depth</strong> in the GI panel.</p>
+</dd>
+<dt class="field-odd">Number of Stories</dt>
+<dd class="field-odd"><p>The number of above-ground stories.</p>
+</dd>
+<dt class="field-even">Height (ft)</dt>
+<dd class="field-even"><p>The total above-ground height of the building.</p>
+</dd>
+<dt class="field-odd">Typical Story Height (ft)</dt>
+<dd class="field-odd"><p><em>Read-only.</em> Computed automatically as <code class="docutils literal notranslate"><span class="pre">Height</span> <span class="pre">/</span> <span class="pre">Number</span> <span class="pre">of</span>
+<span class="pre">Stories</span></code> and updated whenever either source field changes. Used
+to size scaffolding for repair work along the building exterior.</p>
+</dd>
+<dt class="field-even">Plan Area (sq ft)</dt>
+<dd class="field-even"><p><em>Read-only.</em> Computed automatically as
+<code class="docutils literal notranslate"><span class="pre">Length</span> <span class="pre">Side</span> <span class="pre">1</span> <span class="pre">x</span> <span class="pre">Length</span> <span class="pre">Side</span> <span class="pre">2</span></code> and updated whenever either
+source field changes. Used to size the construction workforce
+per story and to derive the total building occupancy from the
+peak occupancy rate.</p>
+</dd>
+</dl>
+<p>The next field is linked to the Loss tab on the DL panel:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Replacement Cost (Median)</dt>
+<dd class="field-odd"><p>The median replacement cost of the building. Used to scale
+repair-cost-driven impeding factors such as financing time and
+engineering design effort.</p>
+</dd>
+</dl>
+<p>The remaining fields in this area are specific to the ATC-138 input
+panel:</p>
+<dl class="field-list">
+<dt class="field-odd">Number of Entry Doors</dt>
+<dd class="field-odd"><p>Total number of entry doors to the building. Used in the egress
+assessment – jammed entry doors after shaking can delay
+reoccupancy and function until temporary unjamming repairs are
+complete.</p>
+</dd>
+<dt class="field-even">Typical Structural Bay Length (ft)</dt>
+<dd class="field-even"><p>Typical length of a structural bay. Used to size scaffolding and
+to allocate repair crews to the work area.</p>
+</dd>
+<dt class="field-odd">Peak Occupancy Rate (per sq ft)</dt>
+<dd class="field-odd"><p>Peak building occupancy expressed as occupants per square foot
+of plan area. Used in the casualty and egress portions of the
+assessment. The default value (<code class="docutils literal notranslate"><span class="pre">0.0031</span></code>) is representative of
+a commercial office building at peak occupancy.</p>
+</dd>
+<dt class="field-even">Engineering Cost Ratio</dt>
+<dd class="field-even"><p>Fraction of the total repair cost attributed to engineering and
+design effort. Used to derive design and re-design durations
+from the simulated repair cost. The default value (<code class="docutils literal notranslate"><span class="pre">0.10</span></code>)
+represents a typical project where engineering and design
+account for 10 % of total project cost.</p>
+</dd>
+<dt class="field-odd">Number of Elevators</dt>
+<dd class="field-odd"><p>Total number of elevators in the building. If left at <code class="docutils literal notranslate"><span class="pre">0</span></code>, the
+number of elevators is inferred automatically from the elevator
+components present in the asset model. Provide an explicit
+number if the asset model does not include elevator components
+but the building does have them, or if you want to override the
+inferred value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Whether or not elevators are <em>required</em> for a tenant unit to
+be considered functional is determined separately, by the
+occupancy type assigned to that tenant unit (see below).</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="optional-custom-inputs">
+<h2><span class="section-number">2.8.2.2. </span>Optional Custom Inputs<a class="headerlink" href="#optional-custom-inputs" title="Permalink to this heading">¶</a></h2>
+<p>ATC-138 ships with sensible defaults for every aspect of the
+assessment that the panel does not expose directly. The two
+checkboxes at the bottom of the panel let you override these
+defaults when needed. <a class="reference internal" href="../../../examples/desktop/pbdl-0004/README.html#pbdl-0004"><span class="std std-ref">FEMA P-58 Assessment with ATC-138 Functional Recovery</span></a> provides ready-to-use template
+files for both options.</p>
+<div class="section" id="custom-tenant-unit-list">
+<h3>Custom tenant unit list<a class="headerlink" href="#custom-tenant-unit-list" title="Permalink to this heading">¶</a></h3>
+<p>When the <strong>Use custom tenant unit list</strong> checkbox is unchecked, PBE
+auto-generates a default <code class="docutils literal notranslate"><span class="pre">tenant_unit_list.csv</span></code> in which each
+story is one tenant unit assigned the full story plan area, a
+perimeter area derived from the building edge lengths and story
+height, and the <em>Commercial Office</em> occupancy type. This is
+appropriate for a typical office building, but real assets often
+have multiple tenants per story or use a different occupancy type.</p>
+<p>To override the default, check the box and use the <strong>Browse</strong>
+button to point PBE at a CSV file with the following columns (one
+row per tenant unit):</p>
+<dl class="field-list">
+<dt class="field-odd">id</dt>
+<dd class="field-odd"><p>Unique tenant unit identifier (integer or string).</p>
+</dd>
+<dt class="field-even">story</dt>
+<dd class="field-even"><p>Building story where the tenant unit is located. Ground floor
+is story <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</dd>
+<dt class="field-odd">area</dt>
+<dd class="field-odd"><p>Total plan area of the tenant unit, in square feet.</p>
+</dd>
+<dt class="field-even">perim_area</dt>
+<dd class="field-even"><p>Total exterior perimeter (elevation) area of the tenant unit,
+in square feet.</p>
+</dd>
+<dt class="field-odd">occupancy_id</dt>
+<dd class="field-odd"><p>Occupancy type identifier. ATC-138 currently supports the
+following four values; any other value will cause the
+assessment to fail:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">0</span></code></dt>
+<dd class="field-odd"><p>Non-Occupied Space</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">1</span></code></dt>
+<dd class="field-even"><p>Commercial Office</p>
+</dd>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">7</span></code></dt>
+<dd class="field-odd"><p>Multi-Unit Residential</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">11</span></code></dt>
+<dd class="field-even"><p>Single-Unit Residential</p>
+</dd>
+</dl>
+<p>The occupancy type drives which utilities, elevators, and
+subsystems must be operational for the tenant unit to be
+considered functional. The full list of functional requirements
+per occupancy type is in
+<a class="reference external" href="https://github.com/OpenPBEE/Functional-Recovery-Python/blob/main/src/atc138/data/tenant_function_requirements.csv">tenant_function_requirements.csv</a>
+in the Functional-Recovery-Python repository.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="custom-optional-inputs">
+<h3>Custom optional inputs<a class="headerlink" href="#custom-optional-inputs" title="Permalink to this heading">¶</a></h3>
+<p>The assessment exposes a large number of secondary parameters
+covering impedance, repair scheduling, and functional recovery
+behavior. PBE uses the built-in defaults for all of them; if you
+need to change any, check the <strong>Use custom optional inputs</strong> box
+and point PBE at a JSON file. You only need to include the
+parameters you actually want to override – ATC-138 merges your
+file on top of the defaults at run time, so anything not specified
+keeps its default value.</p>
+<p>The configurable parameter groups are:</p>
+<dl class="field-list simple">
+<dt class="field-odd">impedance_options</dt>
+<dd class="field-odd"><p>Controls the simulated delays before repairs can start –
+inspection, financing, engineering design, permitting,
+contractor mobilization, and procurement of long-lead items.
+Lets you designate the building as an essential facility, model
+an existing contractor relationship, or change the default lead
+time for materials.</p>
+</dd>
+<dt class="field-even">repair_time_options</dt>
+<dd class="field-even"><p>Controls the construction phase of the schedule – maximum
+workforce density per story, building-level workforce caps,
+whether temporary repairs and shoring are allowed.</p>
+</dd>
+<dt class="field-odd">functionality_options</dt>
+<dd class="field-odd"><p>Controls the fault-tree evaluation of reoccupancy and functional
+recovery – whether red tags are simulated, the egress
+threshold, utility and habitability requirements, the heat fuel
+type, and the flooding model.</p>
+</dd>
+</dl>
+<p>The full list of parameters and their default values is documented
+in
+<a class="reference external" href="https://github.com/OpenPBEE/Functional-Recovery-Python/blob/main/src/atc138/data/default_inputs.json">default_inputs.json</a>
+in the Functional-Recovery-Python repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to change one of the static lookup tables ATC-138
+uses internally (such as <code class="docutils literal notranslate"><span class="pre">component_attributes.csv</span></code> or
+<code class="docutils literal notranslate"><span class="pre">tenant_function_requirements.csv</span></code>), you can place a modified
+copy of the file directly in the project directory and ATC-138
+will prefer it over the built-in default. PBE does not
+currently expose that workflow through the UI – the file has
+to be copied into the project directory manually.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

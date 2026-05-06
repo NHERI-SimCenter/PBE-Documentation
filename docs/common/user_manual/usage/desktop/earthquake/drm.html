@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.4.8. Domain Reduction Method (DRM) &mdash; Performance Based Engineering Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../_static/copybutton.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.4.9. Multiple Models" href="multimodelEvent.html" />
+    <link rel="prev" title="2.4.7. Physics Based Ground Motions" href="physicsBased.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/PBE-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/PBE/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack_pbe.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/pbeReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="earthquakeEvents.html">2.4. EVT: Earthquake Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticGroundMotion.html">2.4.1. Stochastic Ground Motions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peerNGA.html">2.4.2. PEER NGA Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.4.3. Multiple PEER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.4.4. Multiple SimCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.4.5. Site Response Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userSpecifiedDatabase.html">2.4.6. User Specified Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physicsBased.html">2.4.7. Physics Based Ground Motions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.8. Domain Reduction Method (DRM)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#predefined-drm-designsafe">2.4.8.1. Predefined DRM (DesignSafe)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#local-drm-h5drm">2.4.8.2. Local DRM (H5DRM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="multimodelEvent.html">2.4.9. Multiple Models</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/DL.html">2.7. DL: Damage and Loss Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/performance.html">2.8. PRF: Recovery Performance Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PBE/resPBE.html">2.9. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../PBE/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/PBE.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Misc.html">9. Misc</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Performance Based Engineering Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
+        
+          <li><a href="earthquakeEvents.html"><span class="section-number">2.4. </span>EVT: Earthquake Events</a> &raquo;</li>
+        
+      <li><span class="section-number">2.4.8. </span>Domain Reduction Method (DRM)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/earthquake/drm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="domain-reduction-method-drm">
+<span id="lbldrmevent"></span><h1><span class="section-number">2.4.8. </span>Domain Reduction Method (DRM)<a class="headerlink" href="#domain-reduction-method-drm" title="Permalink to this heading">¶</a></h1>
+<p>This panel, as shown in <a class="reference internal" href="#fig-drm-event"><span class="std std-numref">Fig. 2.4.8.1</span></a>, lets the user apply a precomputed 3D wavefield to the boundaries of a local SSI model. That wavefield can be selected from curated datasets on DesignSafe or read from a local H5DRM file. DRM allows realistic source‑to‑site wave propagation to enter a smaller, high‑resolution domain.</p>
+<div class="align-center figure" id="id1">
+<span id="fig-drm-event"></span><img alt="../../../../../_images/DRM.png" src="../../../../../_images/DRM.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1 </span><span class="caption-text">DRM event selection panel (placeholder – add overview screenshot).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Two DRM modes are available in <strong>EE‑UQ</strong>:</p>
+<ul class="simple">
+<li><p>Predefined (DesignSafe): use a curated dataset hosted on DesignSafe (e.g., Hayward Fault SW4 runs). No local files are required.</p></li>
+<li><p>Local: use your own H5DRM file stored locally.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To use DRM with SSI, set <code class="docutils literal notranslate"><span class="pre">boundary_conditions</span> <span class="pre">=</span> <span class="pre">DRM</span></code> in the <strong>SIM → Soil and Foundation</strong> tab (SSI Type 1). See the SSI SIM section for DRM absorbing layer options and resource planning.</p>
+</div>
+<div class="section" id="predefined-drm-designsafe">
+<h2><span class="section-number">2.4.8.1. </span>Predefined DRM (DesignSafe)<a class="headerlink" href="#predefined-drm-designsafe" title="Permalink to this heading">¶</a></h2>
+<p>Select from a list of predefined DRM datasets available on DesignSafe (e.g., SW4 Hayward Fault sites near/mid/far). The panel provides:</p>
+<ul class="simple">
+<li><p>Dataset browser / selector: choose a site or scenario from the list. A small viewer displays metadata (e.g., footprint size, mesh spacing).</p></li>
+<li><p>Center of your local model: provide the center coordinates for your SSI domain so the imported wavefield aligns with your local box.</p></li>
+<li><p>Time step and number of steps: you may set <code class="docutils literal notranslate"><span class="pre">dT</span></code> and <code class="docutils literal notranslate"><span class="pre">numSteps</span></code> explicitly, or leave them on auto‑detect (when supported by the dataset) to let EE‑UQ configure these from the DRM file.</p></li>
+</ul>
+<div class="align-center figure" id="id2">
+<span id="fig-drm-predefined"></span><img alt="../../../../../_images/DRM_event_predefined.png" src="../../../../../_images/DRM_event_predefined.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1.1 </span><span class="caption-text">DRM event panel (Predefined DesignSafe dataset) – add screenshot here.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Tips
+“””
+- Predefined datasets are large; using them directly avoids uploading huge files.
+- Ensure your SSI soil box meets the dataset’s minimum extents (e.g., 128 × 128 × 48 m for 4 m mesh spacing).</p>
+</div>
+<div class="section" id="local-drm-h5drm">
+<h2><span class="section-number">2.4.8.2. </span>Local DRM (H5DRM)<a class="headerlink" href="#local-drm-h5drm" title="Permalink to this heading">¶</a></h2>
+<p>Use a local H5DRM file that you prepared or received. The panel exposes the low‑level parameters needed to map the DRM file to your local coordinates (based on the DRM event widgets):</p>
+<ul class="simple">
+<li><p>File: select the local H5DRM file.</p></li>
+<li><p>Coordinate transform: toggle whether to apply a coordinate transform and, if enabled, provide the 3×3 matrix entries (<code class="docutils literal notranslate"><span class="pre">T00..T22</span></code>). Use this to rotate/reorient the incoming field relative to your local axes.</p></li>
+<li><p>Scale: <code class="docutils literal notranslate"><span class="pre">crd_scale</span></code> to reconcile unit systems, if needed.</p></li>
+<li><p>Time control: <code class="docutils literal notranslate"><span class="pre">dT</span></code> (time step) and <code class="docutils literal notranslate"><span class="pre">numSteps</span></code> (number of steps). Set to match your DRM file. Some files can be auto‑inspected; otherwise provide values explicitly.</p></li>
+<li><p>DRM box alignment: provide the reference point (e.g., <code class="docutils literal notranslate"><span class="pre">x00,</span> <span class="pre">x01,</span> <span class="pre">x02</span></code> for the model center/origin) to position the local box within the DRM dataset.</p></li>
+<li><p>Tolerance: <code class="docutils literal notranslate"><span class="pre">distance_tolerance</span></code> for nearest‑neighbor matching within the DRM box.</p></li>
+</ul>
+<div class="align-center figure" id="id3">
+<span id="fig-drm-local"></span><img alt="../../../../../_images/DRM_event_local.png" src="../../../../../_images/DRM_event_local.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.8.2.1 </span><span class="caption-text">DRM event panel (Local H5DRM) – add screenshot here.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If you run remotely at DesignSafe, EE‑UQ will upload your local H5DRM file. Uploads may take time for very large files.</p></li>
+<li><p>Ensure your local SSI domain size and mesh spacing are compatible with the DRM dataset. The DRM viewer in the event panel can help verify extents.</p></li>
+<li><p>For output extraction under DRM, prefer <strong>User‑Defined EDP</strong> and provide recorders (e.g., a <code class="docutils literal notranslate"><span class="pre">recorders.tcl</span></code>) for structural and/or soil nodes.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
